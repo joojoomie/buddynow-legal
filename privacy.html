@@ -55,7 +55,7 @@
   <h3>Activity data</h3>
   <ul>
     <li>Daily social status, such as chatty, quiet, or no preference. It resets daily at UTC midnight.</li>
-    <li>Activity posts: activity type, meeting place text, optional note, distance radius, and optional GPS latitude and longitude if you grant location permission. Posts expire after 60 minutes.</li>
+    <li>Activity posts: activity type, meeting place text, optional note, distance radius, and optional precise GPS latitude and longitude if you grant location permission. Posts expire after 60 minutes.</li>
     <li>Post applications and their status: pending, approved, rejected, or withdrawn.</li>
     <li>Matches, which record an approved application between two users for a post.</li>
     <li>Chat messages between a matched pair. Messages are 1-500 characters and limited to 200 messages per match.</li>
@@ -98,7 +98,7 @@
   <p>You may withdraw consent by deleting your account in the app or by contacting <a href="mailto:dpo@buddynow.app">dpo@buddynow.app</a>. If you withdraw consent for data needed to operate BuddyNow, we may not be able to continue providing the service to you. We will explain the likely consequences before completing a manual withdrawal request where required.</p>
 
   <h2>5. Location</h2>
-  <p>Location is optional. If you grant location permission, BuddyNow may attach GPS latitude and longitude to an activity post so nearby students can find it within the radius you choose. You can use BuddyNow without granting location permission by typing a meeting place instead.</p>
+  <p>Location is optional. If you grant location permission, BuddyNow may use precise GPS latitude and longitude for browsing and activity post details so students can find posts within the radius you choose. You can use BuddyNow without granting location permission by typing a meeting place instead.</p>
 
   <h2>6. Sharing and Processors</h2>
   <p>We do not sell personal data. We share data only as needed to run BuddyNow, comply with law, protect users, or use service providers under appropriate confidentiality and security expectations.</p>
@@ -116,12 +116,12 @@
     <li>Sessions expire after 30 days unless revoked earlier.</li>
     <li>Activity posts are live for 60 minutes, but related records may remain to support match history, safety review, and service integrity.</li>
     <li>OTP rate-limit timestamps are used for the sliding 60-minute anti-abuse window and operational protection.</li>
-    <li>If you delete your account, directly identifying account data is wiped or anonymized as described below.</li>
-    <li>Anonymized rows may be retained indefinitely as aggregate service, safety, and analytics signals, unless we adopt a shorter review cycle in the future.</li>
+    <li>If you delete your account, directly identifying account data is wiped, de-identified, or pseudonymized where possible as described below.</li>
+    <li>Records that no longer identify your account may be retained only as long as needed for safety review, legal compliance, abuse prevention, counterparty context, or aggregate service integrity. We review these retained records at least every 24 months.</li>
   </ul>
 
-  <h2>8. Account Deletion and Anonymization</h2>
-  <p>When you delete your account through <code>DELETE /me</code> or the in-app deletion flow, BuddyNow uses two kinds of deletion behavior:</p>
+  <h2>8. Account Deletion and De-identification</h2>
+  <p>When you delete your account through <code>DELETE /me</code> or the in-app deletion flow, BuddyNow uses two kinds of deletion behavior. Some retained free-text fields may still contain personal data if you or another user typed it into the text, so we describe this as de-identification or pseudonymization where possible rather than full anonymization.</p>
   <h3>Data wiped or revoked</h3>
   <ul>
     <li>Your user row is wiped.</li>
@@ -129,19 +129,19 @@
     <li>Live posts are automatically cancelled.</li>
     <li>Blocks are deleted entirely because they have no analytics value after account deletion.</li>
   </ul>
-  <h3>Data anonymized and retained</h3>
+  <h3>Data de-identified or pseudonymized and retained</h3>
   <ul>
-    <li>Applications and matches are anonymized by replacing user IDs with null while preserving status.</li>
-    <li>Chat messages are anonymized by replacing sender ID with null, while message body is preserved so the other participant's conversation view remains understandable.</li>
-    <li>Ratings are anonymized by replacing reviewer and reviewee IDs with null, while outcome, tags, and reason are preserved.</li>
-    <li>Reports are anonymized by replacing reporter and reported user IDs with null, while body and category are preserved as safety audit signals.</li>
-    <li>Feedback is anonymized by replacing nickname and user ID with null, while body is preserved.</li>
+    <li>Applications and matches are de-identified by replacing user IDs with null while preserving status.</li>
+    <li>Chat messages are pseudonymized by replacing sender ID with null, while message body is preserved so the other participant's conversation view remains understandable.</li>
+    <li>Ratings are de-identified or pseudonymized by replacing reviewer and reviewee IDs with null, while outcome, tags, and reason are preserved.</li>
+    <li>Reports are de-identified or pseudonymized by replacing reporter and reported user IDs with null, while body and category are preserved as safety audit signals.</li>
+    <li>Feedback is de-identified or pseudonymized by replacing nickname and user ID with null, while body is preserved.</li>
   </ul>
 
   <h2>9. Your Rights</h2>
   <p>Subject to applicable exceptions under Singapore law, you may request access to your personal data, ask us to correct inaccurate data, withdraw consent, or ask us to delete your account.</p>
   <ul>
-    <li><strong>Access:</strong> Use <code>GET /me/export</code> or the in-app export flow when available.</li>
+    <li><strong>Access:</strong> Use <code>GET /me/export</code> or the in-app export flow when available. The export currently includes account profile data, active session count, and your own feedback entries; we are expanding it to cover additional major categories such as reports submitted, blocks, posts, and matches you participated in.</li>
     <li><strong>Deletion:</strong> Use <code>DELETE /me</code> or the in-app account deletion flow.</li>
     <li><strong>Correction:</strong> Update editable profile fields in the app or contact the DPO.</li>
     <li><strong>Complaints:</strong> Contact the DPO first. We aim to respond within 30 days. If unresolved, you may contact Singapore's Personal Data Protection Commission.</li>
