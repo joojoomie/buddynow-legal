@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | BuddyNow</title>
+  <style>
+    :root { color-scheme: light; --ink:#17201b; --muted:#5f6f66; --line:#d9e4dc; --soft:#f5faf6; --accent:#246b4a; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:#fff; line-height:1.65; }
+    main { max-width: 820px; margin: 0 auto; padding: 32px 20px 56px; }
+    header { border-bottom:1px solid var(--line); margin-bottom:28px; padding-bottom:22px; }
+    h1 { font-size:2rem; line-height:1.15; margin:0 0 8px; letter-spacing:0; }
+    h2 { font-size:1.2rem; margin:30px 0 10px; }
+    h3 { font-size:1rem; margin:20px 0 8px; }
+    p, li { font-size:1rem; }
+    p { margin:0 0 12px; }
+    ul { padding-left:22px; margin:8px 0 14px; }
+    a { color:var(--accent); }
+    .meta, .muted { color:var(--muted); }
+    .notice { background:var(--soft); border:1px solid var(--line); border-radius:8px; padding:14px 16px; margin:18px 0; }
+    table { width:100%; border-collapse:collapse; margin:12px 0 18px; font-size:.96rem; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:var(--soft); }
+    footer { margin-top:34px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.94rem; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>BuddyNow Privacy Policy</h1>
+    <p class="meta">Last updated: 19 May 2026</p>
+    <p>BuddyNow, also known as 搭搭, helps students find a buddy for study, running, gym, meals, or another campus activity in the next hour. This policy explains what we collect, why we collect it, and how you can control your data.</p>
+  </header>
+
+  <section class="notice">
+    <p><strong>Short version:</strong> BuddyNow is for NUS, NTU, and SMU students aged 17 or above. We use your school email to verify eligibility, use your posts and messages to run the matching experience, and use reports, blocks, and ratings to keep the community safer. We do not sell personal data, run ads, use tracking SDKs, or collect photos, phone numbers, government IDs, contacts, or payment information.</p>
+  </section>
+
+  <h2>1. Who We Are</h2>
+  <p>BuddyNow is operated for students in Singapore. For privacy questions, access requests, correction requests, withdrawal of consent, or complaints, contact our Data Protection Officer:</p>
+  <p><strong>DPO:</strong> Founder, BuddyNow<br><strong>Email:</strong> <a href="mailto:dpo@buddynow.app">dpo@buddynow.app</a></p>
+
+  <h2>2. Personal Data We Collect</h2>
+  <h3>Account and identity data</h3>
+  <ul>
+    <li>School email address, verified by a one-time password. Production sign-up is limited to <code>@u.nus.edu</code>, <code>@e.ntu.edu.sg</code>, and <code>@smu.edu.sg</code>.</li>
+    <li>Nickname, chosen by you. It is not copied from the email local-part.</li>
+    <li>Age, limited to 17-35 during profile creation.</li>
+    <li>Gender selection: female, male, non-binary, or skip.</li>
+    <li>Avatar settings: two numeric choices for a procedural plant icon, not a photo.</li>
+    <li>School, derived from your school email domain.</li>
+  </ul>
+
+  <h3>Activity data</h3>
+  <ul>
+    <li>Daily social status, such as chatty, quiet, or no preference. It resets daily at UTC midnight.</li>
+    <li>Activity posts: activity type, meeting place text, optional note, distance radius, and optional GPS latitude and longitude if you grant location permission. Posts expire after 60 minutes.</li>
+    <li>Post applications and their status: pending, approved, rejected, or withdrawn.</li>
+    <li>Matches, which record an approved application between two users for a post.</li>
+    <li>Chat messages between a matched pair. Messages are 1-500 characters and limited to 200 messages per match.</li>
+    <li>Ratings after a meetup: outcome, fixed tags such as punctual or good vibe, and an optional short reason.</li>
+    <li>Trust counters, including completed meetup count and no-show count.</li>
+  </ul>
+
+  <h3>Safety data</h3>
+  <ul>
+    <li>Reports submitted by one user about another, including report category and optional body text.</li>
+    <li>Blocks between users. Blocking creates silent bidirectional invisibility.</li>
+  </ul>
+
+  <h3>Operational data</h3>
+  <ul>
+    <li>Sessions, including session ID, hashed token, 30-day expiry, and revocation status.</li>
+    <li>OTP rate-limit timestamps within a sliding 60-minute window.</li>
+    <li>Structured server logs containing user ID strings for operations and security. Logs do not include email addresses or message/report bodies.</li>
+  </ul>
+
+  <h3>Data we do not collect</h3>
+  <p>We do not collect real names, phone numbers, photos, government IDs, payment information, home addresses, contacts or address book data, behavioral analytics, tracking pixels, advertising IDs, or data from Facebook SDK, Google Analytics, Sentry, or similar tracking tools.</p>
+
+  <h2>3. Why We Collect and Use Data</h2>
+  <table>
+    <thead><tr><th>Purpose</th><th>Data used</th></tr></thead>
+    <tbody>
+      <tr><td>Verify student eligibility and prevent misuse</td><td>School email, OTP records, school domain, sessions, rate-limit timestamps</td></tr>
+      <tr><td>Create and operate your profile</td><td>Nickname, age, gender selection, avatar settings, school</td></tr>
+      <tr><td>Show 1-hour campus activity posts and match students</td><td>Activity type, meeting place, notes, radius, optional location, applications, matches</td></tr>
+      <tr><td>Enable 1-on-1 chat after approval</td><td>Match record and chat messages</td></tr>
+      <tr><td>Support trust and safety review</td><td>Ratings, reports, blocks, trust counters, relevant operational logs</td></tr>
+      <tr><td>Maintain security, troubleshoot service issues, and enforce limits</td><td>Sessions, hashed tokens, logs, rate-limit timestamps</td></tr>
+      <tr><td>Comply with legal obligations and handle complaints</td><td>Account, safety, operational, and audit records relevant to the request</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. Consent and Withdrawal</h2>
+  <p>By creating an account and using BuddyNow, you consent to our collection, use, and disclosure of personal data for the purposes described in this policy. Some data is necessary to provide the service. For example, we need your school email to verify eligibility, and we need post and application data to make matching work.</p>
+  <p>You may withdraw consent by deleting your account in the app or by contacting <a href="mailto:dpo@buddynow.app">dpo@buddynow.app</a>. If you withdraw consent for data needed to operate BuddyNow, we may not be able to continue providing the service to you. We will explain the likely consequences before completing a manual withdrawal request where required.</p>
+
+  <h2>5. Location</h2>
+  <p>Location is optional. If you grant location permission, BuddyNow may attach GPS latitude and longitude to an activity post so nearby students can find it within the radius you choose. You can use BuddyNow without granting location permission by typing a meeting place instead.</p>
+
+  <h2>6. Sharing and Processors</h2>
+  <p>We do not sell personal data. We share data only as needed to run BuddyNow, comply with law, protect users, or use service providers under appropriate confidentiality and security expectations.</p>
+  <table>
+    <thead><tr><th>Processor</th><th>Role</th><th>Data processed</th><th>Location note</th></tr></thead>
+    <tbody>
+      <tr><td>Fly.io</td><td>Application hosting and database infrastructure</td><td>Service data stored and processed by the BuddyNow backend</td><td>BuddyNow is configured to host in Singapore region where available</td></tr>
+      <tr><td>Resend</td><td>Transactional email for one-time passwords</td><td>School email address and OTP email metadata/content needed to deliver the login email</td><td>Resend is US-based, so OTP email processing may involve transfer outside Singapore</td></tr>
+    </tbody>
+  </table>
+  <p>Where personal data is transferred outside Singapore, we take steps intended to ensure a standard of protection comparable to the Personal Data Protection Act 2012 of Singapore, as amended.</p>
+
+  <h2>7. How Long We Keep Data</h2>
+  <ul>
+    <li>Sessions expire after 30 days unless revoked earlier.</li>
+    <li>Activity posts are live for 60 minutes, but related records may remain to support match history, safety review, and service integrity.</li>
+    <li>OTP rate-limit timestamps are used for the sliding 60-minute anti-abuse window and operational protection.</li>
+    <li>If you delete your account, directly identifying account data is wiped or anonymized as described below.</li>
+    <li>Anonymized rows may be retained indefinitely as aggregate service, safety, and analytics signals, unless we adopt a shorter review cycle in the future.</li>
+  </ul>
+
+  <h2>8. Account Deletion and Anonymization</h2>
+  <p>When you delete your account through <code>DELETE /me</code> or the in-app deletion flow, BuddyNow uses two kinds of deletion behavior:</p>
+  <h3>Data wiped or revoked</h3>
+  <ul>
+    <li>Your user row is wiped.</li>
+    <li>All sessions are revoked.</li>
+    <li>Live posts are automatically cancelled.</li>
+    <li>Blocks are deleted entirely because they have no analytics value after account deletion.</li>
+  </ul>
+  <h3>Data anonymized and retained</h3>
+  <ul>
+    <li>Applications and matches are anonymized by replacing user IDs with null while preserving status.</li>
+    <li>Chat messages are anonymized by replacing sender ID with null, while message body is preserved so the other participant's conversation view remains understandable.</li>
+    <li>Ratings are anonymized by replacing reviewer and reviewee IDs with null, while outcome, tags, and reason are preserved.</li>
+    <li>Reports are anonymized by replacing reporter and reported user IDs with null, while body and category are preserved as safety audit signals.</li>
+    <li>Feedback is anonymized by replacing nickname and user ID with null, while body is preserved.</li>
+  </ul>
+
+  <h2>9. Your Rights</h2>
+  <p>Subject to applicable exceptions under Singapore law, you may request access to your personal data, ask us to correct inaccurate data, withdraw consent, or ask us to delete your account.</p>
+  <ul>
+    <li><strong>Access:</strong> Use <code>GET /me/export</code> or the in-app export flow when available.</li>
+    <li><strong>Deletion:</strong> Use <code>DELETE /me</code> or the in-app account deletion flow.</li>
+    <li><strong>Correction:</strong> Update editable profile fields in the app or contact the DPO.</li>
+    <li><strong>Complaints:</strong> Contact the DPO first. We aim to respond within 30 days. If unresolved, you may contact Singapore's Personal Data Protection Commission.</li>
+  </ul>
+
+  <h2>10. Security</h2>
+  <p>We use school email OTP verification, hashed session tokens, iOS Keychain storage through SecureStore, rate limits, server-side school allowlists, and structured logs that avoid email addresses and content bodies. No internet service can be perfectly secure, but we design BuddyNow to collect less data and to protect the data needed to operate the service.</p>
+
+  <h2>11. Children and Students Under 18</h2>
+  <p>BuddyNow is for university students aged 17-35 and is not directed to children under 13. Users under 17 may not create an account. Users aged 17 are expected to use the app responsibly and follow campus safety guidance.</p>
+
+  <h2>12. Changes</h2>
+  <p>We may update this policy as BuddyNow changes. If changes are material, we will give notice in the app or by email where practical. The updated policy will show a new “Last updated” date.</p>
+
+  <footer>
+    <p>Related documents: <a href="/terms">Terms of Service</a>, <a href="/guidelines">Community Guidelines</a>, <a href="/cookies">Cookie and Local Storage Notice</a>.</p>
+  </footer>
+</main>
+</body>
+</html>

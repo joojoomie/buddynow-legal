@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cookie 与本地存储说明 | 搭搭 BuddyNow</title>
+  <style>
+    :root { --ink:#17201b; --muted:#5f6f66; --line:#d9e4dc; --soft:#f5faf6; --accent:#246b4a; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif; color:var(--ink); line-height:1.78; }
+    main { max-width:820px; margin:0 auto; padding:32px 20px 56px; }
+    header { border-bottom:1px solid var(--line); margin-bottom:28px; padding-bottom:22px; }
+    h1 { font-size:2rem; line-height:1.2; margin:0 0 8px; }
+    h2 { font-size:1.2rem; margin:30px 0 10px; }
+    p { margin:0 0 12px; }
+    ul { padding-left:22px; }
+    li { margin:5px 0; }
+    table { width:100%; border-collapse:collapse; margin:12px 0 18px; font-size:.96rem; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:var(--soft); }
+    a { color:var(--accent); }
+    .meta { color:var(--muted); }
+    footer { margin-top:34px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.94rem; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>搭搭 BuddyNow Cookie 与本地存储说明</h1>
+    <p class="meta">最后更新：2026 年 5 月 19 日</p>
+    <p>本说明解释 BuddyNow 如何使用 Cookie、本地存储和安全设备存储。</p>
+  </header>
+
+  <h2>1. 移动 App</h2>
+  <p>BuddyNow 移动 App 不使用浏览器 Cookie。App 仅使用有限的设备本地存储，以保证正常运行。</p>
+  <table>
+    <thead><tr><th>存储方式</th><th>用途</th><th>存储内容</th></tr></thead>
+    <tbody>
+      <tr><td>AsyncStorage</td><td>记住 App 偏好</td><td>语言偏好及类似的非敏感设置</td></tr>
+      <tr><td>通过 SecureStore 使用 iOS Keychain</td><td>安全地保持登录状态</td><td>30 天登录会话使用的会话令牌</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2. 网站</h2>
+  <p>BuddyNow 的公开法律页面和落地页是静态页面。我们不会主动设置分析 Cookie、广告 Cookie、追踪像素或跨站追踪工具。</p>
+  <p>Fly.io 等托管基础设施可能会处理提供网站和保护服务所需的标准技术请求信息。BuddyNow 不会将这些信息用于行为广告或跨 App 追踪。</p>
+
+  <h2>3. 分析与广告</h2>
+  <p>BuddyNow 目前不使用第三方分析、广告网络、追踪 SDK、Facebook SDK、Google Analytics 或 Sentry。</p>
+
+  <h2>4. 你的选择</h2>
+  <ul>
+    <li>你可以删除 App，以移除设备上的 App 本地偏好存储。</li>
+    <li>你可以退出登录或删除账号，以撤销服务端会话。</li>
+    <li>如果未来基础设施设置了任何网站 Cookie，你可以通过浏览器设置进行管理。</li>
+  </ul>
+
+  <h2>5. 联系方式</h2>
+  <p>如有问题，请发送至 <a href="mailto:dpo@buddynow.app">dpo@buddynow.app</a>。</p>
+
+  <footer>
+    <p>相关文件：<a href="/privacy-zh">隐私政策</a>。</p>
+  </footer>
+</main>
+</body>
+</html>
