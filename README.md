@@ -37,7 +37,7 @@ The sign-in screen in the mobile app should link to `/privacy` and `/terms` befo
 
 - DPO email is currently `dpo@buddynow.app`.
 - Deleted-account rows are described as de-identified or pseudonymized where possible, with retained records reviewed at least every 24 months.
-- Apple App Privacy should disclose precise location if the app continues to send/store exact `lat/lng` for browse or post detail.
+- Apple App Privacy should disclose coarse location if the app and backend only use coarse or approximate location. If exact `lat/lng` is introduced later, update the Privacy Policy and App Privacy answers before release.
 - Processor list currently covers Fly.io and Resend only. Update the Privacy Policy before adding analytics, crash reporting, ads, payments, or new infrastructure providers.
 
 ## Sources Checked
