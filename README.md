@@ -28,10 +28,10 @@ The sign-in screen in the mobile app should link to `/privacy` and `/terms` befo
 
 ## Publishing Notes
 
-1. Upload these files to the static host for `buddynow.app`.
+1. Upload these files to the static host for `legal.astralogy.org`.
 2. Confirm each route works without authentication from a fresh browser session.
-3. Confirm the App Store Connect privacy policy URL points to `https://buddynow.app/privacy`.
-4. If Chinese onboarding links are shown in the app, point them to `https://buddynow.app/privacy-zh` and `https://buddynow.app/terms-zh`.
+3. Confirm the App Store Connect privacy policy URL points to `https://legal.astralogy.org/privacy`.
+4. If Chinese onboarding links are shown in the app, point them to `https://legal.astralogy.org/privacy-zh` and `https://legal.astralogy.org/terms-zh`.
 
 ## Operational Placeholders to Confirm
 
