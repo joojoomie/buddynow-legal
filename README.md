@@ -35,10 +35,10 @@ The sign-in screen in the mobile app should link to `/privacy` and `/terms` befo
 
 ## Operational Placeholders to Confirm
 
-- DPO email is currently `dpo@buddynow.app`.
-- Deleted-account rows are described as de-identified or pseudonymized where possible, with retained records reviewed at least every 24 months.
-- Apple App Privacy should disclose coarse location if the app and backend only use coarse or approximate location. If exact `lat/lng` is introduced later, update the Privacy Policy and App Privacy answers before release.
-- Processor list currently covers Fly.io and Resend only. Update the Privacy Policy before adding analytics, crash reporting, ads, payments, or new infrastructure providers.
+- DPO email `support@astralogy.org` must be a real mailbox before TestFlight external testing.
+- Deleted-account rows are described as de-identified or pseudonymized where possible. Concrete retention periods are now stated in Privacy § 7 (24-month report retention, 30-day op logs, 30-day Sentry events). Re-review at least every 24 months.
+- Apple App Privacy answers must disclose **coarse** location only — the mobile app uses `Location.Accuracy.Balanced` (≈100m, Wi-Fi-derived). Update the Privacy Policy and App Privacy answers if the code ever switches to `High` / precise GPS.
+- Processor list now covers: Fly.io (hosting), Resend (OTP email), Sentry (crash reporting, backend + mobile), and Apple APNs / Google FCM (push). Update Privacy § 6 before adding analytics, ads, payments, or new infrastructure providers.
 
 ## Sources Checked
 
