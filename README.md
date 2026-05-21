@@ -13,25 +13,25 @@ Each file is standalone HTML with inline CSS, no JavaScript dependencies, and mo
 
 ## Intended Routes
 
-Configure GitHub Pages with the custom domain `astralogy.org` so these URLs resolve to the matching files:
+Configure GitHub Pages with the custom domain `buddynow.astralogy.org` so these URLs resolve to the matching files:
 
-- `https://astralogy.org/legal/privacy.html`
-- `https://astralogy.org/legal/privacy-zh.html`
-- `https://astralogy.org/legal/terms.html`
-- `https://astralogy.org/legal/terms-zh.html`
-- `https://astralogy.org/legal/guidelines.html`
-- `https://astralogy.org/legal/guidelines-zh.html`
-- `https://astralogy.org/legal/cookies.html`
-- `https://astralogy.org/legal/cookies-zh.html`
+- `https://buddynow.astralogy.org/legal/privacy.html`
+- `https://buddynow.astralogy.org/legal/privacy-zh.html`
+- `https://buddynow.astralogy.org/legal/terms.html`
+- `https://buddynow.astralogy.org/legal/terms-zh.html`
+- `https://buddynow.astralogy.org/legal/guidelines.html`
+- `https://buddynow.astralogy.org/legal/guidelines-zh.html`
+- `https://buddynow.astralogy.org/legal/cookies.html`
+- `https://buddynow.astralogy.org/legal/cookies-zh.html`
 
-The sign-in screen in the mobile app should link to `https://astralogy.org/legal/privacy.html` and `https://astralogy.org/legal/terms.html` before TestFlight external testing.
+The sign-in screen in the mobile app should link to `https://buddynow.astralogy.org/legal/privacy.html` and `https://buddynow.astralogy.org/legal/terms.html` before TestFlight external testing.
 
 ## Publishing Notes
 
-1. Enable GitHub Pages for this repo and set the custom domain to `astralogy.org`.
+1. Enable GitHub Pages for this repo and set the custom domain to `buddynow.astralogy.org`. The `CNAME` file in the repo root carries this value — GitHub Pages auto-reads it on every deploy.
 2. Confirm each route works without authentication from a fresh browser session.
-3. Confirm the App Store Connect privacy policy URL points to `https://astralogy.org/legal/privacy.html`.
-4. If Chinese onboarding links are shown in the app, point them to `https://astralogy.org/legal/privacy-zh.html` and `https://astralogy.org/legal/terms-zh.html`.
+3. Confirm the App Store Connect privacy policy URL points to `https://buddynow.astralogy.org/legal/privacy.html`.
+4. If Chinese onboarding links are shown in the app, point them to `https://buddynow.astralogy.org/legal/privacy-zh.html` and `https://buddynow.astralogy.org/legal/terms-zh.html`.
 
 ## Operational Placeholders to Confirm
 
