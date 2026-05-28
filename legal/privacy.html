@@ -29,12 +29,12 @@
 <main>
   <header>
     <h1>BuddyNow Privacy Policy</h1>
-    <p class="meta">Last updated: 20 May 2026</p>
+    <p class="meta">Last updated: 28 May 2026</p>
     <p>BuddyNow, also known as 搭搭, helps students find a buddy for study, running, gym, meals, or another campus activity in the next hour. This policy explains what we collect, why we collect it, and how you can control your data.</p>
   </header>
 
   <section class="notice">
-    <p><strong>Short version:</strong> BuddyNow is for NUS, NTU, and SMU students aged 18 or above. We use your school email to verify eligibility, your posts and messages to run the matching experience, and reports, blocks, and ratings to keep the community safer. We use a narrow crash-reporting service (Sentry) to fix bugs, configured to send no personal content. We do not sell personal data, run ads, use behavioral analytics, or collect photos, phone numbers, government IDs, contacts, or payment information.</p>
+    <p><strong>Short version:</strong> BuddyNow is for NUS, NTU, and SMU students aged 18 or above. We use your school email to verify eligibility, your posts, location mode, applications, matches, and messages to run the matching experience, and reports, blocks, and ratings to keep the community safer. When location is enabled, BuddyNow uses foreground precise-location snapshots for nearby matching; when it is unavailable, we use your registered school campus as an approximate fallback. We show other users only coarse distance labels, not your coordinates or exact meters. We use a narrow crash-reporting service (Sentry) to fix bugs, configured to send no personal content. We do not sell personal data, run ads, use behavioral analytics, collect background location, or collect photos, phone numbers, government IDs, contacts, or payment information.</p>
   </section>
 
   <h2>1. Who We Are</h2>
@@ -46,7 +46,7 @@
   <ul>
     <li>School email address, verified by a one-time password. Production sign-up is limited to <code>@u.nus.edu</code>, <code>@e.ntu.edu.sg</code>, and <code>@smu.edu.sg</code>.</li>
     <li>Nickname, chosen by you. It is not copied from the email local-part.</li>
-    <li>Age, limited to 18-35 during profile creation.</li>
+    <li>Age or birth-year-derived age used to confirm you are 18 or above during profile creation.</li>
     <li>Gender selection: female, male, non-binary, or skip.</li>
     <li>Avatar settings: two numeric choices for a procedural plant icon, not a photo.</li>
     <li>School, derived from your school email domain.</li>
@@ -55,11 +55,11 @@
   <h3>Activity data</h3>
   <ul>
     <li>Daily social status, such as chatty, quiet, or no preference. It resets daily at UTC midnight.</li>
-    <li>Activity posts: activity type, meeting place text, optional note, distance radius, and optional coarse location if you grant location permission. Posts expire after 60 minutes.</li>
+    <li>Activity posts: activity type, meeting place text, optional note, distance radius, and optional foreground precise-location snapshot if you grant location permission and the device reports sufficient accuracy. If location is unavailable or low-confidence, BuddyNow uses the public centre point of your registered school campus as an approximate fallback. Posts expire after 60 minutes.</li>
     <li>Post applications and their status: pending, approved, rejected, or withdrawn.</li>
     <li>Matches, which record an approved application between two users for a post.</li>
     <li>Chat messages between a matched pair. Messages are 1-500 characters and limited to 200 messages per match.</li>
-    <li>Ratings after a meetup: outcome, fixed tags such as punctual or good vibe, and an optional short reason.</li>
+    <li>Ratings after a meetup: outcome, sentiment, fixed tags such as punctual, friendly, late, or hard to find, and an optional private short note. Negative tags and notes are used for internal quality and safety review and are not shown publicly to other users in v1.</li>
     <li>Trust counters, including completed meetup count and no-show count.</li>
   </ul>
 
@@ -76,11 +76,11 @@
     <li>OTP rate-limit timestamps within a sliding 60-minute window.</li>
     <li>Push notification token (issued by Apple Push Notification service or Google FCM) if you grant notification permission. Used only to deliver match / message alerts. Dropped on account deletion or sign-out.</li>
     <li>Structured server logs containing user ID strings for operations and security. Logs do not include email addresses or message/report bodies.</li>
-    <li>Crash and unhandled-exception events captured by Sentry — stack trace, environment tag, build version. No email, message body, report body, or location is sent. By-design business errors (rate limits, validation failures, expired sessions) are filtered out.</li>
+    <li>Crash and unhandled-exception events captured by Sentry — stack trace, environment tag, and build version. No email, message body, report body, or location is intentionally sent. By-design business errors (rate limits, validation failures, expired sessions) are filtered out.</li>
   </ul>
 
   <h3>Data we do not collect</h3>
-  <p>We do not collect real names, phone numbers, photos, government IDs, payment information, home addresses, contacts or address book data, behavioral analytics, tracking pixels, advertising IDs, or data from behavioral-tracking SDKs such as Facebook SDK or Google Analytics. Crash reporting via Sentry is enabled — see § 6 Sharing and Processors for what Sentry receives and how it is constrained.</p>
+  <p>We do not collect real names, phone numbers, photos, government IDs, payment information, home addresses, contacts or address book data, background location, behavioral analytics, tracking pixels, advertising IDs, or data from behavioral-tracking SDKs such as Facebook SDK or Google Analytics. Crash reporting via Sentry is enabled — see § 6 Sharing and Processors for what Sentry receives and how it is constrained.</p>
 
   <h2>3. Why We Collect and Use Data</h2>
   <table>
@@ -88,7 +88,7 @@
     <tbody>
       <tr><td>Verify student eligibility and prevent misuse</td><td>School email, OTP records, school domain, sessions, rate-limit timestamps</td></tr>
       <tr><td>Create and operate your profile</td><td>Nickname, age, gender selection, avatar settings, school</td></tr>
-      <tr><td>Show 1-hour campus activity posts and match students</td><td>Activity type, meeting place, notes, radius, optional location, applications, matches</td></tr>
+      <tr><td>Show 1-hour campus activity posts and match students</td><td>Activity type, meeting place, notes, radius, foreground precise-location snapshot or registered-campus estimate, applications, matches</td></tr>
       <tr><td>Enable 1-on-1 chat after approval</td><td>Match record and chat messages</td></tr>
       <tr><td>Support trust and safety review</td><td>Ratings, reports, blocks, trust counters, relevant operational logs</td></tr>
       <tr><td>Maintain security, troubleshoot service issues, and enforce limits</td><td>Sessions, hashed tokens, logs, rate-limit timestamps</td></tr>
@@ -101,17 +101,21 @@
   <p>You may withdraw consent by deleting your account in the app or by contacting <a href="mailto:support@astralogy.org">support@astralogy.org</a>. If you withdraw consent for data needed to operate BuddyNow, we may not be able to continue providing the service to you. We will explain the likely consequences before completing a manual withdrawal request where required.</p>
 
   <h2>5. Location</h2>
-  <p>Location is optional. If you grant location permission, BuddyNow may use coarse or approximate location for browsing and activity post details so students can find posts within the radius you choose. BuddyNow does not need your exact address or precise real-time location. You can use BuddyNow without granting location permission by typing a meeting place instead.</p>
+  <p>Location is optional, foreground-only, and used for nearby matching. If you grant location permission, BuddyNow asks the device for a current location snapshot and sends coordinates to the backend only when the device reports sufficient accuracy. Qualifying fixes are cached briefly, currently up to 3 minutes, so Browse, Compose, and Apply can use the same nearby calculation without repeatedly prompting the device.</p>
+  <p>If location permission is denied, disabled, or the fix is too inaccurate, BuddyNow falls back to the public centre point of your registered school campus. This fallback lets you browse and apply, but matching may be less precise. School is not a matching boundary: nearby posts can appear across NUS, NTU, and SMU when the effective positions are within the selected radius.</p>
+  <p>Other users do not receive your raw coordinates or exact meter distance. Public distance display is bucketed: roughly 0-100m appears as “Nearby”; 101-400m appears as “0.4km”; 401-700m appears as “0.7km”; 701-1000m appears as “1.0km”; farther distances are rounded upward in similar coarse kilometre steps. BuddyNow does not collect background location or continuously track movement.</p>
 
   <h2>6. Sharing and Processors</h2>
   <p>We do not sell personal data. We share data only as needed to run BuddyNow, comply with law, protect users, or use service providers under appropriate confidentiality and security expectations.</p>
   <table>
     <thead><tr><th>Processor</th><th>Role</th><th>Data processed</th><th>Location note</th></tr></thead>
     <tbody>
-      <tr><td>Fly.io</td><td>Application hosting and database infrastructure</td><td>All service data stored and processed by the BuddyNow backend</td><td>BuddyNow is configured to host in the Singapore (SIN) region</td></tr>
+      <tr><td>Microsoft Azure</td><td>Virtual machine hosting for the BuddyNow API and database</td><td>All service data stored and processed by the BuddyNow backend</td><td>The current production VM is in Azure Japan West unless reconfigured and documented otherwise</td></tr>
+      <tr><td>Cloudflare</td><td>DNS, TLS, and Cloudflare Tunnel ingress for <code>api.astralogy.org</code></td><td>Request routing metadata such as IP address, host, path, user-agent, and TLS connection metadata. Cloudflare does not receive database contents except through normal API traffic it proxies.</td><td>Cloudflare operates globally; request metadata may be processed outside Singapore</td></tr>
       <tr><td>Resend (Resend, Inc.)</td><td>Transactional email for one-time sign-in codes</td><td>School email address and OTP email body needed to deliver the login email. The OTP itself expires in 10 minutes.</td><td>Resend is US-based, so OTP email processing involves transfer outside Singapore</td></tr>
       <tr><td>Sentry (Functional Software Inc.)</td><td>Backend and mobile crash / error reporting</td><td>Stack traces, environment tag, build version. Tracing and profiling are explicitly disabled; default-PII capture is disabled; by-design business errors (RATE_LIMITED, SESSION_EXPIRED, validation failures) are filtered out. No email, message body, report body, or location is sent.</td><td>Sentry is US-based; data transferred outside Singapore</td></tr>
       <tr><td>Apple Push Notification service (APNs) / Google Firebase Cloud Messaging (FCM)</td><td>Push notification delivery</td><td>Device-issued push token and notification payload (e.g. "You have a new match"). Used only when you grant notification permission.</td><td>Apple and Google operate globally; payload may transit non-Singapore infrastructure</td></tr>
+      <tr><td>Better Stack</td><td>External uptime monitoring</td><td>Automated requests to the public <code>/health</code> endpoint and uptime result metadata. It is not configured as a traffic proxy or product analytics service.</td><td>Better Stack operates globally; health-check metadata may be processed outside Singapore</td></tr>
     </tbody>
   </table>
   <p>Where personal data is transferred outside Singapore, we take steps intended to ensure a standard of protection comparable to the Personal Data Protection Act 2012 of Singapore, as amended.</p>
@@ -119,8 +123,8 @@
   <h2>7. How Long We Keep Data</h2>
   <ul>
     <li><strong>Sessions:</strong> 30-day sliding expiry; revoked immediately on sign-out or account deletion.</li>
-    <li><strong>Activity posts:</strong> live for 60 minutes, then read-only. After account deletion, de-identified per § 8.</li>
-    <li><strong>Chat messages, ratings:</strong> retained for the counterparty's reference (your sender / reviewer / reviewee ID is nulled on account deletion; message and reason bodies are preserved so the other party's view still makes sense).</li>
+    <li><strong>Activity posts and location snapshots:</strong> posts are live for 60 minutes, then become read-only or expire from discovery. Location snapshots attached to posts, applications, or matching records are kept only while needed for matching, safety review, account deletion handling, or dispute context, and are de-identified per § 8 when tied to a deleted account.</li>
+    <li><strong>Chat messages and ratings:</strong> retained for the counterparty's reference, trust and safety, and quality review. On account deletion, sender / reviewer / reviewee IDs are nulled where applicable; message text, rating tags, and private note text may remain pseudonymized because they can contain user-entered context.</li>
     <li><strong>Reports:</strong> retained for <strong>24 months</strong> from creation as a safety audit signal, even after both parties delete their accounts (user IDs nulled per § 8, body and category preserved). Terminal-status reports (actioned / dismissed) are deleted after 24 months.</li>
     <li><strong>OTP rate-limit timestamps:</strong> sliding 60-minute anti-abuse window.</li>
     <li><strong>Operational logs</strong> (request metadata, user-agent, timestamp): <strong>30 days</strong>.</li>
@@ -140,24 +144,27 @@
   <p>When you delete your account through <code>DELETE /me</code> or the in-app deletion flow, BuddyNow uses two kinds of deletion behavior. Some retained free-text fields may still contain personal data if you or another user typed it into the text, so we describe this as de-identification or pseudonymization where possible rather than full anonymization.</p>
   <h3>Data wiped or revoked</h3>
   <ul>
-    <li>Your user row is wiped.</li>
-    <li>All sessions are revoked.</li>
-    <li>Live posts are automatically cancelled.</li>
-    <li>Blocks are deleted entirely because they have no analytics value after account deletion.</li>
+    <li>All sessions are revoked immediately.</li>
+    <li>Your account is marked as pending deletion for a 7-day grace period. During this period, normal authenticated use is blocked.</li>
+    <li>Live posts are automatically cancelled and the account is made invisible in user-facing post, application, match, chat, and report surfaces.</li>
+    <li>Public trust counters, including Attendance / no-show counters, are reset immediately.</li>
+    <li>If you sign in again with a fresh OTP before the 7-day deadline, your account identity and retained block list can be restored, but abandoned posts, applications, matches, and chats are not restored to the live product.</li>
+    <li>After the 7-day deadline, an automatic sweep permanently deletes the account row, school email, push token, OTP and rate-limit data, feedback body, and the user's owned block list, subject to limited safety-retention records described below.</li>
   </ul>
   <h3>Data de-identified or pseudonymized and retained</h3>
   <ul>
-    <li>Applications and matches are de-identified by replacing user IDs with null while preserving status.</li>
+    <li>Applications, matches, post ownership, and meetup state are de-identified by replacing user IDs with null while preserving status, aggregate counts, and counterparty context where needed.</li>
     <li>Chat messages are pseudonymized by replacing sender ID with null, while message body is preserved so the other participant's conversation view remains understandable.</li>
-    <li>Ratings are de-identified or pseudonymized by replacing reviewer and reviewee IDs with null, while outcome, tags, and reason are preserved.</li>
+    <li>Ratings are de-identified or pseudonymized by replacing reviewer and reviewee IDs with null, while outcome, sentiment, tags, and private note may be preserved for trust, quality, and safety review.</li>
     <li>Reports are de-identified or pseudonymized by replacing reporter and reported user IDs with null, while body and category are preserved as safety audit signals.</li>
-    <li>Feedback is de-identified or pseudonymized by replacing nickname and user ID with null, while body is preserved.</li>
+    <li>Blocks are retained through the 7-day grace period so restored accounts keep their safety settings. Server-side block filtering is based on a hash of school email so a deleted-and-recreated account cannot trivially bypass another user's safety block; owned block-list records are removed at hard deletion except where limited retention is necessary to protect another user's block.</li>
+    <li>Feedback is de-identified or pseudonymized by replacing nickname and user ID with null and replacing the body with a deletion marker at hard deletion.</li>
   </ul>
 
   <h2>9. Your Rights</h2>
   <p>Subject to applicable exceptions under Singapore law, you may request access to your personal data, ask us to correct inaccurate data, withdraw consent, or ask us to delete your account.</p>
   <ul>
-    <li><strong>Access:</strong> Use <code>GET /me/export</code> or the in-app export flow when available. The export currently includes account profile data, active session count, and your own feedback entries; we are expanding it to cover additional major categories such as reports submitted, blocks, posts, and matches you participated in.</li>
+    <li><strong>Access:</strong> Use <code>GET /me/export</code> or the in-app export flow when available. The export currently includes core account and profile data, public trust counters, active session count, and feedback entries linked to your account. For broader access requests, contact the DPO.</li>
     <li><strong>Deletion:</strong> Use <code>DELETE /me</code> or the in-app account deletion flow.</li>
     <li><strong>Correction:</strong> Update editable profile fields in the app or contact the DPO.</li>
     <li><strong>Complaints:</strong> Contact the DPO first. We aim to respond within 30 days. If unresolved, you may contact Singapore's Personal Data Protection Commission.</li>
@@ -167,7 +174,7 @@
   <p>We use school email OTP verification, hashed session tokens, iOS Keychain storage through SecureStore (or Android Keystore if/when Android support ships), TLS for all API traffic, rate limits, server-side school allowlists, and structured logs that avoid email addresses and content bodies. No internet service can be perfectly secure, but we design BuddyNow to collect less data and to protect the data needed to operate the service.</p>
 
   <h2>11. Age Restriction</h2>
-  <p>BuddyNow is for university students aged 18-35. Users under 18 may not create an account; the in-app born-year picker enforces this floor. If an underage account is detected, it will be deleted.</p>
+  <p>BuddyNow is for university students aged 18 or above. Users under 18 may not create an account; the in-app born-year picker enforces this floor. If an underage account is detected, it will be deleted.</p>
 
   <h2>12. Changes</h2>
   <p>We may update this policy as BuddyNow changes. If changes are material, we will give notice in the app or by email where practical. The updated policy will show a new “Last updated” date.</p>
