@@ -34,7 +34,7 @@
   </header>
 
   <section class="notice">
-    <p><strong>Short version:</strong> BuddyNow is for NUS, NTU, and SMU students aged 18 or above. We use your school email to verify eligibility, your posts, location mode, applications, matches, and messages to run the matching experience, and reports, blocks, and ratings to keep the community safer. When location is enabled, BuddyNow uses foreground precise-location snapshots for nearby matching; when it is unavailable, we use your registered school campus as an approximate fallback. We show other users only coarse distance labels, not your coordinates or exact meters. We use a narrow crash-reporting service (Sentry) to fix bugs, configured to send no personal content. We do not sell personal data, run ads, use behavioral analytics, collect background location, or collect photos, phone numbers, government IDs, contacts, or payment information.</p>
+    <p><strong>Short version:</strong> BuddyNow is for NUS, NTU, and SMU students aged 18 or above. We use your school email to verify eligibility, your posts, location mode, applications, matches, and messages to run the matching experience, and reports, blocks, and ratings to keep the community safer. When location is enabled, BuddyNow uses foreground precise-location snapshots for nearby matching; when it is unavailable, BuddyNow does not estimate a position for you — you simply use the app without a distance. We show other users only coarse distance labels, not your coordinates or exact meters. We use a narrow crash-reporting service (Sentry) to fix bugs, configured to send no personal content. We do not sell personal data, run ads, use behavioral analytics, collect background location, or collect photos, phone numbers, government IDs, contacts, or payment information.</p>
   </section>
 
   <h2>1. Who We Are</h2>
@@ -55,7 +55,7 @@
   <h3>Activity data</h3>
   <ul>
     <li>Daily social status, such as chatty, quiet, or no preference. It resets daily at UTC midnight.</li>
-    <li>Activity posts: activity type, meeting place text, optional note, distance radius, and optional foreground precise-location snapshot if you grant location permission and the device reports sufficient accuracy. If location is unavailable or low-confidence, BuddyNow uses the public centre point of your registered school campus as an approximate fallback. Posts expire after 60 minutes.</li>
+    <li>Activity posts: activity type, meeting place text, optional note, distance radius, and an optional foreground precise-location snapshot if you grant location permission and the device reports sufficient accuracy. If location is unavailable or low-confidence, no location is attached to the post and it is shown to others without a distance. Posts expire after 60 minutes.</li>
     <li>Post applications and their status: pending, approved, rejected, or withdrawn.</li>
     <li>Matches, which record an approved application between two users for a post.</li>
     <li>Chat messages between a matched pair. Messages are 1-500 characters and limited to 200 messages per match.</li>
@@ -88,7 +88,7 @@
     <tbody>
       <tr><td>Verify student eligibility and prevent misuse</td><td>School email, OTP records, school domain, sessions, rate-limit timestamps</td></tr>
       <tr><td>Create and operate your profile</td><td>Nickname, age, gender selection, avatar settings, school</td></tr>
-      <tr><td>Show 1-hour campus activity posts and match students</td><td>Activity type, meeting place, notes, radius, foreground precise-location snapshot or registered-campus estimate, applications, matches</td></tr>
+      <tr><td>Show 1-hour campus activity posts and match students</td><td>Activity type, meeting place, notes, radius, optional foreground precise-location snapshot, applications, matches</td></tr>
       <tr><td>Enable 1-on-1 chat after approval</td><td>Match record and chat messages</td></tr>
       <tr><td>Support trust and safety review</td><td>Ratings, reports, blocks, trust counters, relevant operational logs</td></tr>
       <tr><td>Maintain security, troubleshoot service issues, and enforce limits</td><td>Sessions, hashed tokens, logs, rate-limit timestamps</td></tr>
@@ -102,7 +102,7 @@
 
   <h2>5. Location</h2>
   <p>Location is optional, foreground-only, and used for nearby matching. If you grant location permission, BuddyNow asks the device for a current location snapshot and sends coordinates to the backend only when the device reports sufficient accuracy. Qualifying fixes are cached briefly, currently up to 3 minutes, so Browse, Compose, and Apply can use the same nearby calculation without repeatedly prompting the device.</p>
-  <p>If location permission is denied, disabled, or the fix is too inaccurate, BuddyNow falls back to the public centre point of your registered school campus. This fallback lets you browse and apply, but matching may be less precise. School is not a matching boundary: nearby posts can appear across NUS, NTU, and SMU when the effective positions are within the selected radius.</p>
+  <p>If location permission is denied, disabled, or the fix is too inaccurate, BuddyNow does not estimate a position for you. You can still use BuddyNow without a distance: you see an "Anywhere" view of current posts, and a post you create is shown to others without a distance. School is not a matching boundary: when you share a precise location, nearby posts can appear across NUS, NTU, and SMU when both positions are within the selected radius.</p>
   <p>Other users do not receive your raw coordinates or exact meter distance. Public distance display is bucketed: roughly 0-100m appears as “Nearby”; 101-400m appears as “0.4km”; 401-700m appears as “0.7km”; 701-1000m appears as “1.0km”; farther distances are rounded upward in similar coarse kilometre steps. BuddyNow does not collect background location or continuously track movement.</p>
 
   <h2>6. Sharing and Processors</h2>
