@@ -1,21 +1,1068 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=legal/">
-  <title>BuddyNow Legal</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 2rem;
-      color: #173404;
-      background: #fffdf8;
-    }
-    a { color: #315f22; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astralogy — Software for what enriches a life</title>
+<meta name="description" content="Astralogy is a software company building for what becomes scarce in the AI era — warm presence, real connection, and the experiences that enrich a life.">
+<meta property="og:title" content="Astralogy">
+<meta property="og:description" content="Software for what enriches a life.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Noto+Serif+SC:wght@300..700&family=Noto+Sans+SC:wght@300..600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* Refined warm palette - less earthy, more modern */
+  --cream: #FBF7F2;
+  --cream-warm: #FFF1E8;
+  --blush-pale: #FFE5D7;
+  --blush: #FFD0BD;
+  --blush-deep: #FBAE96;
+  --coral: #EE5C53;
+  --coral-bright: #FF7263;
+  --rose-deep: #C04A4C;
+  --rose-darker: #8B3438;
+  --gold: #D9A659;
+  --gold-soft: #F0CC8F;
+  --charcoal: #1A1614;
+  --charcoal-soft: #3D3A35;
+  --gray: #8B8275;
+  --gray-light: #C9C1B5;
+  --line: rgba(26, 22, 20, 0.1);
+  --line-cream: rgba(251, 247, 242, 0.2);
+
+  --display: 'Instrument Serif', 'Noto Serif SC', Georgia, serif;
+  --body: 'DM Sans', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--body);
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.65;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+html[lang="zh"] body { line-height: 1.75; }
+
+::selection { background: var(--coral); color: var(--cream); }
+
+a { color: inherit; text-decoration: none; }
+
+/* ============ NAV ============ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.5rem clamp(1.5rem, 4vw, 3rem);
+  mix-blend-mode: multiply;
+  color: var(--charcoal);
+  pointer-events: none;
+}
+
+nav > * { pointer-events: auto; }
+
+.logo {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.005em;
+}
+
+.logo .dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--coral);
+  margin: 0 0.5em 0.15em 0.05em;
+  vertical-align: middle;
+}
+
+.nav-right {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.nav-links {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.nav-links a {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+html[lang="zh"] .nav-links a {
+  text-transform: none;
+  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover { opacity: 0.55; }
+
+.lang-toggle {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45em;
+  font-family: var(--display);
+  font-size: 0.95rem;
+  font-style: italic;
+  padding-left: clamp(0.8rem, 2vw, 1.5rem);
+  border-left: 1px solid currentColor;
+}
+
+.lang-toggle button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.4;
+  transition: opacity 0.25s;
+  font-style: italic;
+}
+
+.lang-toggle button:hover { opacity: 0.85; }
+.lang-toggle button.active { opacity: 1; }
+.lang-toggle .sep { opacity: 0.35; font-style: normal; }
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--blush-pale) 0%, var(--cream-warm) 55%, var(--cream) 100%);
+  color: var(--charcoal);
+  padding: clamp(5rem, 12vh, 9rem) clamp(1.5rem, 4vw, 3rem) clamp(3rem, 6vh, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(0.5px);
+}
+
+.orb-1 {
+  top: -8%;
+  right: -5%;
+  width: clamp(380px, 45vw, 640px);
+  height: clamp(380px, 45vw, 640px);
+  background: radial-gradient(circle, rgba(255, 173, 142, 0.6) 0%, rgba(255, 173, 142, 0.15) 40%, transparent 70%);
+  animation: drift 14s ease-in-out infinite;
+  z-index: 1;
+}
+
+.orb-2 {
+  top: 18%;
+  left: 8%;
+  width: clamp(140px, 18vw, 240px);
+  height: clamp(140px, 18vw, 240px);
+  background: radial-gradient(circle, rgba(240, 204, 143, 0.55) 0%, rgba(240, 204, 143, 0.12) 50%, transparent 75%);
+  animation: drift 18s ease-in-out infinite reverse;
+  z-index: 1;
+}
+
+.orb-3 {
+  bottom: 22%;
+  right: 24%;
+  width: clamp(80px, 10vw, 140px);
+  height: clamp(80px, 10vw, 140px);
+  background: radial-gradient(circle, rgba(238, 92, 83, 0.32) 0%, rgba(238, 92, 83, 0.08) 50%, transparent 75%);
+  animation: drift 11s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -15px) scale(1.04); }
+  66% { transform: translate(-15px, 20px) scale(0.97); }
+}
+
+.hero-meta {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--rose-deep);
+  letter-spacing: 0.04em;
+  opacity: 0;
+  animation: fadeUp 1.1s ease 0.3s forwards;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-meta::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--rose-deep);
+  vertical-align: middle;
+  margin-right: 0.8em;
+  transform: translateY(-2px);
+}
+
+.hero-main { position: relative; z-index: 2; }
+
+.hero-title {
+  font-family: var(--display);
+  font-size: clamp(5rem, 19vw, 18rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  margin-bottom: clamp(2rem, 5vh, 3.5rem);
+  color: var(--charcoal);
+  opacity: 0;
+  animation: fadeUp 1.3s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--coral);
+  font-weight: 400;
+}
+
+.hero-tagline {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.35;
+  max-width: 30ch;
+  color: var(--charcoal-soft);
+  opacity: 0;
+  animation: fadeUp 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.9s forwards;
+}
+
+html[lang="zh"] .hero-tagline {
+  font-style: normal;
+  max-width: 18em;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  line-height: 1.55;
+}
+
+.hero-tagline span { color: var(--coral); }
+
+.hero-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: var(--gray);
+  opacity: 0;
+  animation: fadeUp 1.1s ease 1.3s forwards;
+  position: relative;
+  z-index: 2;
+}
+
+.scroll-cue {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.scroll-cue .line {
+  width: 24px;
+  height: 1px;
+  background: var(--gray-light);
+  animation: lineDrop 2.4s ease-in-out infinite;
+}
+
+@keyframes lineDrop {
+  0%, 100% { transform: scaleX(1); opacity: 0.5; }
+  50% { transform: scaleX(0.4); opacity: 1; }
+}
+
+/* ============ SECTIONS ============ */
+section {
+  padding: clamp(5rem, 12vh, 9rem) clamp(1.5rem, 4vw, 3rem);
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-label {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--rose-deep);
+  letter-spacing: 0.04em;
+  margin-bottom: clamp(2rem, 5vh, 3.5rem);
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.section-label::before {
+  content: '';
+  width: 36px;
+  height: 1px;
+  background: var(--rose-deep);
+}
+
+.section-label.light { color: var(--blush); }
+.section-label.light::before { background: var(--blush); }
+.section-label.light { justify-content: center; }
+
+/* ============ ABOUT ============ */
+.about { position: relative; }
+
+.about-orb {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 204, 143, 0.4) 0%, rgba(240, 204, 143, 0.08) 50%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+  animation: drift 16s ease-in-out infinite;
+}
+
+.about > *:not(.about-orb) { position: relative; z-index: 1; }
+
+.manifesto {
+  font-family: var(--display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  max-width: 24ch;
+  margin-bottom: clamp(2.5rem, 5vh, 4rem);
+  color: var(--charcoal);
+}
+
+html[lang="zh"] .manifesto {
+  max-width: 19em;
+  line-height: 1.42;
+  letter-spacing: 0;
+  font-size: clamp(1.7rem, 3.8vw, 2.7rem);
+}
+
+.manifesto em { font-style: italic; color: var(--coral); }
+
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  max-width: 1000px;
+  border-top: 1px solid var(--line);
+  padding-top: clamp(2rem, 4vh, 3rem);
+}
+
+.manifesto-grid h3 {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--rose-deep);
+}
+
+.manifesto-body {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.75;
+  color: var(--charcoal-soft);
+}
+
+.manifesto-body p + p { margin-top: 1.25rem; }
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-top: clamp(3rem, 6vh, 4.5rem);
+  padding-top: clamp(2rem, 4vh, 3rem);
+  border-top: 1px solid var(--line);
+}
+
+.value {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.value-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--coral);
+}
+
+.value-name {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--charcoal);
+}
+
+.value-body {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--charcoal-soft);
+}
+
+@media (max-width: 720px) {
+  .manifesto-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .values { grid-template-columns: 1fr; gap: 2rem; }
+  .about-orb { width: 200px; height: 200px; }
+}
+
+/* ============ PRODUCTS ============ */
+.products {
+  background: var(--cream-warm);
+  max-width: none;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.products::before {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -8%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 173, 142, 0.25) 0%, rgba(255, 173, 142, 0.05) 50%, transparent 75%);
+  pointer-events: none;
+}
+
+.products::after {
+  content: '';
+  position: absolute;
+  top: 8%;
+  right: -5%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 166, 89, 0.18) 0%, rgba(217, 166, 89, 0.04) 50%, transparent 75%);
+  pointer-events: none;
+}
+
+.products-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.product {
+  padding: clamp(3rem, 6vh, 5rem) 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.product:last-child { border-bottom: 1px solid var(--line); }
+
+.product-meta {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--gray);
+}
+
+.product-content { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.product-name {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--charcoal);
+}
+
+.product-name .cn {
+  font-style: italic;
+  color: var(--coral);
+  font-size: 0.45em;
+  margin-left: 0.5em;
+  font-weight: 400;
+  vertical-align: 0.15em;
+}
+
+.product-tagline {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
+  color: var(--charcoal);
+  max-width: 38ch;
+}
+
+html[lang="zh"] .product-tagline { font-style: normal; }
+
+.product-description {
+  max-width: 56ch;
+  font-size: clamp(1rem, 1.15vw, 1.05rem);
+  line-height: 1.78;
+  color: var(--charcoal-soft);
+}
+
+.product-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+
+.tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45em 1em;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--charcoal-soft);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+html[lang="zh"] .tag { text-transform: none; letter-spacing: 0.04em; font-size: 0.82rem; }
+
+.product.placeholder { opacity: 0.6; }
+
+.product.placeholder .product-name {
+  color: var(--gray-light);
+  letter-spacing: 0.15em;
+}
+
+@media (max-width: 720px) {
+  .product { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+/* ============ TEAM ============ */
+.team { position: relative; }
+
+.team-orb {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(238, 92, 83, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.team > *:not(.team-orb) { position: relative; z-index: 1; }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  border-top: 1px solid var(--line);
+  padding-top: clamp(2rem, 4vh, 3rem);
+}
+
+.founder { display: flex; flex-direction: column; gap: 0.8rem; }
+
+.founder-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--rose-deep);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.founder-mark::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--coral);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.founder-name {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  color: var(--charcoal);
+}
+
+.founder-name em {
+  font-style: italic;
+  color: var(--gray);
+  font-weight: 400;
+  font-size: 0.65em;
+  display: block;
+  margin-top: 0.3em;
+  letter-spacing: 0;
+}
+
+.founder-bio {
+  font-size: 1.02rem;
+  line-height: 1.72;
+  color: var(--charcoal-soft);
+  max-width: 38ch;
+}
+
+.founder-bio strong { color: var(--charcoal); font-weight: 500; }
+
+.founder-portrait {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--coral);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 720px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .founder-portrait { width: 80px; height: 80px; }
+}
+
+/* ============ CONTACT ============ */
+.contact {
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 25%, rgba(255, 173, 142, 0.4), transparent 60%),
+    radial-gradient(ellipse 60% 60% at 85% 75%, rgba(217, 166, 89, 0.25), transparent 60%),
+    linear-gradient(140deg, var(--rose-deep) 0%, var(--rose-darker) 100%);
+  color: var(--cream);
+  max-width: none;
+  margin: 0;
+  padding: clamp(6rem, 14vh, 10rem) clamp(1.5rem, 4vw, 3rem);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-inner { position: relative; z-index: 2; }
+
+.contact-line {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  max-width: 22ch;
+  margin: 0 auto clamp(2rem, 4vh, 3rem);
+}
+
+html[lang="zh"] .contact-line {
+  font-style: normal;
+  max-width: 18em;
+  line-height: 1.55;
+}
+
+.contact-email {
+  display: inline-block;
+  font-family: var(--display);
+  font-size: clamp(1.7rem, 4.2vw, 3rem);
+  font-weight: 400;
+  color: var(--cream);
+  border-bottom: 1px solid var(--blush);
+  padding: 0.15em 0.1em;
+  letter-spacing: -0.005em;
+  transition: color 0.4s, border-color 0.4s, transform 0.4s;
+}
+
+.contact-email:hover {
+  color: var(--gold-soft);
+  border-color: var(--cream);
+  transform: translateY(-2px);
+}
+
+.contact-aux {
+  margin-top: clamp(2rem, 5vh, 3.5rem);
+  font-family: var(--display);
+  font-style: italic;
+  color: rgba(251, 247, 242, 0.65);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.contact-aux::before, .contact-aux::after { content: '— '; }
+
+/* ============ FOOTER ============ */
+footer {
+  background: #1A1411;
+  color: rgba(251, 247, 242, 0.55);
+  padding: 1.75rem clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  font-family: var(--display);
+  font-style: italic;
+  letter-spacing: 0.03em;
+}
+
+footer .right { display: flex; gap: 1.5rem; }
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1.1s cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 1.1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.lang-fading [data-i18n] { opacity: 0.4; transition: opacity 0.15s; }
+
+/* ============ MOBILE ============ */
+@media (max-width: 720px) {
+  nav { padding: 1.1rem 1.25rem; }
+  .nav-links { display: none; }
+  .nav-right { gap: 1rem; }
+  .lang-toggle { padding-left: 0; border-left: 0; }
+  .hero { padding: 5.5rem 1.5rem 2.5rem; }
+  .hero-foot { flex-direction: column-reverse; gap: 1.5rem; align-items: flex-start; }
+  .orb-1 { top: -15%; right: -25%; }
+  .orb-2 { display: none; }
+  .orb-3 { width: 60px; height: 60px; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
 </head>
 <body>
-  <p>Redirecting to <a href="legal/">BuddyNow legal documents</a>.</p>
+
+<nav>
+  <a href="#top" class="logo">Astralogy<span class="dot"></span></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#products" data-i18n="nav.products">Products</a>
+      <a href="#team" data-i18n="nav.team">Team</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </div>
+    <div class="lang-toggle">
+      <button data-lang="en" class="active">EN</button>
+      <span class="sep">/</span>
+      <button data-lang="zh">中</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <p class="hero-meta" data-i18n="hero.meta">Software company · Singapore · Est. 2026</p>
+
+  <div class="hero-main">
+    <h1 class="hero-title" data-i18n="hero.title">Astralogy<em>.</em></h1>
+    <p class="hero-tagline" data-i18n="hero.tagline">Crafting software with warmth, creating <span>experiences that enrich the spirit</span>.</p>
+  </div>
+
+  <div class="hero-foot">
+    <div data-i18n="hero.cities">Singapore — Shanghai</div>
+    <div class="scroll-cue"><span class="line"></span><span data-i18n="hero.scroll">Scroll</span></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-orb"></div>
+  <p class="section-label reveal" data-i18n="about.label">About</p>
+  <p class="manifesto reveal" data-i18n="about.manifesto">Astralogy is a software company. We believe what becomes most scarce in the AI era is <em>genuine connection between people, and the warmth of human presence</em>. What is most worth creating is <em>richer journeys of the spirit and more varied experiences of life</em>.</p>
+
+  <div class="manifesto-grid reveal">
+    <h3 data-i18n="about.subhead">What we believe</h3>
+    <div class="manifesto-body" data-i18n="about.body">
+      <p>In an era when AI generates more content than humans can recognize or consume, what becomes scarce and precious is real connection between people. A moment of being truly heard. An activity or place you've long wanted to step into but never had the courage or chance. An afternoon of joyful games worth remembering.</p>
+      <p>The software we make exists to support these — to help people more easily take one more step toward a fuller, richer life. Services that heal rather than addict.</p>
+      <p>One product at a time. Made with warmth.</p>
+    </div>
+  </div>
+
+  <div class="values reveal">
+    <div class="value">
+      <span class="value-num" data-i18n="values.v1.num">01</span>
+      <h4 class="value-name" data-i18n="values.v1.name">Healing, not addictive</h4>
+      <p class="value-body" data-i18n="values.v1.body">Our products leave you better than they found you. No engagement metrics that depend on making you feel worse. We ease anxiety; we don't sell it.</p>
+    </div>
+    <div class="value">
+      <span class="value-num" data-i18n="values.v2.num">02</span>
+      <h4 class="value-name" data-i18n="values.v2.name">Real connection</h4>
+      <p class="value-body" data-i18n="values.v2.body">We design for real relationships between real people — not the one-way watching of deceptively-perfect virtual content, not the virtual companionship simulated by algorithms.</p>
+    </div>
+    <div class="value">
+      <span class="value-num" data-i18n="values.v3.num">03</span>
+      <h4 class="value-name" data-i18n="values.v3.name">Immersive experience</h4>
+      <p class="value-body" data-i18n="values.v3.body">We build products that bring you into moments worth being present in, and experiences worth living through.</p>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="products-inner">
+    <p class="section-label reveal" data-i18n="products.label">Products</p>
+
+    <div class="product reveal">
+      <div>
+        <p class="product-meta" data-i18n="products.p1.meta">Current · Launching Singapore · 2026</p>
+      </div>
+      <div class="product-content">
+        <h2 class="product-name" data-i18n="products.p1.name">BuddyNow<span class="cn">搭搭</span></h2>
+        <p class="product-tagline" data-i18n="products.p1.tagline">Activity first. The people follow.</p>
+        <p class="product-description" data-i18n="products.p1.description">A one-hour social app for verified university students in Singapore. Stop matching on profiles — post what you actually want to do in the next hour: a run, a study session, a gym set, a meal. Someone says yes, you meet, you go. No swiping, no endless feed, no romance pressure — just real, low-pressure company when you want it. Start from what you're doing; the people show up naturally.</p>
+        <div class="product-tags">
+          <span class="tag" data-i18n="products.p1.tag1">Campus Social</span>
+          <span class="tag" data-i18n="products.p1.tag2">Students Only</span>
+          <span class="tag" data-i18n="products.p1.tag3">SG Launch</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product placeholder reveal">
+      <div>
+        <p class="product-meta" data-i18n="products.p2.meta">In Development · 2027</p>
+      </div>
+      <div class="product-content">
+        <h2 class="product-name" data-i18n="products.p2.name">— · — · —</h2>
+        <p class="product-tagline" data-i18n="products.p2.tagline">More on the way.</p>
+        <p class="product-description" data-i18n="products.p2.description">We work on one product at a time, well. The next one is being shaped.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="team-orb"></div>
+  <p class="section-label reveal" data-i18n="team.label">The People</p>
+
+  <div class="team-grid reveal">
+    <div class="founder">
+      <img class="founder-portrait" src="astra.jpg" alt="Astra Zhou" width="96" height="96" loading="lazy">
+      <p class="founder-mark" data-i18n="team.f1.role">Co-Founder · CEO</p>
+      <h3 class="founder-name" data-i18n="team.f1.name">Astra Zhou<em>周晗月</em></h3>
+      <p class="founder-bio" data-i18n="team.f1.bio"><strong>PhD, UCLA</strong> — AI &amp; Biomedical Engineering. Former ML Engineer at Workday, Inc. Leads product, fundraising, and the AI systems behind the work.</p>
+    </div>
+    <div class="founder">
+      <img class="founder-portrait" src="songlin.jpg" alt="Songlin Zhang" width="96" height="96" loading="lazy">
+      <p class="founder-mark" data-i18n="team.f2.role">Co-Founder · CTO</p>
+      <h3 class="founder-name" data-i18n="team.f2.name">Songlin Zhang<em>张崧琳</em></h3>
+      <p class="founder-bio" data-i18n="team.f2.bio"><strong>PhD, Nanyang Technological University</strong> — Chemical &amp; Biomolecular Engineering, AI. Former Researcher at A*STAR. Leads technical architecture, platform engineering, and the Singapore launch.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="section-label light" data-i18n="contact.label">Contact</p>
+    <p class="contact-line" data-i18n="contact.line">For partners, press, and people who'd like to build something with us.</p>
+    <a class="contact-email" href="mailto:astralogy.app@gmail.com">astralogy.app@gmail.com</a>
+    <p class="contact-aux" data-i18n="contact.aux">One inbox · One company · One reply</p>
+  </div>
+</section>
+
+<footer>
+  <div data-i18n="footer.copy">© 2026 Astralogy</div>
+  <div class="right">
+    <span data-i18n="footer.city">Singapore</span>
+    <span>·</span>
+    <span data-i18n="footer.tag">Made with soul</span>
+  </div>
+</footer>
+
+<script>
+const i18n = {
+  en: {
+    "nav.about": "About",
+    "nav.products": "Products",
+    "nav.team": "Team",
+    "nav.contact": "Contact",
+    "hero.meta": "Software company · Singapore · Est. 2026",
+    "hero.title": "Astralogy<em>.</em>",
+    "hero.tagline": "Crafting software with warmth, creating <span>experiences that enrich the spirit</span>.",
+    "hero.cities": "Singapore — Shanghai",
+    "hero.scroll": "Scroll",
+    "about.label": "About",
+    "about.manifesto": "Astralogy is a software company. We believe what becomes most scarce in the AI era is <em>genuine connection between people, and the warmth of human presence</em>. What is most worth creating is <em>richer journeys of the spirit and more varied experiences of life</em>.",
+    "about.subhead": "What we believe",
+    "about.body": "<p>In an era when AI generates more content than humans can recognize or consume, what becomes scarce and precious is real connection between people. A moment of being truly heard. An activity or place you've long wanted to step into but never had the courage or chance. An afternoon of joyful games worth remembering.</p><p>The software we make exists to support these — to help people more easily take one more step toward a fuller, richer life. Services that heal rather than addict.</p><p>One product at a time. Made with warmth.</p>",
+    "values.v1.num": "01",
+    "values.v1.name": "Healing, not addictive",
+    "values.v1.body": "Our products leave you better than they found you. No engagement metrics that depend on making you feel worse. We ease anxiety; we don't sell it.",
+    "values.v2.num": "02",
+    "values.v2.name": "Real connection",
+    "values.v2.body": "We design for real relationships between real people — not the one-way watching of deceptively-perfect virtual content, not the virtual companionship simulated by algorithms.",
+    "values.v3.num": "03",
+    "values.v3.name": "Immersive experience",
+    "values.v3.body": "We build products that bring you into moments worth being present in, and experiences worth living through.",
+    "products.label": "Products",
+    "products.p1.meta": "Current · Launching Singapore · 2026",
+    "products.p1.name": "BuddyNow<span class=\"cn\">搭搭</span>",
+    "products.p1.tagline": "Activity first. The people follow.",
+    "products.p1.description": "A one-hour social app for verified university students in Singapore. Stop matching on profiles — post what you actually want to do in the next hour: a run, a study session, a gym set, a meal. Someone says yes, you meet, you go. No swiping, no endless feed, no romance pressure — just real, low-pressure company when you want it. Start from what you're doing; the people show up naturally.",
+    "products.p1.tag1": "Campus Social",
+    "products.p1.tag2": "Students Only",
+    "products.p1.tag3": "SG Launch",
+    "products.p2.meta": "In Development · 2027",
+    "products.p2.name": "— · — · —",
+    "products.p2.tagline": "More on the way.",
+    "products.p2.description": "We work on one product at a time, well. The next one is being shaped.",
+    "team.label": "The People",
+    "team.f1.role": "Co-Founder · CEO",
+    "team.f1.name": "Astra Zhou<em>周晗月</em>",
+    "team.f1.bio": "<strong>PhD, UCLA</strong> — AI &amp; Biomedical Engineering. Former ML Engineer at Workday, Inc. Leads product, fundraising, and the AI systems behind the work.",
+    "team.f2.role": "Co-Founder · CTO",
+    "team.f2.name": "Songlin Zhang<em>张崧琳</em>",
+    "team.f2.bio": "<strong>PhD, Nanyang Technological University</strong> — Chemical &amp; Biomolecular Engineering, AI. Former Researcher at A*STAR. Leads technical architecture, platform engineering, and the Singapore launch.",
+    "contact.label": "Contact",
+    "contact.line": "For partners, press, and people who'd like to build something with us.",
+    "contact.aux": "One inbox · One company · One reply",
+    "footer.copy": "© 2026 Astralogy",
+    "footer.city": "Singapore",
+    "footer.tag": "Made with soul"
+  },
+  zh: {
+    "nav.about": "关于",
+    "nav.products": "产品",
+    "nav.team": "团队",
+    "nav.contact": "联系",
+    "hero.meta": "软件公司 · 新加坡 · 创立于 2026",
+    "hero.title": "Astralogy<em>.</em>",
+    "hero.tagline": "制作一些有温度的软件，创造<span>丰富心灵的体验</span>。",
+    "hero.cities": "新加坡 — 上海",
+    "hero.scroll": "向下",
+    "about.label": "关于公司",
+    "about.manifesto": "Astralogy 是一家软件公司，我们相信 AI 时代最稀缺的，是<em>人类之间的真挚链接和人情的温度</em>。最值得被创造出来的是<em>让人类更丰富的心灵旅程和更多元化的人生体验</em>。",
+    "about.subhead": "我们相信的事",
+    "about.body": "<p>在 AI 制造的内容已远超人类能辨识和消费速度的时代，真正变得稀缺和贵重的，是人与人之间真实的连接。一次被接住的真诚的陪伴和倾诉，一个一直渴望但是没有勇气或机会踏进的活动和地点，一个值得被记住的欢聚游戏的下午。</p><p>我们制作的软件，是为了支持这些，帮助大家更容易地多踏出一步去创造丰盛、丰富的人生。我们提供的是治愈而非成瘾的服务。</p><p>一次只做一件事，带着温度做。</p>",
+    "values.v1.num": "01",
+    "values.v1.name": "治愈，不成瘾",
+    "values.v1.body": "我们的产品离开你时，让你比来时更好。不依赖那些靠让你心情变糟来获得的留存指标。我们缓解焦虑，不贩卖焦虑。",
+    "values.v2.num": "02",
+    "values.v2.name": "真实的链接",
+    "values.v2.body": "我们为真人之间真实的关系而设计——不是单向围观那看似完美的虚拟内容，也不是算法模拟的虚拟陪伴。",
+    "values.v3.num": "03",
+    "values.v3.name": "沉浸式体验",
+    "values.v3.body": "我们造的产品希望带你进入值得身处其中的时刻和丰富体验。",
+    "products.label": "产品",
+    "products.p1.meta": "进行中 · 2026 年新加坡上线",
+    "products.p1.name": "BuddyNow<span class=\"cn\">搭搭</span>",
+    "products.p1.tagline": "先做事，人自然来。",
+    "products.p1.description": "专为新加坡认证大学生打造的「一小时」社交 App。不再对着头像选人——发一条你接下来一小时真正想做的事:跑个步、自习、撸铁、吃顿饭。有人应你，你们见面，就去做。不滑动、没有刷不完的信息流、没有恋爱压力——只在你想要的时候，给你一个轻松真实的陪伴。从你正在做的事出发，人，自然就在那里。",
+    "products.p1.tag1": "校园社交",
+    "products.p1.tag2": "仅限学生",
+    "products.p1.tag3": "新加坡首发",
+    "products.p2.meta": "开发中 · 2027",
+    "products.p2.name": "— · — · —",
+    "products.p2.tagline": "更多正在路上。",
+    "products.p2.description": "我们一次只做好一件事。下一个产品正在成形。",
+    "team.label": "我们",
+    "team.f1.role": "Co-Founder · CEO",
+    "team.f1.name": "周晗月<em>Astra Zhou</em>",
+    "team.f1.bio": "<strong>UCLA 博士学位</strong>——人工智能与生物医学工程。前 Workday, Inc. 机器学习工程师。负责产品、融资,以及背后的 AI 系统。",
+    "team.f2.role": "Co-Founder · CTO",
+    "team.f2.name": "张崧琳<em>Songlin Zhang</em>",
+    "team.f2.bio": "<strong>南洋理工大学博士学位</strong>——化学与生物分子工程、人工智能。前 A*STAR 研究员。负责技术架构、平台工程、新加坡市场。",
+    "contact.label": "联系",
+    "contact.line": "致合作方、媒体,以及想和我们一起造点什么的人。",
+    "contact.aux": "一个邮箱 · 一家公司 · 一封回信",
+    "footer.copy": "© 2026 Astralogy",
+    "footer.city": "新加坡",
+    "footer.tag": "用心而作"
+  }
+};
+
+function doSet(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (i18n[lang] && i18n[lang][key] !== undefined) {
+      el.innerHTML = i18n[lang][key];
+    }
+  });
+  document.querySelectorAll('.lang-toggle button').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+  const url = new URL(window.location);
+  url.searchParams.set('lang', lang);
+  history.replaceState({}, '', url);
+  document.title = lang === 'zh'
+    ? 'Astralogy — 为丰富的人生'
+    : 'Astralogy — Software for what enriches a life';
+}
+
+function setLang(lang, smooth = false) {
+  if (smooth) {
+    document.body.classList.add('lang-fading');
+    setTimeout(() => doSet(lang), 150);
+    setTimeout(() => document.body.classList.remove('lang-fading'), 300);
+  } else {
+    doSet(lang);
+  }
+}
+
+const urlLang = new URLSearchParams(window.location.search).get('lang');
+const browserLang = (navigator.language || 'en').toLowerCase().startsWith('zh') ? 'zh' : 'en';
+const initialLang = (urlLang === 'zh' || urlLang === 'en') ? urlLang : browserLang;
+setLang(initialLang);
+
+document.querySelectorAll('.lang-toggle button').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.getAttribute('data-lang'), true));
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+setTimeout(() => {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+}, 2000);
+</script>
 </body>
 </html>
