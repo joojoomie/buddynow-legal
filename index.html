@@ -66,6 +66,59 @@ html[lang="zh"] body { line-height: 1.78; }
 
 a { color: inherit; text-decoration: none; }
 
+/* ============ BOTANICAL MINI-ILLUSTRATIONS ============ */
+/* Delicate hand-drawn leaf line-work echoing BuddyNow's matcha/plant theme.
+   Sized and tinted to sit quietly beside labels & headings, never to shout. */
+.sprig {
+  display: inline-block;
+  vertical-align: middle;
+  color: #7FA66A;            /* soft matcha green for the leaf line-work */
+  opacity: 0.9;
+  pointer-events: none;
+  flex: none;
+}
+.sprig path,
+.sprig line { vector-effect: non-scaling-stroke; }
+
+.section-label .sprig { margin-left: 0.7em; color: var(--rose-deep); opacity: 0.7; }
+.section-label.light .sprig { color: var(--rose-deep); opacity: 0.7; }
+.hero-meta .sprig { margin-left: 0.7em; color: var(--rose-deep); opacity: 0.65; transform: translateY(-1px); }
+
+/* A larger, decorative vine that drifts in a corner — sits behind content. */
+.vine {
+  position: absolute;
+  color: #8AB179;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+.about .vine {
+  bottom: clamp(1.5rem, 5vh, 4rem);
+  right: clamp(1rem, 4vw, 4rem);
+  width: clamp(120px, 16vw, 200px);
+  height: auto;
+}
+.contact .vine {
+  top: clamp(2rem, 6vh, 4rem);
+  left: clamp(1rem, 5vw, 5rem);
+  width: clamp(90px, 12vw, 150px);
+  height: auto;
+  opacity: 0.45;
+  z-index: 1;
+}
+.product-sprig {
+  display: block;
+  width: clamp(40px, 5vw, 58px);
+  height: auto;
+  margin-top: 1.1rem;
+  color: #7FA66A;
+  opacity: 0.85;
+}
+@media (max-width: 720px) {
+  .about .vine { width: 110px; opacity: 0.4; }
+  .contact .vine { display: none; }
+}
+
 /* ============ NAV ============ */
 nav {
   position: fixed;
@@ -158,7 +211,14 @@ html[lang="zh"] .nav-links a {
 .hero {
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(165deg, var(--blush-pale) 0%, var(--cream-warm) 50%, var(--cream) 100%);
+  /* Edge-to-edge warm peach wash. Soft radial blooms at both sides keep the
+     warmth reaching the left & right edges (no pale gutter), over an even
+     blush base that never fades to bare cream. */
+  background:
+    radial-gradient(ellipse 70% 90% at 0% 35%, rgba(246, 210, 192, 0.55), transparent 60%),
+    radial-gradient(ellipse 75% 95% at 100% 70%, rgba(239, 177, 153, 0.5), transparent 62%),
+    radial-gradient(ellipse 90% 70% at 50% 110%, rgba(232, 207, 160, 0.32), transparent 70%),
+    linear-gradient(165deg, var(--blush) 0%, var(--blush-pale) 45%, var(--cream-warm) 100%);
   color: var(--charcoal);
   padding: clamp(6rem, 14vh, 9rem) clamp(1.5rem, 6vw, 5rem) clamp(3rem, 6vh, 5rem);
   display: flex;
@@ -189,20 +249,20 @@ html[lang="zh"] .nav-links a {
 }
 
 .orb-1 {
-  top: -8%;
-  right: -5%;
-  width: clamp(380px, 45vw, 640px);
-  height: clamp(380px, 45vw, 640px);
+  top: -10%;
+  right: -12%;
+  width: clamp(440px, 50vw, 720px);
+  height: clamp(440px, 50vw, 720px);
   background: radial-gradient(circle, rgba(239, 177, 153, 0.5) 0%, rgba(239, 177, 153, 0.12) 42%, transparent 70%);
   animation: drift 14s ease-in-out infinite;
   z-index: 1;
 }
 
 .orb-2 {
-  top: 18%;
-  left: 8%;
-  width: clamp(140px, 18vw, 240px);
-  height: clamp(140px, 18vw, 240px);
+  top: 16%;
+  left: -6%;
+  width: clamp(220px, 26vw, 360px);
+  height: clamp(220px, 26vw, 360px);
   background: radial-gradient(circle, rgba(232, 207, 160, 0.45) 0%, rgba(232, 207, 160, 0.1) 50%, transparent 75%);
   animation: drift 18s ease-in-out infinite reverse;
   z-index: 1;
@@ -375,7 +435,20 @@ html[lang="zh"] .section-label { text-transform: none; letter-spacing: 0.1em; fo
 .section-label.light { justify-content: center; }
 
 /* ============ ABOUT ============ */
-.about { position: relative; }
+/* Full-bleed so the warm wash carries edge-to-edge straight out of the hero,
+   with no cream gutter at the sides, then settles into cream by the foot. */
+.about {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(5rem, 11vh, 8.5rem) 0;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 0% 8%, rgba(246, 210, 192, 0.5), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 100% 18%, rgba(239, 177, 153, 0.4), transparent 60%),
+    linear-gradient(180deg, var(--blush-pale) 0%, var(--cream-warm) 55%, var(--cream) 100%);
+}
 
 .about-orb {
   position: absolute;
@@ -390,7 +463,13 @@ html[lang="zh"] .section-label { text-transform: none; letter-spacing: 0.1em; fo
   animation: drift 16s ease-in-out infinite;
 }
 
-.about > *:not(.about-orb) { position: relative; z-index: 1; }
+.about-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 6vw, 5rem);
+  position: relative;
+  z-index: 1;
+}
 
 .manifesto {
   font-family: var(--display);
@@ -861,7 +940,7 @@ footer .right span:last-child { font-style: italic; font-family: var(--display);
   <div class="orb orb-3"></div>
 
   <div class="hero-inner">
-    <p class="hero-meta" data-i18n="hero.meta">Software company · Singapore · Est. 2026</p>
+    <p class="hero-meta"><span data-i18n="hero.meta">Software company · Singapore · Est. 2026</span><svg class="sprig" width="34" height="14" viewBox="0 0 34 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7 H30"/><path d="M30 7 C26 7 23 5 22 1.5 C26 1.5 29 3.5 30 7 Z"/><path d="M30 7 C26 7 23 9 22 12.5 C26 12.5 29 10.5 30 7 Z"/><path d="M17 7 C14.5 7 12.5 5.5 12 3 C15 3 16.8 4.8 17 7 Z"/><path d="M11 7 C8.5 7 6.5 8.5 6 11 C9 11 10.8 9.2 11 7 Z"/></svg></p>
 
     <div class="hero-main">
       <h1 class="hero-title" data-i18n="hero.title">Astralogy<em>.</em></h1>
@@ -877,13 +956,23 @@ footer .right span:last-child { font-style: italic; font-family: var(--display);
 
 <section class="about" id="about">
   <div class="about-orb"></div>
-  <p class="section-label reveal" data-i18n="about.label">About</p>
+  <svg class="vine" width="200" height="150" viewBox="0 0 200 150" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M192 6 C150 30 120 55 100 92 C88 114 80 132 78 146"/>
+    <path d="M150 33 C140 24 138 12 142 4 C152 9 156 21 150 33 Z"/>
+    <path d="M150 33 C160 30 172 32 178 40 C170 47 158 45 150 33 Z"/>
+    <path d="M118 64 C110 56 109 45 113 38 C122 43 124 55 118 64 Z"/>
+    <path d="M118 64 C127 62 138 65 143 73 C135 79 124 76 118 64 Z"/>
+    <path d="M95 99 C88 92 87 81 91 74 C99 79 101 90 95 99 Z"/>
+    <path d="M95 99 C103 98 113 101 117 108 C110 114 100 110 95 99 Z"/>
+  </svg>
+  <div class="about-inner">
+  <p class="section-label reveal"><span data-i18n="about.label">About</span><svg class="sprig" width="30" height="13" viewBox="0 0 30 13" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 11 C8 11 14 8 18 2"/><path d="M18 2 C14 3 11 6 11 10 C15 9.5 18 6.5 18 2 Z"/><path d="M11 8 C8 7.5 5 8.5 3.5 11 C7 11.5 10 10.5 11 8 Z"/></svg></p>
   <p class="manifesto reveal" data-i18n="about.manifesto">Astralogy is a software company. We believe what becomes most scarce in the AI era is <em>genuine connection between people, and the warmth of human presence</em>. What is most worth creating is <em>richer journeys of the spirit and more varied experiences of life</em>.</p>
 
   <div class="manifesto-grid reveal">
     <h3 data-i18n="about.subhead">What we believe</h3>
     <div class="manifesto-body" data-i18n="about.body">
-      <p>In an era when AI generates more content than humans can recognize or consume, what becomes scarce and precious is real connection between people. A moment of being truly heard. An activity or place you've long wanted to step into but never had the courage or chance. An afternoon of play worth remembering.</p>
+      <p>In an era when AI generates more content than anyone can keep up with, or even tell apart, what becomes scarce and precious is real connection between people. A moment of being truly heard. An activity or place you've long wanted to step into but never had the courage or chance. An afternoon of play worth remembering.</p>
       <p>The software we make exists to support these — to help people more easily take one more step toward a fuller, richer life. Software that heals rather than hooks.</p>
       <p>One product at a time. Made with warmth.</p>
     </div>
@@ -906,6 +995,7 @@ footer .right span:last-child { font-style: italic; font-family: var(--display);
       <p class="value-body" data-i18n="values.v3.body">We build products that bring you into moments worth being present in, and experiences worth living through.</p>
     </div>
   </div>
+  </div>
 </section>
 
 <section class="products" id="products">
@@ -915,11 +1005,18 @@ footer .right span:last-child { font-style: italic; font-family: var(--display);
     <div class="product reveal">
       <div>
         <p class="product-meta" data-i18n="products.p1.meta">Current · Launching Singapore · 2026</p>
+        <svg class="product-sprig" width="58" height="34" viewBox="0 0 58 34" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 31 C14 30 26 25 34 14 C39 7 44 3 53 2"/>
+          <path d="M34 14 C30 8 31 1.5 36 -1" transform="translate(0,3)"/>
+          <path d="M34 17 C28 16 22 18 18 24 C25 26 32 23 34 17 Z"/>
+          <path d="M44 8 C40 5 39 -0.5 42 -3" transform="translate(0,6)"/>
+          <path d="M44 9 C49 7 54 9 56 14 C50 16 45 14 44 9 Z"/>
+        </svg>
         <img class="product-mascot" src="mascot.svg" alt="BuddyNow mascot — two little green-bean characters" width="104" height="81" loading="lazy">
       </div>
       <div class="product-content">
         <h2 class="product-name" data-i18n="products.p1.name">BuddyNow<span class="cn">搭搭</span></h2>
-        <p class="product-tagline" data-i18n="products.p1.tagline">Activity first. The people follow.</p>
+        <p class="product-tagline" data-i18n="products.p1.tagline">Activity first. People follow.</p>
         <p class="product-description" data-i18n="products.p1.description">A one-hour social app for verified university students in Singapore. Stop matching on profiles — post what you actually want to do in the next hour: a run, a study session, a gym set, a meal. Someone says yes, you meet, you go. No swiping, no endless feed, no romance pressure — just real, low-pressure company when you want it. Start from what you're doing; the people show up naturally.</p>
         <div class="product-tags">
           <span class="tag" data-i18n="products.p1.tag1">Campus Social</span>
@@ -936,7 +1033,7 @@ footer .right span:last-child { font-style: italic; font-family: var(--display);
       <div class="product-content">
         <h2 class="product-name" data-i18n="products.p2.name">— · — · —</h2>
         <p class="product-tagline" data-i18n="products.p2.tagline">More on the way.</p>
-        <p class="product-description" data-i18n="products.p2.description">We work on one product at a time, well. The next one is being shaped.</p>
+        <p class="product-description" data-i18n="products.p2.description">We build one product at a time, and we build it well. The next one is being shaped.</p>
       </div>
     </div>
   </div>
@@ -951,7 +1048,7 @@ footer .right span:last-child { font-style: italic; font-family: var(--display);
       <img class="founder-portrait" src="astra.jpg" alt="Astra Zhou" width="96" height="96" loading="lazy">
       <p class="founder-mark" data-i18n="team.f1.role">Co-Founder · CEO</p>
       <h3 class="founder-name" data-i18n="team.f1.name">Astra Zhou<em>周晗月</em></h3>
-      <p class="founder-bio" data-i18n="team.f1.bio"><strong>PhD, UCLA</strong> — AI &amp; Biomedical Engineering. Former ML Engineer at Workday, Inc. Leads product, fundraising, and the AI systems behind the work.</p>
+      <p class="founder-bio" data-i18n="team.f1.bio"><strong>PhD, UCLA</strong> — AI &amp; Biomedical Engineering. Former ML Engineer at Workday, Inc. Leads product, fundraising, and the AI behind it all.</p>
     </div>
     <div class="founder">
       <img class="founder-portrait" src="songlin.jpg" alt="Songlin Zhang" width="96" height="96" loading="lazy">
@@ -963,8 +1060,15 @@ footer .right span:last-child { font-style: italic; font-family: var(--display);
 </section>
 
 <section class="contact" id="contact">
+  <svg class="vine" width="150" height="120" viewBox="0 0 150 120" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M6 4 C30 28 48 50 60 80 C66 96 70 108 72 116"/>
+    <path d="M30 28 C24 20 23 9 27 2 C36 7 38 19 30 28 Z"/>
+    <path d="M30 28 C39 25 50 28 55 36 C47 42 36 39 30 28 Z"/>
+    <path d="M55 64 C48 57 47 46 51 39 C60 44 62 56 55 64 Z"/>
+    <path d="M55 64 C64 62 74 65 79 73 C71 79 61 75 55 64 Z"/>
+  </svg>
   <div class="contact-inner">
-    <p class="section-label light" data-i18n="contact.label">Contact</p>
+    <p class="section-label light"><span data-i18n="contact.label">Contact</span><svg class="sprig" width="30" height="13" viewBox="0 0 30 13" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 11 C8 11 14 8 18 2"/><path d="M18 2 C14 3 11 6 11 10 C15 9.5 18 6.5 18 2 Z"/><path d="M11 8 C8 7.5 5 8.5 3.5 11 C7 11.5 10 10.5 11 8 Z"/></svg></p>
     <p class="contact-line" data-i18n="contact.line">For partners, press, and people who'd like to build something with us.</p>
     <a class="contact-email" href="mailto:info@astralogy.org">info@astralogy.org</a>
     <p class="contact-aux" data-i18n="contact.aux">One inbox · One company · One reply</p>
@@ -995,7 +1099,7 @@ const i18n = {
     "about.label": "About",
     "about.manifesto": "Astralogy is a software company. We believe what becomes most scarce in the AI era is <em>genuine connection between people, and the warmth of human presence</em>. What is most worth creating is <em>richer journeys of the spirit and more varied experiences of life</em>.",
     "about.subhead": "What we believe",
-    "about.body": "<p>In an era when AI generates more content than humans can recognize or consume, what becomes scarce and precious is real connection between people. A moment of being truly heard. An activity or place you've long wanted to step into but never had the courage or chance. An afternoon of play worth remembering.</p><p>The software we make exists to support these — to help people more easily take one more step toward a fuller, richer life. Software that heals rather than hooks.</p><p>One product at a time. Made with warmth.</p>",
+    "about.body": "<p>In an era when AI generates more content than anyone can keep up with, or even tell apart, what becomes scarce and precious is real connection between people. A moment of being truly heard. An activity or place you've long wanted to step into but never had the courage or chance. An afternoon of play worth remembering.</p><p>The software we make exists to support these — to help people more easily take one more step toward a fuller, richer life. Software that heals rather than hooks.</p><p>One product at a time. Made with warmth.</p>",
     "values.v1.num": "01",
     "values.v1.name": "Healing, not addictive",
     "values.v1.body": "Our products leave you better than they found you. No engagement metrics that depend on making you feel worse. We ease anxiety; we don't sell it.",
@@ -1008,7 +1112,7 @@ const i18n = {
     "products.label": "Products",
     "products.p1.meta": "Current · Launching Singapore · 2026",
     "products.p1.name": "BuddyNow<span class=\"cn\">搭搭</span>",
-    "products.p1.tagline": "Activity first. The people follow.",
+    "products.p1.tagline": "Activity first. People follow.",
     "products.p1.description": "A one-hour social app for verified university students in Singapore. Stop matching on profiles — post what you actually want to do in the next hour: a run, a study session, a gym set, a meal. Someone says yes, you meet, you go. No swiping, no endless feed, no romance pressure — just real, low-pressure company when you want it. Start from what you're doing; the people show up naturally.",
     "products.p1.tag1": "Campus Social",
     "products.p1.tag2": "Students Only",
@@ -1016,11 +1120,11 @@ const i18n = {
     "products.p2.meta": "In Development · 2027",
     "products.p2.name": "— · — · —",
     "products.p2.tagline": "More on the way.",
-    "products.p2.description": "We work on one product at a time, well. The next one is being shaped.",
+    "products.p2.description": "We build one product at a time, and we build it well. The next one is being shaped.",
     "team.label": "The People",
     "team.f1.role": "Co-Founder · CEO",
     "team.f1.name": "Astra Zhou<em>周晗月</em>",
-    "team.f1.bio": "<strong>PhD, UCLA</strong> — AI &amp; Biomedical Engineering. Former ML Engineer at Workday, Inc. Leads product, fundraising, and the AI systems behind the work.",
+    "team.f1.bio": "<strong>PhD, UCLA</strong> — AI &amp; Biomedical Engineering. Former ML Engineer at Workday, Inc. Leads product, fundraising, and the AI behind it all.",
     "team.f2.role": "Co-Founder · CTO",
     "team.f2.name": "Songlin Zhang<em>张崧琳</em>",
     "team.f2.bio": "<strong>PhD, Nanyang Technological University</strong> — Chemical &amp; Biomolecular Engineering, AI. Former Researcher at A*STAR. Leads technical architecture, platform engineering, and the Singapore launch.",
@@ -1038,16 +1142,16 @@ const i18n = {
     "nav.contact": "联系",
     "hero.meta": "软件公司 · 新加坡 · 创立于 2026",
     "hero.title": "Astralogy<em>.</em>",
-    "hero.tagline": "制作一些有温度的软件，创造<span>丰富心灵的体验</span>。",
+    "hero.tagline": "打造有温度的软件，创造<span>丰富心灵的体验</span>。",
     "hero.cities": "新加坡 — 上海",
     "hero.scroll": "向下",
     "about.label": "关于公司",
-    "about.manifesto": "Astralogy 是一家软件公司，我们相信 AI 时代最稀缺的，是<em>人类之间的真挚连接和人情的温度</em>。最值得被创造出来的，是<em>让人拥有更丰富的心灵旅程和更多元的人生体验</em>。",
+    "about.manifesto": "Astralogy 是一家软件公司，我们相信 AI 时代最稀缺的，是<em>人与人之间真挚的连接，以及人与人相处的温度</em>。最值得被创造出来的，是<em>让人拥有更丰富的心灵旅程和更多元的人生体验</em>。",
     "about.subhead": "我们相信的事",
-    "about.body": "<p>在 AI 制造的内容已多到人类无法辨识、也消费不完的时代，真正变得稀缺和贵重的，是人与人之间真实的连接。一次被接住的真诚倾诉，一个一直渴望却没有勇气或机会踏进的活动和地点，一个值得被记住、一起欢闹的下午。</p><p>我们制作的软件，是为了支持这些，帮助大家更容易地多踏出一步去创造丰盛、丰富的人生。我们提供的是治愈而非成瘾的服务。</p><p>一次只做一件事，带着温度做。</p>",
+    "about.body": "<p>在 AI 制造的内容已多到人类无法辨识、也消费不完的时代，真正变得稀缺和贵重的，是人与人之间真实的连接。一次被接住的真诚倾诉，一个一直渴望却没有勇气或机会踏进的活动和地点，一个值得被记住、一起欢闹的下午。</p><p>我们制作的软件，是为了支持这些，帮助大家更容易地多踏出一步去创造更丰盈、更丰富的人生。我们想做的是治愈，而不是让人上瘾。</p><p>一次只做一件事，带着温度做。</p>",
     "values.v1.num": "01",
     "values.v1.name": "治愈，不成瘾",
-    "values.v1.body": "我们的产品离开你时，让你比来时更好。不依赖那些靠让你心情变糟来获得的留存指标。我们缓解焦虑，不贩卖焦虑。",
+    "values.v1.body": "用过我们的产品后，你会比之前更好一点。不依赖那些靠让你心情变糟来获得的留存指标。我们缓解焦虑，不贩卖焦虑。",
     "values.v2.num": "02",
     "values.v2.name": "真实的连接",
     "values.v2.body": "我们为真人之间真实的关系而设计——不是单向围观那些看似完美的虚拟内容，也不是算法模拟出来的虚拟陪伴。",
@@ -1058,7 +1162,7 @@ const i18n = {
     "products.p1.meta": "进行中 · 2026 年新加坡上线",
     "products.p1.name": "BuddyNow<span class=\"cn\">搭搭</span>",
     "products.p1.tagline": "先做事，人自然来。",
-    "products.p1.description": "专为新加坡认证大学生打造的「一小时」社交 App。不再对着头像选人——发一条你接下来一小时真正想做的事:跑个步、自习、撸铁、吃顿饭。有人应你，你们见面，就去做。不滑动、没有刷不完的信息流、没有恋爱压力——只在你想要的时候，给你一个轻松真实的陪伴。从你正在做的事出发，人，自然就在那里。",
+    "products.p1.description": "专为新加坡认证大学生打造的「一小时」社交 App。不再对着头像选人——发一条你接下来一小时真正想做的事：跑个步、自习、撸铁、吃顿饭。有人应你，你们见面，就去做。不滑动、没有刷不完的信息流、没有恋爱压力——只在你想要的时候，给你一段轻松、真实的陪伴。从你正在做的事出发，人，自然就在那里。",
     "products.p1.tag1": "校园社交",
     "products.p1.tag2": "仅限学生",
     "products.p1.tag3": "新加坡首发",
