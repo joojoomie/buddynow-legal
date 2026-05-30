@@ -211,6 +211,8 @@ html[lang="zh"] .nav-links a {
 .hero {
   min-height: 100vh;
   width: 100%;
+  max-width: none;
+  margin: 0;
   /* Edge-to-edge warm peach wash. Soft radial blooms at both sides keep the
      warmth reaching the left & right edges (no pale gutter), over an even
      blush base that never fades to bare cream. */
@@ -462,6 +464,19 @@ html[lang="zh"] .section-label { text-transform: none; letter-spacing: 0.1em; fo
   z-index: 0;
   animation: drift 16s ease-in-out infinite;
 }
+
+.about-flora {
+  position: absolute;
+  right: clamp(2rem, 7vw, 8rem);
+  top: 50%;
+  transform: translateY(-46%);
+  width: clamp(220px, 24vw, 380px);
+  height: auto;
+  z-index: 0;
+  opacity: 0.62;
+  pointer-events: none;
+}
+@media (max-width: 1024px) { .about-flora { display: none; } }
 
 .about-inner {
   max-width: var(--maxw);
@@ -956,6 +971,18 @@ footer .right span:last-child { font-style: italic; font-family: var(--display);
 
 <section class="about" id="about">
   <div class="about-orb"></div>
+  <svg class="about-flora" viewBox="0 0 200 380" fill="none" aria-hidden="true">
+    <path d="M100 376 C95 300 106 232 95 170 C87 118 106 66 100 8" stroke="#7FA66A" stroke-width="2.6" stroke-linecap="round"/>
+    <g fill="#A9CD86">
+      <path d="M97 306 C69 302 49 282 45 256 C77 256 95 276 97 306 Z"/>
+      <path d="M101 276 C129 270 151 250 153 224 C121 226 103 246 101 276 Z"/>
+      <path d="M96 224 C69 220 51 200 49 176 C79 176 95 196 96 224 Z"/>
+      <path d="M101 192 C127 186 147 166 149 142 C119 144 103 164 101 192 Z"/>
+      <path d="M98 142 C72 138 54 120 52 98 C80 98 96 116 98 142 Z"/>
+      <path d="M101 106 C125 100 143 82 145 60 C117 62 103 80 101 106 Z"/>
+      <path d="M99 66 C76 62 60 46 58 26 C84 26 98 42 99 66 Z"/>
+    </g>
+  </svg>
   <svg class="vine" width="200" height="150" viewBox="0 0 200 150" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <path d="M192 6 C150 30 120 55 100 92 C88 114 80 132 78 146"/>
     <path d="M150 33 C140 24 138 12 142 4 C152 9 156 21 150 33 Z"/>
