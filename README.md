@@ -37,8 +37,9 @@ The sign-in screen in the mobile app should link to `https://buddynow.astralogy.
 
 - DPO email `support@astralogy.org` must be a real mailbox before TestFlight external testing.
 - Deleted-account rows are described as de-identified or pseudonymized where possible. Concrete retention periods are now stated in Privacy § 7 (24-month report retention, 30-day op logs, 30-day Sentry events). Re-review at least every 24 months.
-- Apple App Privacy answers must disclose **coarse** location only — the mobile app uses `Location.Accuracy.Balanced` (≈100m, Wi-Fi-derived). Update the Privacy Policy and App Privacy answers if the code ever switches to `High` / precise GPS.
-- Processor list now covers: Fly.io (hosting), Resend (OTP email), Sentry (crash reporting, backend + mobile), and Apple APNs / Google FCM (push). Update Privacy § 6 before adding analytics, ads, payments, or new infrastructure providers.
+- Apple App Privacy answers must disclose foreground location collection accurately: the mobile app uses `Location.Accuracy.Balanced` and uploads latitude/longitude snapshots only when the reported accuracy is within the app's matching threshold. Public distance display is coarse, but the backend receives a foreground coordinate snapshot when location is enabled. Update the Privacy Policy and App Privacy answers if the code ever switches to background location, continuous tracking, or a different accuracy model.
+- App Privacy answers must cover Sign in with Apple / identifiers: Apple users authenticate through Apple's identity provider and BuddyNow stores an app-specific Apple account identifier. School-email users may have a verified-school badge; Apple users are full users without that badge.
+- Processor list now covers: Microsoft Azure (API/database hosting), Cloudflare (DNS/TLS/Tunnel), Apple (Sign in with Apple), Resend (school-email OTP), Sentry (crash reporting, backend + mobile), Expo Push Service plus Apple APNs / Google FCM (push), and Better Stack (uptime monitoring). Update Privacy § 6 before adding analytics, ads, payments, or new infrastructure providers.
 
 ## Sources Checked
 

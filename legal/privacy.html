@@ -29,27 +29,29 @@
 <main>
   <header>
     <h1>BuddyNow Privacy Policy</h1>
-    <p class="meta">Last updated: 28 May 2026</p>
-    <p>BuddyNow, also known as 搭搭, helps students find a buddy for study, running, gym, meals, or another campus activity in the next hour. This policy explains what we collect, why we collect it, and how you can control your data.</p>
+    <p class="meta">Last updated: 4 June 2026</p>
+    <p>BuddyNow, also known as 搭搭, helps eligible users find a buddy for study, running, gym, meals, or another low-pressure activity in the next hour. This policy explains what we collect, why we collect it, and how you can control your data.</p>
   </header>
 
   <section class="notice">
-    <p><strong>Short version:</strong> BuddyNow is for NUS, NTU, and SMU students aged 18 or above. We use your school email to verify eligibility, your posts, location mode, applications, matches, and messages to run the matching experience, and reports, blocks, and ratings to keep the community safer. When location is enabled, BuddyNow uses foreground precise-location snapshots for nearby matching; when it is unavailable, BuddyNow does not estimate a position for you — you simply use the app without a distance. We show other users only coarse distance labels, not your coordinates or exact meters. We use a narrow crash-reporting service (Sentry) to fix bugs, configured to send no personal content. We do not sell personal data, run ads, use behavioral analytics, collect background location, or collect photos, phone numbers, government IDs, contacts, or payment information.</p>
+    <p><strong>Short version:</strong> BuddyNow is for users aged 18 or above. You may sign in with a supported school email or with Sign in with Apple. School-email users from supported university domains receive a verified-school signal; Apple users are full users but do not receive a school verification badge. We use your sign-in data, posts, location mode, applications, matches, and messages to run the matching experience, and reports, blocks, and ratings to keep the community safer. When location is enabled, BuddyNow uses foreground precise-location snapshots for nearby matching; when it is unavailable, BuddyNow does not estimate a position for you — you simply use the app without a distance. We show other users only coarse distance labels, not your coordinates or exact meters. We use a narrow crash-reporting service (Sentry) to fix bugs, configured to send no personal content. We do not sell personal data, run ads, use behavioral analytics, collect background location, or collect photos, phone numbers, government IDs, contacts, or payment information.</p>
   </section>
 
   <h2>1. Who We Are</h2>
-  <p>BuddyNow is operated for students in Singapore. For privacy questions, access requests, correction requests, withdrawal of consent, or complaints, contact our Data Protection Officer:</p>
+  <p>BuddyNow is operated for users in Singapore. For privacy questions, access requests, correction requests, withdrawal of consent, or complaints, contact our Data Protection Officer:</p>
   <p><strong>DPO:</strong> Founder, BuddyNow<br><strong>Email:</strong> <a href="mailto:support@astralogy.org">support@astralogy.org</a></p>
 
   <h2>2. Personal Data We Collect</h2>
   <h3>Account and identity data</h3>
   <ul>
-    <li>School email address, verified by a one-time password. Production sign-up is limited to <code>@u.nus.edu</code>, <code>@e.ntu.edu.sg</code>, and <code>@smu.edu.sg</code>.</li>
+    <li>Sign-in method. School-email sign-in uses a school email address verified by a one-time password. Current school verification supports <code>@u.nus.edu</code>, <code>@e.ntu.edu.sg</code>, and <code>@smu.edu.sg</code>.</li>
+    <li>Sign in with Apple account identifier, when you choose Apple login. Apple gives BuddyNow a stable app-specific identifier. We store that identifier to find or create your BuddyNow account. We do not use Apple login to verify a school.</li>
     <li>Nickname, chosen by you. It is not copied from the email local-part.</li>
     <li>Age or birth-year-derived age used to confirm you are 18 or above during profile creation.</li>
     <li>Gender selection: female, male, non-binary, or skip.</li>
     <li>Avatar settings: two numeric choices for a procedural plant icon, not a photo.</li>
-    <li>School, derived from your school email domain.</li>
+    <li>School, for school-email accounts, derived from your school email domain and shown as a verified-school signal. Apple accounts do not receive this signal.</li>
+    <li>Internal account placeholders for Apple accounts, including a synthetic non-deliverable email value and an internal school sentinel. These are storage-only implementation details and are not shown publicly as a school or school email.</li>
   </ul>
 
   <h3>Activity data</h3>
@@ -74,7 +76,7 @@
   <ul>
     <li>Sessions, including session ID, hashed token, 30-day expiry, and revocation status.</li>
     <li>OTP rate-limit timestamps within a sliding 60-minute window.</li>
-    <li>Push notification token (issued by Apple Push Notification service or Google FCM) if you grant notification permission. Used only to deliver match / message alerts. Dropped on account deletion or sign-out.</li>
+    <li>Push notification token if you grant notification permission. The mobile app uses Expo push tokens; Expo relays delivery through Apple Push Notification service or Google FCM as needed. Used only to deliver match / message alerts. Dropped on account deletion or sign-out.</li>
     <li>Structured server logs containing user ID strings for operations and security. Logs do not include email addresses or message/report bodies.</li>
     <li>Crash and unhandled-exception events captured by Sentry — stack trace, environment tag, and build version. No email, message body, report body, or location is intentionally sent. By-design business errors (rate limits, validation failures, expired sessions) are filtered out.</li>
   </ul>
@@ -86,9 +88,9 @@
   <table>
     <thead><tr><th>Purpose</th><th>Data used</th></tr></thead>
     <tbody>
-      <tr><td>Verify student eligibility and prevent misuse</td><td>School email, OTP records, school domain, sessions, rate-limit timestamps</td></tr>
-      <tr><td>Create and operate your profile</td><td>Nickname, age, gender selection, avatar settings, school</td></tr>
-      <tr><td>Show 1-hour campus activity posts and match students</td><td>Activity type, meeting place, notes, radius, optional foreground precise-location snapshot, applications, matches</td></tr>
+      <tr><td>Authenticate accounts, verify school status where applicable, and prevent misuse</td><td>School email, OTP records, school domain, Apple account identifier, sessions, rate-limit timestamps</td></tr>
+      <tr><td>Create and operate your profile</td><td>Nickname, age, gender selection, avatar settings, verified school where applicable</td></tr>
+      <tr><td>Show 1-hour activity posts and match users</td><td>Activity type, meeting place, notes, radius, optional foreground precise-location snapshot, applications, matches</td></tr>
       <tr><td>Enable 1-on-1 chat after approval</td><td>Match record and chat messages</td></tr>
       <tr><td>Support trust and safety review</td><td>Ratings, reports, blocks, trust counters, relevant operational logs</td></tr>
       <tr><td>Maintain security, troubleshoot service issues, and enforce limits</td><td>Sessions, hashed tokens, logs, rate-limit timestamps</td></tr>
@@ -97,7 +99,7 @@
   </table>
 
   <h2>4. Consent and Withdrawal</h2>
-  <p>By creating an account and using BuddyNow, you consent to our collection, use, and disclosure of personal data for the purposes described in this policy. Some data is necessary to provide the service. For example, we need your school email to verify eligibility, and we need post and application data to make matching work.</p>
+  <p>By creating an account and using BuddyNow, you consent to our collection, use, and disclosure of personal data for the purposes described in this policy. Some data is necessary to provide the service. For example, we need your school email or Apple account identifier to authenticate your account, and we need post and application data to make matching work.</p>
   <p>You may withdraw consent by deleting your account in the app or by contacting <a href="mailto:support@astralogy.org">support@astralogy.org</a>. If you withdraw consent for data needed to operate BuddyNow, we may not be able to continue providing the service to you. We will explain the likely consequences before completing a manual withdrawal request where required.</p>
 
   <h2>5. Location</h2>
@@ -112,9 +114,10 @@
     <tbody>
       <tr><td>Microsoft Azure</td><td>Virtual machine hosting for the BuddyNow API and database</td><td>All service data stored and processed by the BuddyNow backend</td><td>The current production VM is in Azure Japan West unless reconfigured and documented otherwise</td></tr>
       <tr><td>Cloudflare</td><td>DNS, TLS, and Cloudflare Tunnel ingress for <code>api.astralogy.org</code></td><td>Request routing metadata such as IP address, host, path, user-agent, and TLS connection metadata. Cloudflare does not receive database contents except through normal API traffic it proxies.</td><td>Cloudflare operates globally; request metadata may be processed outside Singapore</td></tr>
-      <tr><td>Resend (Resend, Inc.)</td><td>Transactional email for one-time sign-in codes</td><td>School email address and OTP email body needed to deliver the login email. The OTP itself expires in 10 minutes.</td><td>Resend is US-based, so OTP email processing involves transfer outside Singapore</td></tr>
+      <tr><td>Apple Inc.</td><td>Sign in with Apple identity provider</td><td>Apple identity token and app-specific Apple account identifier needed to authenticate Apple sign-in. BuddyNow stores the identifier, not your Apple password.</td><td>Apple operates globally; Apple sign-in data may be processed outside Singapore</td></tr>
+      <tr><td>Resend (Resend, Inc.)</td><td>Transactional email for one-time sign-in codes</td><td>School email address and OTP email body needed to deliver school-email login. The OTP itself expires in 10 minutes.</td><td>Resend is US-based, so OTP email processing involves transfer outside Singapore</td></tr>
       <tr><td>Sentry (Functional Software Inc.)</td><td>Backend and mobile crash / error reporting</td><td>Stack traces, environment tag, build version. Tracing and profiling are explicitly disabled; default-PII capture is disabled; by-design business errors (RATE_LIMITED, SESSION_EXPIRED, validation failures) are filtered out. No email, message body, report body, or location is sent.</td><td>Sentry is US-based; data transferred outside Singapore</td></tr>
-      <tr><td>Apple Push Notification service (APNs) / Google Firebase Cloud Messaging (FCM)</td><td>Push notification delivery</td><td>Device-issued push token and notification payload (e.g. "You have a new match"). Used only when you grant notification permission.</td><td>Apple and Google operate globally; payload may transit non-Singapore infrastructure</td></tr>
+      <tr><td>Expo Push Service / Apple Push Notification service (APNs) / Google Firebase Cloud Messaging (FCM)</td><td>Push notification delivery</td><td>Expo push token and notification payload (e.g. "You have a new match"). Expo relays notifications to APNs or FCM as needed. Used only when you grant notification permission.</td><td>Expo, Apple, and Google operate globally; payload may transit non-Singapore infrastructure</td></tr>
       <tr><td>Better Stack</td><td>External uptime monitoring</td><td>Automated requests to the public <code>/health</code> endpoint and uptime result metadata. It is not configured as a traffic proxy or product analytics service.</td><td>Better Stack operates globally; health-check metadata may be processed outside Singapore</td></tr>
     </tbody>
   </table>
@@ -149,7 +152,7 @@
     <li>Live posts are automatically cancelled and the account is made invisible in user-facing post, application, match, chat, and report surfaces.</li>
     <li>Public trust counters, including Attendance / no-show counters, are reset immediately.</li>
     <li>If you sign in again with a fresh OTP before the 7-day deadline, your account identity and retained block list can be restored, but abandoned posts, applications, matches, and chats are not restored to the live product.</li>
-    <li>After the 7-day deadline, an automatic sweep permanently deletes the account row, school email, push token, OTP and rate-limit data, feedback body, and the user's owned block list, subject to limited safety-retention records described below.</li>
+    <li>After the 7-day deadline, an automatic sweep permanently deletes the account row, school email or Apple account identifier, push token, OTP and rate-limit data, feedback body, and the user's owned block list, subject to limited safety-retention records described below.</li>
   </ul>
   <h3>Data de-identified or pseudonymized and retained</h3>
   <ul>
@@ -157,7 +160,7 @@
     <li>Chat messages are pseudonymized by replacing sender ID with null, while message body is preserved so the other participant's conversation view remains understandable.</li>
     <li>Ratings are de-identified or pseudonymized by replacing reviewer and reviewee IDs with null, while outcome, sentiment, tags, and private note may be preserved for trust, quality, and safety review.</li>
     <li>Reports are de-identified or pseudonymized by replacing reporter and reported user IDs with null, while body and category are preserved as safety audit signals.</li>
-    <li>Blocks are retained through the 7-day grace period so restored accounts keep their safety settings. Server-side block filtering is based on a hash of school email so a deleted-and-recreated account cannot trivially bypass another user's safety block; owned block-list records are removed at hard deletion except where limited retention is necessary to protect another user's block.</li>
+    <li>Blocks are retained through the 7-day grace period so restored accounts keep their safety settings. Server-side block filtering uses a stable account identifier, such as a school-email hash for school-email accounts, so a deleted-and-recreated account cannot trivially bypass another user's safety block; owned block-list records are removed at hard deletion except where limited retention is necessary to protect another user's block.</li>
     <li>Feedback is de-identified or pseudonymized by replacing nickname and user ID with null and replacing the body with a deletion marker at hard deletion.</li>
   </ul>
 
@@ -171,10 +174,10 @@
   </ul>
 
   <h2>10. Security</h2>
-  <p>We use school email OTP verification, hashed session tokens, iOS Keychain storage through SecureStore (or Android Keystore if/when Android support ships), TLS for all API traffic, rate limits, server-side school allowlists, and structured logs that avoid email addresses and content bodies. No internet service can be perfectly secure, but we design BuddyNow to collect less data and to protect the data needed to operate the service.</p>
+  <p>We use school email OTP verification or Sign in with Apple, hashed session tokens, iOS Keychain storage through SecureStore (or Android Keystore if/when Android support ships), TLS for all API traffic, rate limits, server-side school allowlists for school verification, and structured logs that avoid email addresses and content bodies. No internet service can be perfectly secure, but we design BuddyNow to collect less data and to protect the data needed to operate the service.</p>
 
   <h2>11. Age Restriction</h2>
-  <p>BuddyNow is for university students aged 18 or above. Users under 18 may not create an account; the in-app born-year picker enforces this floor. If an underage account is detected, it will be deleted.</p>
+  <p>BuddyNow is for users aged 18 or above. Users under 18 may not create an account; the in-app born-year picker enforces this floor. If an underage account is detected, it will be deleted.</p>
 
   <h2>12. Changes</h2>
   <p>We may update this policy as BuddyNow changes. If changes are material, we will give notice in the app or by email where practical. The updated policy will show a new “Last updated” date.</p>
