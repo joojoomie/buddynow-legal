@@ -143,14 +143,30 @@ nav > * { pointer-events: auto; }
   letter-spacing: -0.01em;
 }
 
-.logo .dot {
+/* Brand four-point star — replaces the old coral dot. Inherits --coral via
+   currentColor; rides the top-right of the wordmark in both the nav + hero. */
+.brandstar {
   display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--coral);
-  margin: 0 0.5em 0.15em 0.05em;
-  vertical-align: middle;
+  color: var(--coral);
+  pointer-events: none;
+  flex: none;
+}
+.brandstar svg { display: block; width: 100%; height: 100%; }
+
+/* nav logo: small star tucked at the top-right of "Astralogy" */
+.logo .logostar {
+  width: 0.5em;
+  height: 0.5em;
+  margin-left: 0.14em;
+  vertical-align: 0.34em;
+}
+
+/* hero: chunky star riding the top-right corner of the big wordmark */
+.hero-title .herostar {
+  width: 0.28em;
+  height: 0.28em;
+  margin-left: 0.05em;
+  vertical-align: 0.6em;
 }
 
 .nav-right {
@@ -285,6 +301,29 @@ html[lang="zh"] .nav-links a {
   33% { transform: translate(20px, -15px) scale(1.04); }
   66% { transform: translate(-15px, 20px) scale(0.97); }
 }
+
+/* Celestial line-art illustration in the hero's right blank area. Sits above
+   the soft orbs (z-1) but below the wordmark (hero-inner is z-2). The fade is
+   opacity-only so it doesn't fight the translateY(-50%) vertical centering. */
+.hero-illus {
+  position: absolute;
+  top: 50%;
+  right: clamp(1.5rem, 7vw, 8rem);
+  transform: translateY(-50%);
+  width: clamp(260px, 30vw, 460px);
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  animation: illusIn 1.6s ease 1.1s forwards;
+}
+
+@keyframes illusIn {
+  from { opacity: 0; }
+  to { opacity: 0.92; }
+}
+
+@media (max-width: 900px) { .hero-illus { display: none; } }
 
 .hero-meta {
   font-family: var(--sans);
@@ -932,7 +971,7 @@ footer .right span:last-child { font-style: italic; font-family: var(--display);
 <body>
 
 <nav>
-  <a href="#top" class="logo">Astralogy<span class="dot"></span></a>
+  <a href="#top" class="logo">Astralogy<i class="brandstar logostar" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M50 2 Q55 45 98 50 Q55 55 50 98 Q45 55 2 50 Q45 45 50 2 Z" fill="currentColor"/></svg></i></a>
   <div class="nav-right">
     <div class="nav-links">
       <a href="#about" data-i18n="nav.about">About</a>
@@ -953,11 +992,45 @@ footer .right span:last-child { font-style: italic; font-family: var(--display);
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
 
+  <!-- Celestial line-art motif drifting in the hero's right blank area. -->
+  <svg class="hero-illus" viewBox="0 0 640 720" fill="none" aria-hidden="true">
+    <g stroke="#C0573E" stroke-linecap="round">
+      <ellipse cx="350" cy="350" rx="300" ry="118" transform="rotate(26 350 350)" stroke-width="1" stroke-opacity="0.55"/>
+      <ellipse cx="350" cy="350" rx="224" ry="60" transform="rotate(-16 350 350)" stroke-width="1.2" stroke-opacity="0.9"/>
+      <circle cx="350" cy="350" r="132" stroke-width="1.5"/>
+      <g stroke-width="0.9" stroke-opacity="0.5">
+        <ellipse cx="350" cy="350" rx="44" ry="132"/>
+        <path d="M225 308 a132 70 0 0 0 250 0"/>
+        <path d="M232 392 a118 60 0 0 0 236 0"/>
+      </g>
+    </g>
+    <g fill="#C0573E">
+      <circle cx="558" cy="250" r="5.5"/>
+      <circle cx="150" cy="470" r="4"/>
+    </g>
+    <circle cx="196" cy="214" r="9" fill="#E8523A"/>
+    <circle cx="196" cy="214" r="20" fill="none" stroke="#E8523A" stroke-width="1" stroke-opacity="0.35"/>
+    <g fill="#C0573E">
+      <path d="M470 150 q3 9 12 12 q-9 3 -12 12 q-3 -9 -12 -12 q9 -3 12 -12 Z" opacity="0.9"/>
+      <path d="M120 320 q2 6 8 8 q-6 2 -8 8 q-2 -6 -8 -8 q6 -2 8 -8 Z" opacity="0.7"/>
+      <path d="M540 470 q2.5 7 10 10 q-7.5 2.5 -10 10 q-2.5 -7.5 -10 -10 q7.5 -2.5 10 -10 Z" opacity="0.8"/>
+    </g>
+    <g stroke="#C0573E" stroke-width="0.8" stroke-opacity="0.7" fill="#C0573E">
+      <line x1="430" y1="560" x2="486" y2="588"/>
+      <line x1="486" y1="588" x2="520" y2="548"/>
+      <line x1="486" y1="588" x2="512" y2="624"/>
+      <circle cx="430" cy="560" r="2.6"/>
+      <circle cx="486" cy="588" r="3.2"/>
+      <circle cx="520" cy="548" r="2.6"/>
+      <circle cx="512" cy="624" r="2.4"/>
+    </g>
+  </svg>
+
   <div class="hero-inner">
     <p class="hero-meta"><span data-i18n="hero.meta">Software company · Singapore · Est. 2026</span><svg class="sprig" width="34" height="14" viewBox="0 0 34 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7 H30"/><path d="M30 7 C26 7 23 5 22 1.5 C26 1.5 29 3.5 30 7 Z"/><path d="M30 7 C26 7 23 9 22 12.5 C26 12.5 29 10.5 30 7 Z"/><path d="M17 7 C14.5 7 12.5 5.5 12 3 C15 3 16.8 4.8 17 7 Z"/><path d="M11 7 C8.5 7 6.5 8.5 6 11 C9 11 10.8 9.2 11 7 Z"/></svg></p>
 
     <div class="hero-main">
-      <h1 class="hero-title" data-i18n="hero.title">Astralogy<em>.</em></h1>
+      <h1 class="hero-title" data-i18n="hero.title">Astralogy<i class="brandstar herostar" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M50 2 Q55 45 98 50 Q55 55 50 98 Q45 55 2 50 Q45 45 50 2 Z" fill="currentColor"/></svg></i></h1>
       <p class="hero-tagline" data-i18n="hero.tagline">Crafting software with warmth, creating <span>experiences that enrich the spirit</span>.</p>
     </div>
 
@@ -1122,7 +1195,7 @@ const i18n = {
     "nav.team": "Team",
     "nav.contact": "Contact",
     "hero.meta": "Software company · Singapore · Est. 2026",
-    "hero.title": "Astralogy<em>.</em>",
+    "hero.title": "Astralogy<i class=\"brandstar herostar\" aria-hidden=\"true\"><svg viewBox=\"0 0 100 100\"><path d=\"M50 2 Q55 45 98 50 Q55 55 50 98 Q45 55 2 50 Q45 45 50 2 Z\" fill=\"currentColor\"/></svg></i>",
     "hero.tagline": "Crafting software with warmth, creating <span>experiences that enrich the spirit</span>.",
     "hero.cities": "Singapore — Shanghai",
     "hero.scroll": "Scroll",
@@ -1171,7 +1244,7 @@ const i18n = {
     "nav.team": "团队",
     "nav.contact": "联系",
     "hero.meta": "软件公司 · 新加坡 · 创立于 2026",
-    "hero.title": "Astralogy<em>.</em>",
+    "hero.title": "Astralogy<i class=\"brandstar herostar\" aria-hidden=\"true\"><svg viewBox=\"0 0 100 100\"><path d=\"M50 2 Q55 45 98 50 Q55 55 50 98 Q45 55 2 50 Q45 45 50 2 Z\" fill=\"currentColor\"/></svg></i>",
     "hero.tagline": "打造有温度的软件，创造<span>丰富心灵的体验</span>。",
     "hero.cities": "新加坡 — 上海",
     "hero.scroll": "向下",
