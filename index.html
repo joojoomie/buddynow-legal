@@ -748,6 +748,43 @@ html[lang="zh"] .tag { text-transform: none; letter-spacing: 0.04em; font-size: 
   letter-spacing: 0.15em;
 }
 
+/* App icon slot — sits where BuddyNow's mascot sits, same optical weight. */
+.product-appicon {
+  display: block;
+  width: clamp(64px, 8vw, 88px);
+  height: auto;
+  margin-top: 1.5rem;
+  border-radius: 22.37%;
+  image-rendering: pixelated;
+  box-shadow: 0 4px 18px rgba(60, 50, 40, 0.13);
+}
+
+@media (max-width: 720px) { .product-appicon { margin-top: 0.75rem; } }
+
+.product-link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--charcoal-soft);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.35em;
+  transition: color 0.3s ease, border-color 0.3s ease, gap 0.3s ease;
+}
+
+.product-link:hover {
+  color: var(--charcoal);
+  border-color: var(--charcoal-soft);
+  gap: 0.75em;
+}
+
+.product-link svg { flex: none; }
+
+html[lang="zh"] .product-link { letter-spacing: 0.03em; font-size: 0.88rem; }
+
 @media (max-width: 720px) {
   .product { grid-template-columns: 1fr; gap: 1rem; }
 }
@@ -1129,16 +1166,35 @@ footer .right span:last-child { font-style: italic; font-family: var(--display);
       </div>
     </div>
 
-    <div class="product placeholder reveal">
+    <div class="product reveal">
       <div>
-        <p class="product-meta" data-i18n="products.p2.meta">In Development · 2027</p>
+        <p class="product-meta" data-i18n="products.p2.meta">Live on the App Store · 2026</p>
+        <svg class="product-sprig" width="58" height="34" viewBox="0 0 58 34" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 27 C11 27 18 24 24 18"/>
+          <path d="M24 18 C30 12 38 9 47 9"/>
+          <path d="M47 9 L53 5 M47 9 L53 13"/>
+          <path d="M9 24 L9 20 M16 22 L16 18 M31 13 L31 9 M39 10 L39 6"/>
+        </svg>
+        <img class="product-appicon" src="runquest-icon.png" alt="RunQuest app icon — a pixel hero running with a glowing sword" width="104" height="104" loading="lazy">
       </div>
       <div class="product-content">
-        <h2 class="product-name" data-i18n="products.p2.name">— · — · —</h2>
-        <p class="product-tagline" data-i18n="products.p2.tagline">More on the way.</p>
-        <p class="product-description" data-i18n="products.p2.description">We build one product at a time, and we build it well. The next one is being shaped.</p>
+        <h2 class="product-name" data-i18n="products.p2.name">RunQuest<span class="cn">跑步英雄传</span></h2>
+        <p class="product-tagline" data-i18n="products.p2.tagline">You run. Your hero fights.</p>
+        <p class="product-description" data-i18n="products.p2.description">A running RPG for iPhone and Apple Watch. Every real step moves your pixel hero forward — through monsters, bosses, and loot. Your actual pace and distance drive the whole adventure. No fake XP, no idle grinding, no pay-to-win: gear and leaderboard spots are earned by moving your body, and nothing you buy can replace a kilometer. It doubles as a running companion, tracking distance, pace, and — with Apple Watch — your heart rate.</p>
+        <div class="product-tags">
+          <span class="tag" data-i18n="products.p2.tag1">Running RPG</span>
+          <span class="tag" data-i18n="products.p2.tag2">iPhone + Apple Watch</span>
+          <span class="tag" data-i18n="products.p2.tag3">No Pay-to-Win</span>
+        </div>
+        <a class="product-link" href="https://apps.apple.com/app/id6779448158" target="_blank" rel="noopener">
+          <span data-i18n="products.p2.link">Download on the App Store</span>
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 10 L10 3"/><path d="M4.5 3 H10 V8.5"/>
+          </svg>
+        </a>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -1220,10 +1276,14 @@ const i18n = {
     "products.p1.tag1": "Activity Social",
     "products.p1.tag2": "Verified School Badge",
     "products.p1.tag3": "SG Launch",
-    "products.p2.meta": "In Development · 2027",
-    "products.p2.name": "— · — · —",
-    "products.p2.tagline": "More on the way.",
-    "products.p2.description": "We build one product at a time, and we build it well. The next one is being shaped.",
+    "products.p2.meta": "Live on the App Store · 2026",
+    "products.p2.name": "RunQuest<span class=\"cn\">跑步英雄传</span>",
+    "products.p2.tagline": "You run. Your hero fights.",
+    "products.p2.description": "A running RPG for iPhone and Apple Watch. Every real step moves your pixel hero forward — through monsters, bosses, and loot. Your actual pace and distance drive the whole adventure. No fake XP, no idle grinding, no pay-to-win: gear and leaderboard spots are earned by moving your body, and nothing you buy can replace a kilometer. It doubles as a running companion, tracking distance, pace, and — with Apple Watch — your heart rate.",
+    "products.p2.tag1": "Running RPG",
+    "products.p2.tag2": "iPhone + Apple Watch",
+    "products.p2.tag3": "No Pay-to-Win",
+    "products.p2.link": "Download on the App Store",
     "team.label": "The People",
     "team.f1.role": "Co-Founder · CEO",
     "team.f1.name": "Astra Zhou<em>周晗月</em>",
@@ -1269,10 +1329,14 @@ const i18n = {
     "products.p1.tag1": "活动社交",
     "products.p1.tag2": "学校认证 badge",
     "products.p1.tag3": "新加坡首发",
-    "products.p2.meta": "开发中 · 2027",
-    "products.p2.name": "— · — · —",
-    "products.p2.tagline": "更多正在路上。",
-    "products.p2.description": "我们一次只做好一件事。下一个产品正在成形。",
+    "products.p2.meta": "已上架 App Store · 2026",
+    "products.p2.name": "RunQuest<span class=\"cn\">跑步英雄传</span>",
+    "products.p2.tagline": "你跑步，英雄替你战斗。",
+    "products.p2.description": "一款 iPhone + Apple Watch 的跑步 RPG。你在现实里迈出的每一步，都会推着像素英雄向前——打怪、挑战 Boss、捡装备。你真实的配速与距离，直接决定这场冒险。没有虚假经验值，没有挂机升级，也没有付费变强：装备和排行榜名次只能靠真跑，花钱买不来一公里。它同时也是你的跑步伙伴，记录距离、配速，戴上 Apple Watch 还能记录心率。",
+    "products.p2.tag1": "跑步 RPG",
+    "products.p2.tag2": "iPhone + Apple Watch",
+    "products.p2.tag3": "付费买不到战力",
+    "products.p2.link": "在 App Store 下载",
     "team.label": "我们",
     "team.f1.role": "Co-Founder · CEO",
     "team.f1.name": "周晗月<em>Astra Zhou</em>",
