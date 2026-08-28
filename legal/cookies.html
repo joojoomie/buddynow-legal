@@ -4,63 +4,141 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cookie and Local Storage Notice | BuddyNow</title>
-  <style>
-    :root { --ink:#17201b; --muted:#5f6f66; --line:#d9e4dc; --soft:#f5faf6; --accent:#246b4a; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); line-height:1.65; }
-    main { max-width:820px; margin:0 auto; padding:32px 20px 56px; }
-    header { border-bottom:1px solid var(--line); margin-bottom:28px; padding-bottom:22px; }
-    h1 { font-size:2rem; line-height:1.15; margin:0 0 8px; }
-    h2 { font-size:1.2rem; margin:30px 0 10px; }
-    p { margin:0 0 12px; }
-    ul { padding-left:22px; }
-    li { margin:5px 0; }
-    table { width:100%; border-collapse:collapse; margin:12px 0 18px; font-size:.96rem; }
-    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
-    th { background:var(--soft); }
-    a { color:var(--accent); }
-    .meta { color:var(--muted); }
-    footer { margin-top:34px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.94rem; }
-  </style>
+  <link rel="stylesheet" href="/legal/legal.css">
 </head>
 <body>
 <main>
-  <header>
-    <h1>BuddyNow Cookie and Local Storage Notice</h1>
-    <p class="meta">Last updated: 28 May 2026</p>
-    <p>This notice explains how BuddyNow uses cookies, local storage, and secure device storage.</p>
-  </header>
+  <div data-lang-switch></div>
 
-  <h2>1. Mobile App</h2>
-  <p>The BuddyNow mobile app does not use browser cookies. It uses limited on-device storage so the app can work normally.</p>
-  <table>
-    <thead><tr><th>Storage</th><th>Purpose</th><th>What is stored</th></tr></thead>
-    <tbody>
-      <tr><td>AsyncStorage</td><td>Remember app preferences</td><td>Language preference and similar non-sensitive settings</td></tr>
-      <tr><td>iOS Keychain through SecureStore</td><td>Keep you signed in securely</td><td>Session token for the 30-day login session</td></tr>
-    </tbody>
-  </table>
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang" data-lang="en">
+    <header>
+      <h1>BuddyNow Cookie and Local Storage Notice</h1>
+      <p class="meta">Last updated: 28 August 2026</p>
+      <p>This notice explains how BuddyNow uses cookies, local storage, and secure device storage.</p>
+    </header>
 
-  <h2>2. Website</h2>
-  <p>The public BuddyNow legal and landing pages are static pages. We do not intentionally set analytics cookies, advertising cookies, tracking pixels, or cross-site tracking tools.</p>
-  <p>Hosting and DNS infrastructure, such as GitHub Pages and Cloudflare, may process standard technical request information needed to deliver the website and protect the service. BuddyNow does not use this for behavioral advertising or cross-app tracking.</p>
+    <h2>1. Mobile App</h2>
+    <p>The BuddyNow mobile app does not use browser cookies. It uses limited on-device storage so the app can work normally.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Storage</th><th>Purpose</th><th>What is stored</th></tr></thead>
+        <tbody>
+          <tr><td>AsyncStorage</td><td>Remember app preferences</td><td>Language preference and similar non-sensitive settings</td></tr>
+          <tr><td>iOS Keychain through SecureStore</td><td>Keep you signed in securely</td><td>Session token for the 30-day login session</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-  <h2>3. Analytics, Advertising, and Crash Reporting</h2>
-  <p>BuddyNow does not use third-party analytics, ad networks, behavioral tracking SDKs, Facebook SDK, or Google Analytics. We do use <strong>Sentry</strong> for crash and error reporting on the backend and mobile app — see the <a href="/legal/privacy.html">Privacy Policy § 6</a> for what Sentry receives and how it is constrained (no email, no message bodies, no location; by-design business errors are filtered out).</p>
+    <h2>2. Website</h2>
+    <p>The public BuddyNow legal and landing pages are static pages. We do not intentionally set analytics cookies, advertising cookies, tracking pixels, or cross-site tracking tools.</p>
+    <p>These pages keep one item in your browser's local storage: the language you pick with the EN / 简 / 繁 switch, so the next page you open stays in that language. It is not an identifier, it is never sent to us, and clearing your browser data removes it.</p>
+    <p>Hosting and DNS infrastructure, such as GitHub Pages and Cloudflare, may process standard technical request information needed to deliver the website and protect the service. BuddyNow does not use this for behavioural advertising or cross-app tracking.</p>
 
-  <h2>4. Your Choices</h2>
-  <ul>
-    <li>You can delete the app to remove app-local preference storage from your device.</li>
-    <li>You can sign out or delete your account to revoke server sessions.</li>
-    <li>You can manage website cookies, if any are set by infrastructure in the future, through your browser settings.</li>
-  </ul>
+    <h2>3. Analytics, Advertising, and Crash Reporting</h2>
+    <p>BuddyNow does not use third-party analytics, ad networks, behavioural tracking SDKs, Facebook SDK, or Google Analytics. We do use <strong>Sentry</strong> for crash and error reporting on the backend and mobile app — see the <a href="/legal/privacy.html">Privacy Policy § 6</a> for what Sentry receives and how it is constrained (no email, no message bodies, no location; by-design business errors are filtered out).</p>
 
-  <h2>5. Contact</h2>
-  <p>Questions can be sent to <a href="mailto:support@astralogy.org">support@astralogy.org</a>.</p>
+    <h2>4. Your Choices</h2>
+    <ul>
+      <li>You can delete the app to remove app-local preference storage from your device.</li>
+      <li>You can sign out or delete your account to revoke server sessions.</li>
+      <li>You can clear the saved language choice, and any cookies infrastructure may set in future, through your browser settings.</li>
+    </ul>
 
-  <footer>
-    <p>Related document: <a href="/legal/privacy.html">Privacy Policy</a>.</p>
-  </footer>
+    <h2>5. Contact</h2>
+    <p>Questions can be sent to <a href="mailto:support@astralogy.org">support@astralogy.org</a>.</p>
+
+    <footer>
+      <p>Related document: <a href="/legal/privacy.html">Privacy Policy</a>.</p>
+    </footer>
+  </div>
+
+  <!-- ==================== 简体中文 ==================== -->
+  <div class="lang" data-lang="zh-Hans">
+    <header>
+      <h1>搭搭 BuddyNow Cookie 与本地存储说明</h1>
+      <p class="meta">最后更新：2026 年 8 月 28 日</p>
+      <p>本说明解释 BuddyNow 如何使用 Cookie、本地存储和安全设备存储。</p>
+    </header>
+
+    <h2>1. 移动 App</h2>
+    <p>BuddyNow 移动 App 不使用浏览器 Cookie。App 仅使用有限的设备本地存储，以保证正常运行。</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>存储方式</th><th>用途</th><th>存储内容</th></tr></thead>
+        <tbody>
+          <tr><td>AsyncStorage</td><td>记住 App 偏好</td><td>语言偏好及类似的非敏感设置</td></tr>
+          <tr><td>通过 SecureStore 使用 iOS Keychain</td><td>安全地保持登录状态</td><td>30 天登录会话使用的会话令牌</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. 网站</h2>
+    <p>BuddyNow 的公开法律页面和落地页是静态页面。我们不会主动设置分析 Cookie、广告 Cookie、追踪像素或跨站追踪工具。</p>
+    <p>这些页面会在你的浏览器本地存储里保存一项内容：你用 EN / 简 / 繁 切换选择的语言，以便你打开下一页时保持同一语言。它不是标识符，不会发送给我们，清除浏览器数据即可移除。</p>
+    <p>GitHub Pages、Cloudflare 等托管和 DNS 基础设施可能会处理提供网站和保护服务所需的标准技术请求信息。BuddyNow 不会将这些信息用于行为广告或跨 App 追踪。</p>
+
+    <h2>3. 分析、广告与崩溃上报</h2>
+    <p>BuddyNow 不使用第三方分析、广告网络、行为追踪 SDK、Facebook SDK 或 Google Analytics。我们在后端和移动 App 上使用 <strong>Sentry</strong> 进行崩溃和错误上报——详见<a href="/legal/privacy.html">隐私政策第 6 节</a>了解 Sentry 接收什么以及如何受限（不发送邮箱、消息内容、位置；业务正常错误会被过滤掉）。</p>
+
+    <h2>4. 你的选择</h2>
+    <ul>
+      <li>你可以删除 App，以移除设备上的 App 本地偏好存储。</li>
+      <li>你可以退出登录或删除账号，以撤销服务端会话。</li>
+      <li>你可以通过浏览器设置清除已保存的语言选择，以及未来基础设施可能设置的任何 Cookie。</li>
+    </ul>
+
+    <h2>5. 联系方式</h2>
+    <p>如有问题，请发送至 <a href="mailto:support@astralogy.org">support@astralogy.org</a>。</p>
+
+    <footer>
+      <p>相关文件：<a href="/legal/privacy.html">隐私政策</a>。</p>
+    </footer>
+  </div>
+
+  <!-- ==================== 繁體中文 ==================== -->
+  <div class="lang" data-lang="zh-Hant">
+    <header>
+      <h1>搭搭 BuddyNow Cookie 與本機儲存說明</h1>
+      <p class="meta">最後更新：2026 年 8 月 28 日</p>
+      <p>本說明解釋 BuddyNow 如何使用 Cookie、本機儲存與裝置安全儲存。</p>
+    </header>
+
+    <h2>1. 行動 App</h2>
+    <p>BuddyNow 行動 App 不使用瀏覽器 Cookie，僅使用有限的裝置本機儲存，以維持正常運作。</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>儲存方式</th><th>用途</th><th>儲存內容</th></tr></thead>
+        <tbody>
+          <tr><td>AsyncStorage</td><td>記住 App 偏好設定</td><td>語言偏好及類似的非敏感設定</td></tr>
+          <tr><td>透過 SecureStore 使用 iOS Keychain</td><td>安全地維持登入狀態</td><td>30 天登入工作階段所用的工作階段權杖</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. 網站</h2>
+    <p>BuddyNow 的公開法律頁面與首頁為靜態頁面。我們不會主動設定分析 Cookie、廣告 Cookie、追蹤像素或跨站追蹤工具。</p>
+    <p>這些頁面會在你的瀏覽器本機儲存中保留一項資料：你用 EN / 简 / 繁 切換所選的語言，讓你開啟下一頁時維持同一語言。它不是識別碼，不會傳送給我們，清除瀏覽器資料即可移除。</p>
+    <p>GitHub Pages、Cloudflare 等代管與 DNS 基礎設施，可能會處理傳遞網站及保護服務所需的標準技術請求資訊。BuddyNow 不會將這些資訊用於行為廣告或跨 App 追蹤。</p>
+
+    <h2>3. 分析、廣告與當機回報</h2>
+    <p>BuddyNow 不使用第三方分析、廣告聯播網、行為追蹤 SDK、Facebook SDK 或 Google Analytics。我們在後端與行動 App 上使用 <strong>Sentry</strong> 進行當機與錯誤回報——詳見<a href="/legal/privacy.html">隱私權政策第 6 節</a>，了解 Sentry 接收哪些資料以及受到哪些限制（不傳送電子郵件、訊息內容、位置；屬於正常商業邏輯的錯誤會被過濾）。</p>
+
+    <h2>4. 你的選擇</h2>
+    <ul>
+      <li>你可以刪除 App，以移除裝置上的 App 本機偏好儲存。</li>
+      <li>你可以登出或刪除帳號，以撤銷伺服器端工作階段。</li>
+      <li>你可以透過瀏覽器設定清除已儲存的語言選擇，以及未來基礎設施可能設定的任何 Cookie。</li>
+    </ul>
+
+    <h2>5. 聯絡方式</h2>
+    <p>如有問題，請寄至 <a href="mailto:support@astralogy.org">support@astralogy.org</a>。</p>
+
+    <footer>
+      <p>相關文件：<a href="/legal/privacy.html">隱私權政策</a>。</p>
+    </footer>
+  </div>
 </main>
+<script src="/legal/lang.js"></script>
 </body>
 </html>

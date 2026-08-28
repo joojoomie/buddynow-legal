@@ -4,32 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy | BuddyNow</title>
-  <style>
-    :root { color-scheme: light; --ink:#17201b; --muted:#5f6f66; --line:#d9e4dc; --soft:#f5faf6; --accent:#246b4a; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:#fff; line-height:1.65; }
-    main { max-width: 820px; margin: 0 auto; padding: 32px 20px 56px; }
-    header { border-bottom:1px solid var(--line); margin-bottom:28px; padding-bottom:22px; }
-    h1 { font-size:2rem; line-height:1.15; margin:0 0 8px; letter-spacing:0; }
-    h2 { font-size:1.2rem; margin:30px 0 10px; }
-    h3 { font-size:1rem; margin:20px 0 8px; }
-    p, li { font-size:1rem; }
-    p { margin:0 0 12px; }
-    ul { padding-left:22px; margin:8px 0 14px; }
-    a { color:var(--accent); }
-    .meta, .muted { color:var(--muted); }
-    .notice { background:var(--soft); border:1px solid var(--line); border-radius:8px; padding:14px 16px; margin:18px 0; }
-    table { width:100%; border-collapse:collapse; margin:12px 0 18px; font-size:.96rem; }
-    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
-    th { background:var(--soft); }
-    footer { margin-top:34px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.94rem; }
-  </style>
+  <link rel="stylesheet" href="/legal/legal.css">
 </head>
 <body>
 <main>
-  <header>
+  <div data-lang-switch></div>
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div class="lang" data-lang="en">
+<header>
     <h1>BuddyNow Privacy Policy</h1>
-    <p class="meta">Last updated: 4 June 2026</p>
+    <p class="meta">Last updated: 28 August 2026 · Available in Singapore, Taiwan, and Hong Kong</p>
     <p>BuddyNow, also known as 搭搭, helps eligible users find a buddy for study, running, gym, meals, or another low-pressure activity in the next hour. This policy explains what we collect, why we collect it, and how you can control your data.</p>
   </header>
 
@@ -38,13 +23,13 @@
   </section>
 
   <h2>1. Who We Are</h2>
-  <p>BuddyNow is operated for users in Singapore. For privacy questions, access requests, correction requests, withdrawal of consent, or complaints, contact our Data Protection Officer:</p>
+  <p>BuddyNow is available to users in Singapore, Taiwan, and Hong Kong. This policy is written to meet Singapore's Personal Data Protection Act 2012 (PDPA), Taiwan's Personal Data Protection Act (個人資料保護法), and Hong Kong's Personal Data (Privacy) Ordinance (Cap. 486). Where any of those laws gives you a stronger right than this policy describes, the stronger right applies. For privacy questions, access requests, correction requests, withdrawal of consent, or complaints, contact our Data Protection Officer:</p>
   <p><strong>DPO:</strong> Founder, BuddyNow<br><strong>Email:</strong> <a href="mailto:support@astralogy.org">support@astralogy.org</a></p>
 
   <h2>2. Personal Data We Collect</h2>
   <h3>Account and identity data</h3>
   <ul>
-    <li>Sign-in method. School-email sign-in uses a school email address verified by a one-time password. Current school verification supports <code>@u.nus.edu</code>, <code>@e.ntu.edu.sg</code>, and <code>@smu.edu.sg</code>.</li>
+    <li>Sign-in method. School-email sign-in uses a school email address verified by a one-time password. Current verification supports <code>@u.nus.edu</code> (NUS), <code>@e.ntu.edu.sg</code> (NTU), <code>@smu.edu.sg</code> (SMU), <code>@mymail.sutd.edu.sg</code> (SUTD), <code>@singaporetech.edu.sg</code> (SIT), and <code>@suss.edu.sg</code> (SUSS). This list changes as support is added; the app's sign-in screen always shows the current one.</li>
     <li>Sign in with Apple account identifier, when you choose Apple login. Apple gives BuddyNow a stable app-specific identifier. We store that identifier to find or create your BuddyNow account. We do not use Apple login to verify a school.</li>
     <li>Nickname, chosen by you. It is not copied from the email local-part.</li>
     <li>Age or birth-year-derived age used to confirm you are 18 or above during profile creation.</li>
@@ -61,7 +46,7 @@
     <li>Post applications and their status: pending, approved, rejected, or withdrawn.</li>
     <li>Matches, which record an approved application between two users for a post.</li>
     <li>Chat messages between a matched pair. Messages are 1-500 characters and limited to 200 messages per match.</li>
-    <li>Ratings after a meetup: outcome, sentiment, fixed tags such as punctual, friendly, late, or hard to find, and an optional private short note. Negative tags and notes are used for internal quality and safety review and are not shown publicly to other users in v1.</li>
+    <li>Ratings after a meetup: outcome, sentiment, fixed tags such as punctual, friendly, late, or hard to find, and an optional private short note. Positive tags appear on your public profile with a count. <strong>A negative tag becomes publicly visible on your profile only after at least three DIFFERENT people have independently picked that same tag about you</strong> — repeated ratings from one person can never cross the threshold alone. Below that, a negative tag is visible only to our safety review. A public missed-meetup mark works the same way and needs at least two different people. The optional private note is never shown publicly to anyone.</li>
     <li>Trust counters, including completed meetup count and no-show count.</li>
   </ul>
 
@@ -104,7 +89,7 @@
 
   <h2>5. Location</h2>
   <p>Location is optional, foreground-only, and used for nearby matching. If you grant location permission, BuddyNow asks the device for a current location snapshot and sends coordinates to the backend only when the device reports sufficient accuracy. Qualifying fixes are cached briefly, currently up to 3 minutes, so Browse, Compose, and Apply can use the same nearby calculation without repeatedly prompting the device.</p>
-  <p>If location permission is denied, disabled, or the fix is too inaccurate, BuddyNow does not estimate a position for you. You can still use BuddyNow without a distance: you see an "Anywhere" view of current posts, and a post you create is shown to others without a distance. School is not a matching boundary: when you share a precise location, nearby posts can appear across NUS, NTU, and SMU when both positions are within the selected radius.</p>
+  <p>If location permission is denied, disabled, or the fix is too inaccurate, BuddyNow does not estimate a position for you. You can still use BuddyNow without a distance: you see an "Anywhere" view of current posts, and a post you create is shown to others without a distance. School is not a matching boundary: when you share a precise location, nearby posts can appear across different schools, and between users with no school at all, whenever both positions are within the selected radius.</p>
   <p>Other users do not receive your raw coordinates or exact meter distance. Public distance display is bucketed: roughly 0-100m appears as “Nearby”; 101-400m appears as “0.4km”; 401-700m appears as “0.7km”; 701-1000m appears as “1.0km”; farther distances are rounded upward in similar coarse kilometre steps. BuddyNow does not collect background location or continuously track movement.</p>
 
   <h2>6. Sharing and Processors</h2>
@@ -130,7 +115,7 @@
     <li><strong>Chat messages and ratings:</strong> retained for the counterparty's reference, trust and safety, and quality review. On account deletion, sender / reviewer / reviewee IDs are nulled where applicable; message text, rating tags, and private note text may remain pseudonymized because they can contain user-entered context.</li>
     <li><strong>Reports:</strong> retained for <strong>24 months</strong> from creation as a safety audit signal, even after both parties delete their accounts (user IDs nulled per § 8, body and category preserved). Terminal-status reports (actioned / dismissed) are deleted after 24 months.</li>
     <li><strong>OTP rate-limit timestamps:</strong> sliding 60-minute anti-abuse window.</li>
-    <li><strong>Operational logs</strong> (request metadata, user-agent, timestamp): <strong>30 days</strong>.</li>
+    <li><strong>Operational logs</strong> (request metadata, user-agent, timestamp): rotated automatically and capped at a fixed volume, so old entries are overwritten continuously rather than accumulating. In practice this is well under 30 days at current traffic, but it is a size limit, not a calendar one — we do not promise an exact number of days.</li>
     <li><strong>Sentry crash events:</strong> 30 days per Sentry's default retention.</li>
     <li>Records that no longer identify your account may be retained only as long as needed for safety review, legal compliance, abuse prevention, counterparty context, or aggregate service integrity. We review these retained records at least every 24 months.</li>
   </ul>
@@ -139,6 +124,8 @@
   <p>If we discover a personal-data breach likely to cause significant harm to affected users — for example, unauthorized access to email addresses, chat messages, or reports — we will:</p>
   <ul>
     <li>Notify Singapore's Personal Data Protection Commission (PDPC) within <strong>3 calendar days</strong> of becoming aware, per Section 26D of the PDPA.</li>
+    <li>In Taiwan, notify affected data subjects as required by Article 12 of the Personal Data Protection Act, and report to the competent authority where required.</li>
+    <li>In Hong Kong, notify affected users and report the breach to the Privacy Commissioner for Personal Data (PCPD).</li>
     <li>Notify affected users without undue delay, including the categories of data involved and the steps you can take.</li>
     <li>Take reasonable steps to contain the breach and prevent recurrence.</li>
   </ul>
@@ -165,12 +152,22 @@
   </ul>
 
   <h2>9. Your Rights</h2>
-  <p>Subject to applicable exceptions under Singapore law, you may request access to your personal data, ask us to correct inaccurate data, withdraw consent, or ask us to delete your account.</p>
+  <p>You may request access to your personal data, ask us to correct inaccurate data, withdraw consent, or ask us to delete your account. The law that applies depends on where you are, and each sets its own deadline. We follow whichever is shortest for you.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Where you are</th><th>Law</th><th>Access request</th><th>Correction / deletion</th><th>Regulator</th></tr></thead>
+      <tbody>
+        <tr><td>Singapore</td><td>PDPA 2012</td><td>As soon as reasonably possible</td><td>As soon as reasonably possible</td><td>Personal Data Protection Commission (PDPC)</td></tr>
+        <tr><td>Taiwan</td><td>個人資料保護法</td><td><strong>15 days</strong> to decide, extendable once by 15 days (Art. 13)</td><td><strong>30 days</strong>, extendable once by 30 days (Art. 13)</td><td>Ministry of Digital Affairs / competent authority</td></tr>
+        <tr><td>Hong Kong</td><td>PDPO (Cap. 486)</td><td><strong>40 days</strong></td><td><strong>40 days</strong></td><td>Privacy Commissioner for Personal Data (PCPD)</td></tr>
+      </tbody>
+    </table>
+  </div>
   <ul>
-    <li><strong>Access:</strong> Use <code>GET /me/export</code> or the in-app export flow when available. The export currently includes core account and profile data, public trust counters, active session count, and feedback entries linked to your account. For broader access requests, contact the DPO.</li>
+    <li><strong>Access:</strong> Email the DPO at <a href="mailto:support@astralogy.org">support@astralogy.org</a>. There is no in-app export button — the export endpoint exists on the server but you cannot reach it from the app, so email is the route that actually works. We verify the request and reply within the deadline for your location shown above.</li>
     <li><strong>Deletion:</strong> Use <code>DELETE /me</code> or the in-app account deletion flow.</li>
     <li><strong>Correction:</strong> Update editable profile fields in the app or contact the DPO.</li>
-    <li><strong>Complaints:</strong> Contact the DPO first. We aim to respond within 30 days. If unresolved, you may contact Singapore's Personal Data Protection Commission.</li>
+    <li><strong>Complaints:</strong> Contact the DPO first. We aim to acknowledge within 7 working days and to answer within the statutory deadline for your location shown above. If unresolved, you may complain to the regulator for your location: the PDPC (Singapore), the competent authority under the Personal Data Protection Act (Taiwan), or the PCPD (Hong Kong).</li>
   </ul>
 
   <h2>10. Security</h2>
@@ -185,6 +182,356 @@
   <footer>
     <p>Related documents: <a href="/legal/terms.html">Terms of Service</a>, <a href="/legal/guidelines.html">Community Guidelines</a>, <a href="/legal/cookies.html">Cookie and Local Storage Notice</a>.</p>
   </footer>
+  </div>
+
+  <!-- ==================== 简体中文 ==================== -->
+  <div class="lang" data-lang="zh-Hans">
+<header>
+    <h1>搭搭 BuddyNow 隐私政策</h1>
+    <p class="meta">最后更新：2026 年 8 月 28 日 · 在新加坡、台湾、香港提供</p>
+    <p>BuddyNow（中文品牌“搭搭”）帮助符合条件的用户在接下来一小时内找到一起自习、跑步、健身、吃饭或参加其他低压力活动的同伴。本政策说明我们收集哪些数据、为什么收集，以及你可以如何管理自己的数据。</p>
+  </header>
+
+  <section class="notice">
+    <p><strong>简要说明：</strong>BuddyNow 面向年满 18 岁的用户。你可以使用受支持的学校邮箱登录，也可以使用 Apple 登录。来自受支持大学域名的学校邮箱用户会获得学校认证信号；Apple 登录用户是完整用户，但不会获得学校认证 badge。我们使用你的登录数据、帖子、定位模式、申请、匹配和消息完成匹配体验，使用举报、拉黑和评价维护社区安全。开启定位时，搭搭会使用前台精确定位快照做附近匹配；定位不可用时，搭搭不会替你估算位置——你仍可正常使用，只是不带距离。其他用户只会看到粗略距离标签，不会看到你的坐标或精确米数。我们使用一项窄范围的崩溃上报服务（Sentry）来修 bug，配置为不发送任何个人内容。我们不出售个人数据，不投放广告，不使用行为分析，不收集后台定位，也不收集照片、手机号、政府身份证件、通讯录或支付信息。</p>
+  </section>
+
+  <h2>1. 我们是谁</h2>
+  <p>BuddyNow 在新加坡、台湾和香港提供服务。本政策依据新加坡《个人资料保护法》（PDPA 2012）、台湾《个人资料保护法》以及香港《个人资料（私隐）条例》（第 486 章）撰写。若上述任一法律赋予你的权利强于本政策所述，以更强的权利为准。如有隐私问题、访问请求、更正请求、撤回同意或投诉，请联系数据保护负责人：</p>
+  <p><strong>数据保护负责人：</strong>BuddyNow 创始人<br><strong>邮箱：</strong><a href="mailto:support@astralogy.org">support@astralogy.org</a></p>
+
+  <h2>2. 我们收集的个人数据</h2>
+  <h3>账号与身份数据</h3>
+  <ul>
+    <li>登录方式。学校邮箱登录会使用通过一次性验证码验证的学校邮箱。目前认证支持 <code>@u.nus.edu</code>（NUS）、<code>@e.ntu.edu.sg</code>（NTU）、<code>@smu.edu.sg</code>（SMU）、<code>@mymail.sutd.edu.sg</code>（SUTD）、<code>@singaporetech.edu.sg</code>（SIT）和 <code>@suss.edu.sg</code>（SUSS）。该清单会随支持范围调整；App 登录页始终显示当前清单。</li>
+    <li>Apple 登录账号标识符，当你选择 Apple 登录时使用。Apple 会向 BuddyNow 提供稳定的、仅适用于本 App 的账号标识符。我们用该标识符查找或创建你的 BuddyNow 账号。我们不会把 Apple 登录用于学校认证。</li>
+    <li>你自行设置的昵称。昵称不会从邮箱前缀自动生成。</li>
+    <li>年龄或由出生年份推导的年龄，用于确认你在创建资料时已满 18 岁。</li>
+    <li>性别选项：女性、男性、非二元，或跳过。</li>
+    <li>头像设置：由两个数字选项组成的程序化植物图标，不是照片。</li>
+    <li>学校信息。学校邮箱账号的学校信息由学校邮箱域名推导得出，并作为学校认证信号展示。Apple 账号不会获得该信号。</li>
+    <li>Apple 账号的内部占位字段，包括不可投递的合成邮箱值和内部学校标记。这些只是存储实现细节，不会作为学校或学校邮箱公开展示。</li>
+  </ul>
+
+  <h3>活动数据</h3>
+  <ul>
+    <li>每日社交状态，例如想聊天、想安静、无偏好。该状态会在 UTC 每日零点重置。</li>
+    <li>活动帖子：活动类型、集合地点文字、可选备注、距离范围，以及在你授权定位且设备返回足够准确结果时使用的前台精确定位快照。如果定位不可用或精度不足，帖子不会附带任何位置，展示给其他人时也不带距离。帖子有效期为 60 分钟。</li>
+    <li>帖子申请及状态：待处理、已通过、已拒绝或已撤回。</li>
+    <li>匹配记录，即某个申请被通过后，两名用户与对应帖子之间的记录。</li>
+    <li>匹配双方之间的一对一聊天消息。每条消息 1 至 500 个字符，每个匹配最多 200 条消息。</li>
+    <li>见面后的评价：是否见到、评价倾向、固定标签（如准时、友好、迟到、难找到）以及可选的私密简短备注。正面标签会带计数显示在你的公开资料上。<strong>负面标签只有在至少三个不同的人各自独立选择了同一个标签之后，才会公开显示在你的资料上</strong>——同一个人反复评价永远无法单独越过这个阈值。未达阈值时，负面标签只有我们的安全审阅看得到。公开的「未碰面」标记同理，需要至少两个不同的人。可选的私密备注对任何人都不公开展示。</li>
+    <li>信任计数，例如已完成见面次数和爽约次数。</li>
+  </ul>
+
+  <h3>安全数据</h3>
+  <ul>
+    <li>用户对其他用户提交的举报，包括举报类别、可选说明，以及若举报是在某场聊天里发起则附带的 match-id 上下文。被举报者不会被通知有人举报了 ta。</li>
+    <li>安全团队在调查过程中加入的内部审核备注。这些备注仅管理员可见，不会展示给举报者或被举报者。</li>
+    <li>用户之间的拉黑记录。拉黑是静默的——被拉黑者不会被通知，双方互相不可见。</li>
+  </ul>
+
+  <h3>运营数据</h3>
+  <ul>
+    <li>会话信息，包括会话 ID、哈希后的令牌、30 天有效期和撤销状态。</li>
+    <li>一次性验证码限流时间戳，用于 60 分钟滑动窗口内的防滥用限制。</li>
+    <li>若你授予通知权限，App 会保存推送通知令牌。移动端使用 Expo push token；Expo 会按需通过 Apple Push Notification service 或 Google FCM 转发通知。仅用于发送匹配 / 消息通知。注销账号或退出登录时清除。</li>
+    <li>结构化服务器日志，其中可能包含用户 ID 字符串，用于运营和安全排查。日志不包含邮箱地址，也不包含消息或举报正文。</li>
+    <li>Sentry 采集的崩溃和未捕获异常事件——堆栈、环境标签、构建版本。我们不会有意发送邮箱、消息正文、举报正文或位置。业务正常错误（限速、参数校验失败、会话过期等）会被过滤掉。</li>
+  </ul>
+
+  <h3>我们不收集的数据</h3>
+  <p>我们不收集真实姓名、手机号、照片、政府身份证件、支付信息、住址、通讯录、后台定位、行为分析数据、追踪像素、广告 ID，也不使用 Facebook SDK、Google Analytics 等行为追踪 SDK。Sentry 崩溃上报已启用——见 § 6 共享与处理方了解 Sentry 接收什么以及如何受限。</p>
+
+  <h2>3. 我们为什么使用这些数据</h2>
+  <table>
+    <thead><tr><th>目的</th><th>使用的数据</th></tr></thead>
+    <tbody>
+      <tr><td>认证账号、在适用时验证学校状态，并防止滥用</td><td>学校邮箱、验证码记录、学校域名、Apple 账号标识符、会话、限流时间戳</td></tr>
+      <tr><td>创建和维护你的个人资料</td><td>昵称、年龄、性别选项、头像设置、适用时的学校认证信息</td></tr>
+      <tr><td>展示一小时活动帖子并完成匹配</td><td>活动类型、集合地点、备注、距离范围、可选的前台精确定位快照、申请、匹配</td></tr>
+      <tr><td>在通过申请后开启一对一聊天</td><td>匹配记录和聊天消息</td></tr>
+      <tr><td>支持信任与安全审核</td><td>评价、举报、拉黑、信任计数、相关运营日志</td></tr>
+      <tr><td>维护安全、排查服务问题并执行使用限制</td><td>会话、哈希令牌、日志、限流时间戳</td></tr>
+      <tr><td>履行法律义务并处理投诉</td><td>与请求相关的账号、安全、运营和审计记录</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. 同意与撤回</h2>
+  <p>创建账号并使用 BuddyNow，即表示你同意我们为本政策所述目的收集、使用和披露个人数据。部分数据是提供服务所必需的。例如，我们需要学校邮箱或 Apple 账号标识符来认证你的账号，也需要帖子和申请数据完成匹配。</p>
+  <p>你可以在 App 内删除账号，或联系 <a href="mailto:support@astralogy.org">support@astralogy.org</a> 撤回同意。如果你撤回的是 BuddyNow 运营所必需的数据授权，我们可能无法继续向你提供服务。在需要人工处理的撤回请求中，我们会在完成前说明可能后果。</p>
+
+  <h2>5. 定位</h2>
+  <p>定位是可选的，只在前台使用，并用于附近匹配。如果你授权定位，搭搭会向设备请求当前定位快照，并且只在设备报告的精度足够时把坐标发送给后端。合格的定位结果会短暂缓存，目前最长约 3 分钟，用于浏览、发帖和申请时保持同一套附近计算，而不是反复请求设备定位。</p>
+  <p>如果你拒绝定位、关闭定位，或设备返回的位置精度不足，搭搭不会替你估算位置。你仍可正常使用，只是不带距离：你会看到「不限距离」的帖子视图，你发布的帖子展示给其他人时也不带距离。学校不是匹配边界：当你共享精确位置时，只要双方位置都在所选距离范围内，不同学校之间、以及与没有学校标识的用户之间，都可以互相看到附近帖子。</p>
+  <p>其他用户不会收到你的原始坐标或精确米数。公开距离会分档显示：约 0–100 米显示为「附近」；101–400 米显示为「0.4km」；401–700 米显示为「0.7km」；701–1000 米显示为「1.0km」；更远距离继续按类似的粗略公里档位向上取整。搭搭不收集后台定位，也不会持续追踪你的移动轨迹。</p>
+
+  <h2>6. 共享与处理方</h2>
+  <p>我们不出售个人数据。我们只会在运营 BuddyNow、遵守法律、保护用户或使用服务提供商所必要的范围内共享数据，并要求相关服务提供商遵守适当的保密和安全要求。</p>
+  <table>
+    <thead><tr><th>处理方</th><th>作用</th><th>处理的数据</th><th>地点说明</th></tr></thead>
+    <tbody>
+      <tr><td>Microsoft Azure</td><td>BuddyNow API 与数据库所在虚拟机托管</td><td>BuddyNow 后端存储和处理的全部服务数据</td><td>当前生产虚拟机位于 Azure Japan West，除非后续重新配置并另行记录</td></tr>
+      <tr><td>Cloudflare</td><td><code>api.astralogy.org</code> 的 DNS、TLS 与 Cloudflare Tunnel 入口</td><td>请求路由元数据，例如 IP 地址、host、path、user-agent 和 TLS 连接元数据。除其代理的正常 API 流量外，Cloudflare 不接收数据库内容。</td><td>Cloudflare 全球运营；请求元数据可能在新加坡境外处理</td></tr>
+      <tr><td>Apple Inc.</td><td>Apple 登录身份提供方</td><td>认证 Apple 登录所需的 Apple identity token 和仅适用于本 App 的 Apple 账号标识符。BuddyNow 保存该标识符，不保存你的 Apple 密码。</td><td>Apple 全球运营；Apple 登录数据可能在新加坡境外处理</td></tr>
+      <tr><td>Resend（Resend, Inc.）</td><td>发送一次性登录码的事务邮件服务</td><td>学校邮箱地址，以及发送学校邮箱登录邮件所需的验证码邮件正文。OTP 本身 10 分钟过期。</td><td>Resend 总部位于美国，验证码邮件处理涉及向新加坡境外传输</td></tr>
+      <tr><td>Sentry（Functional Software Inc.）</td><td>后端和 Mobile 崩溃 / 错误上报</td><td>错误堆栈、环境标签、构建版本。已显式关闭 tracing 和 profiling，关闭默认 PII 采集，并过滤掉业务正常错误（RATE_LIMITED、SESSION_EXPIRED、参数校验失败等）。不发送邮箱、消息正文、举报正文或位置。</td><td>Sentry 总部位于美国；数据传输至新加坡境外</td></tr>
+      <tr><td>Expo Push Service / Apple Push Notification service（APNs）/ Google Firebase Cloud Messaging（FCM）</td><td>推送通知投递</td><td>Expo push token 和通知内容（如「你有新的匹配」）。Expo 会按需将通知转发给 APNs 或 FCM。仅在你授予通知权限时使用。</td><td>Expo、Apple 和 Google 全球运营；推送内容可能经过新加坡境外的基础设施</td></tr>
+      <tr><td>Better Stack</td><td>外部可用性监控</td><td>对公开 <code>/health</code> 接口的自动请求和可用性结果元数据。Better Stack 未被配置为流量代理或产品分析服务。</td><td>Better Stack 全球运营；健康检查元数据可能在新加坡境外处理</td></tr>
+    </tbody>
+  </table>
+  <p>如个人数据被传输至新加坡境外，我们会采取措施，力求确保接收方提供与新加坡《2012 年个人数据保护法》（及其修订）相当的保护水平。</p>
+
+  <h2>7. 数据保留期限</h2>
+  <ul>
+    <li><strong>会话：</strong>30 天滑动过期；登出或注销账号时立即吊销。</li>
+    <li><strong>活动帖子和定位快照：</strong>帖子实时展示 60 分钟，之后转为只读或从发现列表过期。与帖子、申请或匹配记录相关的定位快照，只会在匹配、安全审核、账号删除处理或争议上下文所需期间保留；如与已删除账号相关，会按 § 8 去标识化。</li>
+    <li><strong>聊天消息和评价：</strong>为对方视角、信任与安全、质量观察而保留。注销账号时，sender / reviewer / reviewee ID 会在适用处置空；消息内容、评价标签和私密备注可能保留为假名化数据，因为这些内容可能包含用户自行输入的上下文。</li>
+    <li><strong>举报记录：</strong>自创建起保留 <strong>24 个月</strong>作为安全审计信号，即使双方都注销也会保留（§ 8 中将用户 ID 置空，正文和类别保留）。24 个月后，已完成处理（actioned / dismissed）的举报会被删除。</li>
+    <li><strong>OTP 限流时间戳：</strong>60 分钟滑动窗口内的防滥用保护。</li>
+    <li><strong>运营日志</strong>（请求元数据、user-agent、时间戳）：自动轮转并限定总量，旧记录会被持续覆盖，不会无限累积。以当前流量计算实际远短于 30 天，但这是容量上限而非日历上限——我们不承诺一个确切的天数。</li>
+    <li><strong>Sentry 崩溃事件：</strong>按 Sentry 默认保留 30 天。</li>
+    <li>不再直接识别你账号的记录，只会在安全审核、法律合规、防滥用、保留对方上下文或汇总服务完整性所需期间保留。我们至少每 24 个月复核一次这些保留记录。</li>
+  </ul>
+
+  <h2>7a. 数据泄露应对</h2>
+  <p>如发生可能对用户造成重大伤害的个人数据泄露——例如邮箱、聊天内容或举报内容被未授权访问——我们将：</p>
+  <ul>
+    <li>在察觉后 <strong>3 个日历日内</strong>按 PDPA 第 26D 条通知新加坡个人资料保护委员会（PDPC）。</li>
+    <li>在台湾，依《个人资料保护法》第 12 条通知受影响的当事人，并在法律要求时向主管机关通报。</li>
+    <li>在香港，通知受影响用户，并向个人资料私隐专员公署（PCPD）通报。</li>
+    <li>无不当延迟地通知受影响用户，告知泄露涉及的数据类别和你可以采取的步骤。</li>
+    <li>采取合理措施控制泄露范围并防止再次发生。</li>
+  </ul>
+
+  <h2>8. 删除账号、去标识化与假名化</h2>
+  <p>当你通过 <code>DELETE /me</code> 或 App 内删除流程删除账号时，BuddyNow 会采用两类处理方式。部分保留的自由文本字段中，可能仍包含你或其他用户自行输入的个人数据，因此我们将其描述为在可行时去标识化或假名化，而不是完全匿名化。</p>
+  <h3>删除或撤销的数据</h3>
+  <ul>
+    <li>所有会话会立即被撤销。</li>
+    <li>你的账号会被标记为待删除，并进入 7 天宽限期。宽限期内，正常登录后的账号操作会被阻止。</li>
+    <li>仍在有效期内的帖子会被自动取消，并且该账号会从用户可见的帖子、申请、匹配、聊天和举报界面中隐藏。</li>
+    <li>公开信任计数，包括出勤 / 爽约计数，会立即清零。</li>
+    <li>如果你在 7 天期限前用新的 OTP 再次登录，可以恢复账号身份和保留的拉黑列表；但已放弃的帖子、申请、匹配和聊天不会恢复为产品中的实时状态。</li>
+    <li>7 天期限后，自动清理任务会永久删除账号行、学校邮箱或 Apple 账号标识符、推送令牌、OTP 与限流数据、反馈正文，以及该用户拥有的拉黑列表，但下方说明的有限安全保留记录除外。</li>
+  </ul>
+  <h3>去标识化或假名化后保留的数据</h3>
+  <ul>
+    <li>申请、匹配、帖子归属和见面状态会把用户 ID 替换为 null，同时在必要时保留状态、汇总计数和对方视角上下文。</li>
+    <li>聊天消息会把发送者 ID 替换为 null，但保留消息正文，使另一方的聊天视图仍然可理解，因此属于假名化处理。</li>
+    <li>评价会把评价者和被评价者 ID 替换为 null，同时可能保留结果、评价倾向、标签和私密备注，用于信任、质量和安全观察。</li>
+    <li>举报会把举报者和被举报者 ID 替换为 null，同时保留正文和类别，作为安全审计信号，属于去标识化或假名化处理。</li>
+    <li>拉黑记录会在 7 天宽限期内保留，使恢复账号后仍保留安全设置。服务端拉黑过滤使用稳定账号标识，例如学校邮箱账号使用学校邮箱哈希，因此删除并重新注册的账号不能轻易绕过其他用户的安全拉黑；用户自己拥有的拉黑列表会在硬删除时移除，但为保护其他用户拉黑效果所需的有限记录除外。</li>
+    <li>反馈会把昵称和用户 ID 替换为 null，并在硬删除时把正文替换为删除标记，属于去标识化或假名化处理。</li>
+  </ul>
+
+  <h2>9. 你的权利</h2>
+  <p>你可以请求访问自己的个人数据、要求更正不准确数据、撤回同意，或要求删除账号。适用哪部法律取决于你身处何地，各自的时限也不同。我们按对你最短的那个执行。</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>你所在地</th><th>适用法律</th><th>查阅请求</th><th>更正 / 删除</th><th>主管机关</th></tr></thead>
+      <tbody>
+        <tr><td>新加坡</td><td>PDPA 2012</td><td>在合理可行范围内尽快</td><td>在合理可行范围内尽快</td><td>个人资料保护委员会（PDPC）</td></tr>
+        <tr><td>台湾</td><td>个人资料保护法</td><td><strong>15 日</strong>内决定是否受理，得延长一次 15 日（第 13 条）</td><td><strong>30 日</strong>，得延长一次 30 日（第 13 条）</td><td>数位发展部／目的事业主管机关</td></tr>
+        <tr><td>香港</td><td>个人资料（私隐）条例（第 486 章）</td><td><strong>40 日</strong></td><td><strong>40 日</strong></td><td>个人资料私隐专员公署（PCPD）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul>
+    <li><strong>访问：</strong>请发邮件给数据保护负责人 <a href="mailto:support@astralogy.org">support@astralogy.org</a>。App 内没有导出按钮——服务端虽有导出接口，但你在 App 里触达不到，所以邮件才是真正可用的途径。我们会核验请求，并在上表所列、适用于你所在地的时限内答复。</li>
+    <li><strong>删除：</strong>使用 <code>DELETE /me</code>，或使用 App 内账号删除流程。</li>
+    <li><strong>更正：</strong>在 App 内更新可编辑资料字段，或联系数据保护负责人。</li>
+    <li><strong>投诉：</strong>请先联系数据保护负责人。我们力争在 7 个工作日内确认收到，并在上表所列、适用于你所在地的法定时限内答复。如问题仍未解决，你可以向你所在地的主管机关投诉：新加坡个人资料保护委员会（PDPC）、台湾《个人资料保护法》下的主管机关，或香港个人资料私隐专员公署（PCPD）。</li>
+  </ul>
+
+  <h2>10. 安全</h2>
+  <p>我们使用学校邮箱验证码或 Apple 登录、哈希后的会话令牌、通过 SecureStore 存入 iOS Keychain 的本地会话（若未来支持 Android 将使用 Android Keystore）、所有 API 流量 TLS、限流、用于学校认证的服务端学校域名白名单，以及不记录邮箱和正文内容的结构化日志。没有任何互联网服务能保证绝对安全，但 BuddyNow 的设计原则是少收集数据，并保护服务运行所必需的数据。</p>
+
+  <h2>11. 年龄限制</h2>
+  <p>搭搭 BuddyNow 面向年满 18 岁的用户。未满 18 岁的用户不得创建账号；App 内的出生年份选择会强制这一下限。如发现未成年账号，会被删除。</p>
+
+  <h2>12. 政策变更</h2>
+  <p>随着 BuddyNow 发展，我们可能更新本政策。如有重大变更，我们会在可行时通过 App 或邮件通知。更新后的政策会显示新的“最后更新”日期。</p>
+
+  <footer>
+    <p>相关文件：<a href="/legal/terms.html">服务条款</a>、<a href="/legal/guidelines.html">社区准则</a>、<a href="/legal/cookies.html">Cookie 与本地存储说明</a>。</p>
+  </footer>
+  </div>
+
+  <!-- ==================== 繁體中文 ==================== -->
+  <div class="lang" data-lang="zh-Hant">
+<header>
+    <h1>搭搭 BuddyNow 隱私政策</h1>
+    <p class="meta">最後更新：2026 年 8 月 28 日 · 在新加坡、臺灣、香港提供</p>
+    <p>BuddyNow（中文品牌「搭搭」）幫助符合條件的使用者在接下來一小時內找到一起自習、跑步、健身、吃飯或參加其他低壓力活動的同伴。本政策說明我們收集哪些資料、為什麼收集，以及你可以如何管理自己的資料。</p>
+  </header>
+
+  <section class="notice">
+    <p><strong>簡要說明：</strong>BuddyNow 面向年滿 18 歲的使用者。你可以使用受支援的學校信箱登入，也可以使用 Apple 登入。來自受支援大學域名的學校信箱使用者會獲得學校認證訊號；Apple 登入使用者是完整使用者，但不會獲得學校認證 badge。我們使用你的登入資料、貼文、定位模式、申請、配對和訊息完成配對體驗，使用檢舉、封鎖和評價維護社群安全。開啟定位時，搭搭會使用前臺精確定位快照做附近配對；定位不可用時，搭搭不會替你估算位置——你仍可正常使用，只是不帶距離。其他使用者只會看到粗略距離標籤，不會看到你的座標或精確米數。我們使用一項窄範圍的崩潰上報服務（Sentry）來修 bug，配置為不傳送任何個人內容。我們不出售個人資料，不投放廣告，不使用行為分析，不收集後臺定位，也不收集照片、手機號、政府身份證件、通訊錄或支付資訊。</p>
+  </section>
+
+  <h2>1. 我們是誰</h2>
+  <p>BuddyNow 在新加坡、臺灣和香港提供服務。本政策依據新加坡《個人資料保護法》（PDPA 2012）、臺灣《個人資料保護法》以及香港《個人資料（私隱）條例》（第 486 章）撰寫。若上述任一法律賦予你的權利強於本政策所述，以更強的權利為準。如有隱私問題、訪問請求、更正請求、撤回同意或投訴，請聯絡資料保護負責人：</p>
+  <p><strong>資料保護負責人：</strong>BuddyNow 創始人<br><strong>信箱：</strong><a href="mailto:support@astralogy.org">support@astralogy.org</a></p>
+
+  <h2>2. 我們收集的個人資料</h2>
+  <h3>帳號與身份資料</h3>
+  <ul>
+    <li>登入方式。學校信箱登入會使用透過一次性驗證碼驗證的學校信箱。目前認證支援 <code>@u.nus.edu</code>（NUS）、<code>@e.ntu.edu.sg</code>（NTU）、<code>@smu.edu.sg</code>（SMU）、<code>@mymail.sutd.edu.sg</code>（SUTD）、<code>@singaporetech.edu.sg</code>（SIT）和 <code>@suss.edu.sg</code>（SUSS）。該清單會隨支援範圍調整；App 登入頁始終顯示當前清單。</li>
+    <li>Apple 登入帳號識別符號，當你選擇 Apple 登入時使用。Apple 會向 BuddyNow 提供穩定的、僅適用於本 App 的帳號識別符號。我們用該識別符號查詢或建立你的 BuddyNow 帳號。我們不會把 Apple 登入用於學校認證。</li>
+    <li>你自行設定的暱稱。暱稱不會從信箱字首自動生成。</li>
+    <li>年齡或由出生年份推導的年齡，用於確認你在建立資料時已滿 18 歲。</li>
+    <li>性別選項：女性、男性、非二元，或跳過。</li>
+    <li>頭像設定：由兩個數字選項組成的程式化植物圖示，不是照片。</li>
+    <li>學校資訊。學校信箱帳號的學校資訊由學校信箱域名推導得出，並作為學校認證訊號展示。Apple 帳號不會獲得該訊號。</li>
+    <li>Apple 帳號的內部佔位欄位，包括不可投遞的合成信箱值和內部學校標記。這些只是儲存實現細節，不會作為學校或學校信箱公開展示。</li>
+  </ul>
+
+  <h3>活動資料</h3>
+  <ul>
+    <li>每日社交狀態，例如想聊天、想安靜、無偏好。該狀態會在 UTC 每日零點重置。</li>
+    <li>活動貼文：活動型別、集合地點文字、可選備註、距離範圍，以及在你授權定位且裝置返回足夠準確結果時使用的前臺精確定位快照。如果定位不可用或精度不足，貼文不會附帶任何位置，展示給其他人時也不帶距離。貼文有效期為 60 分鐘。</li>
+    <li>貼文申請及狀態：待處理、已透過、已拒絕或已撤回。</li>
+    <li>配對記錄，即某個申請被透過後，兩名使用者與對應貼文之間的記錄。</li>
+    <li>配對雙方之間的一對一聊天訊息。每條訊息 1 至 500 個字元，每個配對最多 200 條訊息。</li>
+    <li>見面後的評價：是否見到、評價傾向、固定標籤（如準時、友好、遲到、難找到）以及可選的私密簡短備註。正面標籤會帶計數顯示在你的公開資料上。<strong>負面標籤只有在至少三個不同的人各自獨立選擇了同一個標籤之後，才會公開顯示在你的資料上</strong>——同一個人反覆評價永遠無法單獨越過這個閾值。未達閾值時，負面標籤只有我們的安全審閱看得到。公開的「未碰面」標記同理，需要至少兩個不同的人。可選的私密備註對任何人都不公開展示。</li>
+    <li>信任計數，例如已完成見面次數和放鴿子次數。</li>
+  </ul>
+
+  <h3>安全資料</h3>
+  <ul>
+    <li>使用者對其他使用者提交的檢舉，包括檢舉類別、可選說明，以及若檢舉是在某場聊天裡發起則附帶的 match-id 上下文。被檢舉者不會被通知有人檢舉了 ta。</li>
+    <li>安全團隊在調查過程中加入的內部稽核備註。這些備註僅管理員可見，不會展示給檢舉者或被檢舉者。</li>
+    <li>使用者之間的封鎖記錄。封鎖是靜默的——被封鎖者不會被通知，雙方互相不可見。</li>
+  </ul>
+
+  <h3>運營資料</h3>
+  <ul>
+    <li>會話資訊，包括會話 ID、雜湊後的令牌、30 天有效期和撤銷狀態。</li>
+    <li>一次性驗證碼限流時間戳，用於 60 分鐘滑動視窗內的防濫用限制。</li>
+    <li>若你授予通知許可權，App 會儲存推送通知令牌。移動端使用 Expo push token；Expo 會按需透過 Apple Push Notification service 或 Google FCM 轉發通知。僅用於傳送配對 / 訊息通知。登出帳號或退出登入時清除。</li>
+    <li>結構化伺服器日誌，其中可能包含使用者 ID 字串，用於運營和安全排查。日誌不包含信箱地址，也不包含訊息或檢舉正文。</li>
+    <li>Sentry 採集的崩潰和未捕獲異常事件——堆疊、環境標籤、構建版本。我們不會有意傳送信箱、訊息正文、檢舉正文或位置。業務正常錯誤（限速、引數校驗失敗、會話過期等）會被過濾掉。</li>
+  </ul>
+
+  <h3>我們不收集的資料</h3>
+  <p>我們不收集真實姓名、手機號、照片、政府身份證件、支付資訊、住址、通訊錄、後臺定位、行為分析資料、追蹤畫素、廣告 ID，也不使用 Facebook SDK、Google Analytics 等行為追蹤 SDK。Sentry 崩潰上報已啟用——見 § 6 共享與處理方瞭解 Sentry 接收什麼以及如何受限。</p>
+
+  <h2>3. 我們為什麼使用這些資料</h2>
+  <table>
+    <thead><tr><th>目的</th><th>使用的資料</th></tr></thead>
+    <tbody>
+      <tr><td>認證帳號、在適用時驗證學校狀態，並防止濫用</td><td>學校信箱、驗證碼記錄、學校域名、Apple 帳號識別符號、會話、限流時間戳</td></tr>
+      <tr><td>建立和維護你的個人資料</td><td>暱稱、年齡、性別選項、頭像設定、適用時的學校認證資訊</td></tr>
+      <tr><td>展示一小時活動貼文並完成配對</td><td>活動型別、集合地點、備註、距離範圍、可選的前臺精確定位快照、申請、配對</td></tr>
+      <tr><td>在透過申請後開啟一對一聊天</td><td>配對記錄和聊天訊息</td></tr>
+      <tr><td>支援信任與安全稽核</td><td>評價、檢舉、封鎖、信任計數、相關運營日誌</td></tr>
+      <tr><td>維護安全、排查服務問題並執行使用限制</td><td>會話、雜湊令牌、日誌、限流時間戳</td></tr>
+      <tr><td>履行法律義務並處理投訴</td><td>與請求相關的帳號、安全、運營和審計記錄</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. 同意與撤回</h2>
+  <p>建立帳號並使用 BuddyNow，即表示你同意我們為本政策所述目的收集、使用和披露個人資料。部分資料是提供服務所必需的。例如，我們需要學校信箱或 Apple 帳號識別符號來認證你的帳號，也需要貼文和申請資料完成配對。</p>
+  <p>你可以在 App 內刪除帳號，或聯絡 <a href="mailto:support@astralogy.org">support@astralogy.org</a> 撤回同意。如果你撤回的是 BuddyNow 運營所必需的資料授權，我們可能無法繼續向你提供服務。在需要人工處理的撤回請求中，我們會在完成前說明可能後果。</p>
+
+  <h2>5. 定位</h2>
+  <p>定位是可選的，只在前臺使用，並用於附近配對。如果你授權定位，搭搭會向裝置請求當前定位快照，並且只在裝置報告的精度足夠時把座標傳送給後端。合格的定位結果會短暫快取，目前最長約 3 分鐘，用於瀏覽、發帖和申請時保持同一套附近計算，而不是反覆請求裝置定位。</p>
+  <p>如果你拒絕定位、關閉定位，或裝置返回的位置精度不足，搭搭不會替你估算位置。你仍可正常使用，只是不帶距離：你會看到「不限距離」的貼文檢視，你釋出的貼文展示給其他人時也不帶距離。學校不是配對邊界：當你共享精確位置時，只要雙方位置都在所選距離範圍內，不同學校之間、以及與沒有學校標識的使用者之間，都可以互相看到附近貼文。</p>
+  <p>其他使用者不會收到你的原始座標或精確米數。公開距離會分檔顯示：約 0–100 米顯示為「附近」；101–400 米顯示為「0.4km」；401–700 米顯示為「0.7km」；701–1000 米顯示為「1.0km」；更遠距離繼續按類似的粗略公里檔位向上取整。搭搭不收集後臺定位，也不會持續追蹤你的移動軌跡。</p>
+
+  <h2>6. 共享與處理方</h2>
+  <p>我們不出售個人資料。我們只會在運營 BuddyNow、遵守法律、保護使用者或使用服務提供商所必要的範圍內共享資料，並要求相關服務提供商遵守適當的保密和安全要求。</p>
+  <table>
+    <thead><tr><th>處理方</th><th>作用</th><th>處理的資料</th><th>地點說明</th></tr></thead>
+    <tbody>
+      <tr><td>Microsoft Azure</td><td>BuddyNow API 與資料庫所在虛擬機器託管</td><td>BuddyNow 後端儲存和處理的全部服務資料</td><td>當前生產虛擬機器位於 Azure Japan West，除非後續重新配置並另行記錄</td></tr>
+      <tr><td>Cloudflare</td><td><code>api.astralogy.org</code> 的 DNS、TLS 與 Cloudflare Tunnel 入口</td><td>請求路由後設資料，例如 IP 地址、host、path、user-agent 和 TLS 連線後設資料。除其代理的正常 API 流量外，Cloudflare 不接收資料庫內容。</td><td>Cloudflare 全球運營；請求後設資料可能在新加坡境外處理</td></tr>
+      <tr><td>Apple Inc.</td><td>Apple 登入身份提供方</td><td>認證 Apple 登入所需的 Apple identity token 和僅適用於本 App 的 Apple 帳號識別符號。BuddyNow 儲存該識別符號，不儲存你的 Apple 密碼。</td><td>Apple 全球運營；Apple 登入資料可能在新加坡境外處理</td></tr>
+      <tr><td>Resend（Resend, Inc.）</td><td>傳送一次性登入碼的事務郵件服務</td><td>學校信箱地址，以及傳送學校信箱登入郵件所需的驗證碼郵件正文。OTP 本身 10 分鐘過期。</td><td>Resend 總部位於美國，驗證碼郵件處理涉及向新加坡境外傳輸</td></tr>
+      <tr><td>Sentry（Functional Software Inc.）</td><td>後端和 Mobile 崩潰 / 錯誤上報</td><td>錯誤堆疊、環境標籤、構建版本。已顯式關閉 tracing 和 profiling，關閉預設 PII 採集，並過濾掉業務正常錯誤（RATE_LIMITED、SESSION_EXPIRED、引數校驗失敗等）。不傳送信箱、訊息正文、檢舉正文或位置。</td><td>Sentry 總部位於美國；資料傳輸至新加坡境外</td></tr>
+      <tr><td>Expo Push Service / Apple Push Notification service（APNs）/ Google Firebase Cloud Messaging（FCM）</td><td>推送通知投遞</td><td>Expo push token 和通知內容（如「你有新的配對」）。Expo 會按需將通知轉發給 APNs 或 FCM。僅在你授予通知許可權時使用。</td><td>Expo、Apple 和 Google 全球運營；推送內容可能經過新加坡境外的基礎設施</td></tr>
+      <tr><td>Better Stack</td><td>外部可用性監控</td><td>對公開 <code>/health</code> 介面的自動請求和可用性結果後設資料。Better Stack 未被配置為流量代理或產品分析服務。</td><td>Better Stack 全球運營；健康檢查後設資料可能在新加坡境外處理</td></tr>
+    </tbody>
+  </table>
+  <p>如個人資料被傳輸至新加坡境外，我們會採取措施，力求確保接收方提供與新加坡《2012 年個人資料保護法》（及其修訂）相當的保護水平。</p>
+
+  <h2>7. 資料保留期限</h2>
+  <ul>
+    <li><strong>會話：</strong>30 天滑動過期；登出或登出帳號時立即吊銷。</li>
+    <li><strong>活動貼文和定位快照：</strong>貼文實時展示 60 分鐘，之後轉為只讀或從發現列表過期。與貼文、申請或配對記錄相關的定位快照，只會在配對、安全稽核、帳號刪除處理或爭議上下文所需期間保留；如與已刪除帳號相關，會按 § 8 去標識化。</li>
+    <li><strong>聊天訊息和評價：</strong>為對方視角、信任與安全、質量觀察而保留。登出帳號時，sender / reviewer / reviewee ID 會在適用處置空；訊息內容、評價標籤和私密備註可能保留為假名化資料，因為這些內容可能包含使用者自行輸入的上下文。</li>
+    <li><strong>檢舉記錄：</strong>自建立起保留 <strong>24 個月</strong>作為安全審計訊號，即使雙方都登出也會保留（§ 8 中將使用者 ID 置空，正文和類別保留）。24 個月後，已完成處理（actioned / dismissed）的檢舉會被刪除。</li>
+    <li><strong>OTP 限流時間戳：</strong>60 分鐘滑動視窗內的防濫用保護。</li>
+    <li><strong>運營日誌</strong>（請求後設資料、user-agent、時間戳）：自動輪轉並限定總量，舊記錄會被持續覆蓋，不會無限累積。以當前流量計算實際遠短於 30 天，但這是容量上限而非日曆上限——我們不承諾一個確切的天數。</li>
+    <li><strong>Sentry 崩潰事件：</strong>按 Sentry 預設保留 30 天。</li>
+    <li>不再直接識別你帳號的記錄，只會在安全稽核、法律合規、防濫用、保留對方上下文或彙總服務完整性所需期間保留。我們至少每 24 個月複核一次這些保留記錄。</li>
+  </ul>
+
+  <h2>7a. 資料洩露應對</h2>
+  <p>如發生可能對使用者造成重大傷害的個人資料洩露——例如信箱、聊天內容或檢舉內容被未經授權存取——我們將：</p>
+  <ul>
+    <li>在察覺後 <strong>3 個日曆日內</strong>按 PDPA 第 26D 條通知新加坡個人資料保護委員會（PDPC）。</li>
+    <li>在臺灣，依《個人資料保護法》第 12 條通知受影響的當事人，並在法律要求時向主管機關通報。</li>
+    <li>在香港，通知受影響使用者，並向個人資料私隱專員公署（PCPD）通報。</li>
+    <li>無不當延遲地通知受影響使用者，告知洩露涉及的資料類別和你可以採取的步驟。</li>
+    <li>採取合理措施控制洩露範圍並防止再次發生。</li>
+  </ul>
+
+  <h2>8. 刪除帳號、去標識化與假名化</h2>
+  <p>當你透過 <code>DELETE /me</code> 或 App 內刪除流程刪除帳號時，BuddyNow 會採用兩類處理方式。部分保留的自由文字欄位中，可能仍包含你或其他使用者自行輸入的個人資料，因此我們將其描述為在可行時去標識化或假名化，而不是完全匿名化。</p>
+  <h3>刪除或撤銷的資料</h3>
+  <ul>
+    <li>所有會話會立即被撤銷。</li>
+    <li>你的帳號會被標記為待刪除，並進入 7 天寬限期。寬限期內，正常登入後的帳號操作會被阻止。</li>
+    <li>仍在有效期內的貼文會被自動取消，並且該帳號會從使用者可見的貼文、申請、配對、聊天和檢舉介面中隱藏。</li>
+    <li>公開信任計數，包括出勤 / 放鴿子計數，會立即清零。</li>
+    <li>如果你在 7 天期限前用新的 OTP 再次登入，可以恢復帳號身份和保留的封鎖列表；但已放棄的貼文、申請、配對和聊天不會恢復為產品中的實時狀態。</li>
+    <li>7 天期限後，自動清理任務會永久刪除帳號行、學校信箱或 Apple 帳號識別符號、推送令牌、OTP 與限流資料、反饋正文，以及該使用者擁有的封鎖列表，但下方說明的有限安全保留記錄除外。</li>
+  </ul>
+  <h3>去標識化或假名化後保留的資料</h3>
+  <ul>
+    <li>申請、配對、貼文歸屬和見面狀態會把使用者 ID 替換為 null，同時在必要時保留狀態、彙總計數和對方視角上下文。</li>
+    <li>聊天訊息會把傳送者 ID 替換為 null，但保留訊息正文，使另一方的聊天檢視仍然可理解，因此屬於假名化處理。</li>
+    <li>評價會把評價者和被評價者 ID 替換為 null，同時可能保留結果、評價傾向、標籤和私密備註，用於信任、質量和安全觀察。</li>
+    <li>檢舉會把檢舉者和被檢舉者 ID 替換為 null，同時保留正文和類別，作為安全審計訊號，屬於去標識化或假名化處理。</li>
+    <li>封鎖記錄會在 7 天寬限期內保留，使恢復帳號後仍保留安全設定。服務端封鎖過濾使用穩定帳號標識，例如學校信箱帳號使用學校信箱雜湊，因此刪除並重新註冊的帳號不能輕易繞過其他使用者的安全封鎖；使用者自己擁有的封鎖列表會在硬刪除時移除，但為保護其他使用者封鎖效果所需的有限記錄除外。</li>
+    <li>反饋會把暱稱和使用者 ID 替換為 null，並在硬刪除時把正文替換為刪除標記，屬於去標識化或假名化處理。</li>
+  </ul>
+
+  <h2>9. 你的權利</h2>
+  <p>你可以請求訪問自己的個人資料、要求更正不準確資料、撤回同意，或要求刪除帳號。適用哪部法律取決於你身處何地，各自的時限也不同。我們按對你最短的那個執行。</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>你所在地</th><th>適用法律</th><th>查閱請求</th><th>更正 / 刪除</th><th>主管機關</th></tr></thead>
+      <tbody>
+        <tr><td>新加坡</td><td>PDPA 2012</td><td>在合理可行範圍內儘快</td><td>在合理可行範圍內儘快</td><td>個人資料保護委員會（PDPC）</td></tr>
+        <tr><td>臺灣</td><td>個人資料保護法</td><td><strong>15 日</strong>內決定是否受理，得延長一次 15 日（第 13 條）</td><td><strong>30 日</strong>，得延長一次 30 日（第 13 條）</td><td>數位發展部／目的事業主管機關</td></tr>
+        <tr><td>香港</td><td>個人資料（私隱）條例（第 486 章）</td><td><strong>40 日</strong></td><td><strong>40 日</strong></td><td>個人資料私隱專員公署（PCPD）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul>
+    <li><strong>查閱：</strong>請發郵件給資料保護負責人 <a href="mailto:support@astralogy.org">support@astralogy.org</a>。App 內沒有匯出按鈕——服務端雖有匯出介面，但你在 App 裡觸達不到，所以郵件才是真正可用的途徑。我們會核驗請求，並在上表所列、適用於你所在地的時限內答覆。</li>
+    <li><strong>刪除：</strong>使用 <code>DELETE /me</code>，或使用 App 內帳號刪除流程。</li>
+    <li><strong>更正：</strong>在 App 內更新可編輯資料欄位，或聯絡資料保護負責人。</li>
+    <li><strong>投訴：</strong>請先聯絡資料保護負責人。我們力爭在 7 個工作日內確認收到，並在上表所列、適用於你所在地的法定時限內答覆。如問題仍未解決，你可以向你所在地的主管機關投訴：新加坡個人資料保護委員會（PDPC）、臺灣《個人資料保護法》下的主管機關，或香港個人資料私隱專員公署（PCPD）。</li>
+  </ul>
+
+  <h2>10. 安全</h2>
+  <p>我們使用學校信箱驗證碼或 Apple 登入、雜湊後的會話令牌、透過 SecureStore 存入 iOS Keychain 的本地會話（若未來支援 Android 將使用 Android Keystore）、所有 API 流量 TLS、限流、用於學校認證的服務端學校域名白名單，以及不記錄信箱和正文內容的結構化日誌。沒有任何網際網路服務能保證絕對安全，但 BuddyNow 的設計原則是少收集資料，並保護服務執行所必需的資料。</p>
+
+  <h2>11. 年齡限制</h2>
+  <p>搭搭 BuddyNow 面向年滿 18 歲的使用者。未滿 18 歲的使用者不得建立帳號；App 內的出生年份選擇會強制這一下限。如發現未成年帳號，會被刪除。</p>
+
+  <h2>12. 政策變更</h2>
+  <p>隨著 BuddyNow 發展，我們可能更新本政策。如有重大變更，我們會在可行時透過 App 或郵件通知。更新後的政策會顯示新的「最後更新」日期。</p>
+
+  <footer>
+    <p>相關檔案：<a href="/legal/terms.html">服務條款</a>、<a href="/legal/guidelines.html">社群準則</a>、<a href="/legal/cookies.html">Cookie 與本地儲存說明</a>。</p>
+  </footer>
+  </div>
 </main>
+<script src="/legal/lang.js"></script>
 </body>
 </html>
