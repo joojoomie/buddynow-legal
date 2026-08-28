@@ -102,6 +102,43 @@ ZH_HANT_BANNED = [
     ("運營",           "營運"),
     ("質量",           "品質"),
     ("約會物件",       "約會對象 — 物件 is a programming object"),
+    # --- second batch, 2026-08-29 ---------------------------------------
+    # Everything below was still sitting in the published zh-Hant blocks after
+    # the first pass. The first four are the s2twp failure the app's own i18n
+    # header warns about: it converts SOFTWARE jargon, so 类型→型別 (a
+    # programming `type`), 权限→許可權, 参数→引數, 扩展→擴充套件. They read as
+    # gibberish-adjacent in a privacy policy.
+    ("型別",     "類型"),
+    ("許可權",   "權限"),
+    ("引數",     "參數"),
+    ("擴充套件", "擴大"),
+    ("識別符號", "識別碼"),
+    ("構建版本", "建置版本"),
+    # 高校 means SENIOR HIGH SCHOOL in Taiwan (and nothing in Hong Kong). It
+    # was in the Terms describing who may sign in — the opposite of what an
+    # 18+ app wants to say.
+    ("高校",     "大學"),
+    ("退出登入", "登出 (what the app itself says)"),
+    ("推送通知", "推播通知"),
+    ("崩潰",     "當機"),
+    ("令牌",     "權杖"),
+    ("限流",     "頻率限制"),
+    ("域名",     "網域 (matches the app's SCHOOL_NOT_SUPPORTED copy)"),
+    ("前臺",     "前景"),
+    ("後臺",     "背景"),
+    ("移動 App", "行動 App"),
+    ("移動端",   "App 端"),
+    ("反饋",     "回饋"),
+    ("封禁",     "停權"),
+    ("吊銷",     "撤銷"),
+    ("事務郵件", "交易郵件"),
+    ("校驗",     "驗證"),
+    (" ta ",     "對方 — mainland internet pronoun"),
+    # One name per concept, matching the app: 標章 (not 標識/徽章), 配對
+    # (not a bare English "match").
+    ("標識",     "標章"),
+    ("徽章",     "標章"),
+    ("match",    "配對"),
 ]
 
 # Navigation instructions must match the real UI. The support page used to say
