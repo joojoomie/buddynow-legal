@@ -19,7 +19,7 @@
   </header>
 
   <section class="notice">
-    <p><strong>Short version:</strong> BuddyNow is for users aged 18 or above. You may sign in with a supported school email or with Sign in with Apple. Users who sign in with a supported university email get a verified-email badge; the institution itself is never shown to other users. Apple users are full users without that badge. We use your sign-in data, posts, location mode, applications, matches, and messages to run the matching experience, and reports, blocks, and ratings to keep the community safer. When location is enabled, BuddyNow uses foreground precise-location snapshots for nearby matching; when it is unavailable, BuddyNow does not estimate a position for you — you simply use the app without a distance. We show other users only coarse distance labels, not your coordinates or exact meters. We use a narrow crash-reporting service (Sentry) to fix bugs, configured to send no personal content. We do not sell personal data, run ads, use behavioral analytics, collect background location, or collect photos, phone numbers, government IDs, contacts, or payment information.</p>
+    <p><strong>Short version:</strong> BuddyNow is for users aged 18 or above. You may sign in with a supported school email or with Sign in with Apple. Users who sign in with a supported university email get a verified-email badge. Apple users are full users without that badge. We use your sign-in data, posts, location mode, applications, matches, and messages to run the matching experience, and reports, blocks, and ratings to keep the community safer. When location is enabled, BuddyNow uses foreground precise-location snapshots for nearby matching; when it is unavailable, BuddyNow does not estimate a position for you — you simply use the app without a distance. We show other users only coarse distance labels, not your coordinates or exact meters. We use a narrow crash-reporting service (Sentry) to fix bugs, configured to send no personal content. We do not sell personal data, run ads, use behavioral analytics, collect background location, or collect photos, phone numbers, government IDs, contacts, or payment information.</p>
   </section>
 
   <h2>1. Who We Are</h2>
@@ -35,7 +35,7 @@
     <li>Age or birth-year-derived age used to confirm you are 18 or above during profile creation.</li>
     <li>Gender selection: female, male, non-binary, or skip.</li>
     <li>Avatar settings: two numeric choices for a procedural plant icon, not a photo.</li>
-    <li>School, for university-email accounts, derived from your email domain. It is stored and used internally (for example, aggregate sign-up statistics) but is <strong>not shown to other users</strong>: what they see is a badge that says the email address was verified, without naming the institution. Apple accounts do not receive that badge.</li>
+    <li>School, for university-email accounts, derived from your email domain. It is stored and used internally, for example for aggregate sign-up statistics. Other users see a badge confirming your email address was verified. <strong>App versions released before September 2026 also display your institution's short name next to that badge</strong>; from that release onwards the institution is no longer shown to anyone but you. Apple accounts do not receive the badge.</li>
     <li>Internal account placeholders for Apple accounts, including a synthetic non-deliverable email value and an internal school sentinel. These are storage-only implementation details and are not shown publicly as a school or school email.</li>
   </ul>
 
@@ -193,7 +193,7 @@
   </header>
 
   <section class="notice">
-    <p><strong>简要说明：</strong>BuddyNow 面向年满 18 岁的用户。你可以使用受支持的学校邮箱登录，也可以使用 Apple 登录。使用受支持大学邮箱登录的用户会获得「邮箱已验证」徽章；学校名称不会展示给其他用户。Apple 登录用户是完整用户，只是没有该徽章。我们使用你的登录数据、帖子、定位模式、申请、匹配和消息完成匹配体验，使用举报、拉黑和评价维护社区安全。开启定位时，搭搭会使用前台精确定位快照做附近匹配；定位不可用时，搭搭不会替你估算位置——你仍可正常使用，只是不带距离。其他用户只会看到粗略距离标签，不会看到你的坐标或精确米数。我们使用一项窄范围的崩溃上报服务（Sentry）来修 bug，配置为不发送任何个人内容。我们不出售个人数据，不投放广告，不使用行为分析，不收集后台定位，也不收集照片、手机号、政府身份证件、通讯录或支付信息。</p>
+    <p><strong>简要说明：</strong>BuddyNow 面向年满 18 岁的用户。你可以使用受支持的学校邮箱登录，也可以使用 Apple 登录。使用受支持大学邮箱登录的用户会获得「邮箱已验证」徽章。Apple 登录用户是完整用户，只是没有该徽章。我们使用你的登录数据、帖子、定位模式、申请、匹配和消息完成匹配体验，使用举报、拉黑和评价维护社区安全。开启定位时，搭搭会使用前台精确定位快照做附近匹配；定位不可用时，搭搭不会替你估算位置——你仍可正常使用，只是不带距离。其他用户只会看到粗略距离标签，不会看到你的坐标或精确米数。我们使用一项窄范围的崩溃上报服务（Sentry）来修 bug，配置为不发送任何个人内容。我们不出售个人数据，不投放广告，不使用行为分析，不收集后台定位，也不收集照片、手机号、政府身份证件、通讯录或支付信息。</p>
   </section>
 
   <h2>1. 我们是谁</h2>
@@ -209,7 +209,7 @@
     <li>年龄或由出生年份推导的年龄，用于确认你在创建资料时已满 18 岁。</li>
     <li>性别选项：女性、男性、非二元，或跳过。</li>
     <li>头像设置：由两个数字选项组成的程序化植物图标，不是照片。</li>
-    <li>学校信息。学校邮箱账号的学校信息由学校邮箱域名推导得出，并作为学校认证信号展示。Apple 账号不会获得该信号。</li>
+    <li>学校信息。使用大学邮箱的账号，其学校信息由邮箱域名推导得出，会被存储并供内部使用（例如汇总的注册统计）。其他用户会看到一个确认你邮箱已验证的徽章。<strong>2026 年 9 月之前发布的 App 版本会在该徽章旁一并显示你所在机构的简称</strong>；自该版本起，机构名称只有你自己可见。Apple 账号不会获得该徽章。</li>
     <li>Apple 账号的内部占位字段，包括不可投递的合成邮箱值和内部学校标记。这些只是存储实现细节，不会作为学校或学校邮箱公开展示。</li>
   </ul>
 
@@ -367,7 +367,7 @@
   </header>
 
   <section class="notice">
-    <p><strong>簡要說明：</strong>BuddyNow 面向年滿 18 歲的使用者。你可以使用受支援的學校信箱登入，也可以使用 Apple 登入。使用受支援大學信箱登入的使用者會獲得「信箱已驗證」徽章；學校名稱不會展示給其他使用者。Apple 登入使用者是完整使用者，只是沒有該徽章。我們使用你的登入資料、貼文、定位模式、申請、配對和訊息完成配對體驗，使用檢舉、封鎖和評價維護社群安全。開啟定位時，搭搭會使用前臺精確定位快照做附近配對；定位不可用時，搭搭不會替你估算位置——你仍可正常使用，只是不帶距離。其他使用者只會看到粗略距離標籤，不會看到你的座標或精確米數。我們使用一項窄範圍的崩潰上報服務（Sentry）來修 bug，配置為不傳送任何個人內容。我們不出售個人資料，不投放廣告，不使用行為分析，不收集後臺定位，也不收集照片、手機號、政府身份證件、通訊錄或支付資訊。</p>
+    <p><strong>簡要說明：</strong>BuddyNow 面向年滿 18 歲的使用者。你可以使用受支援的學校信箱登入，也可以使用 Apple 登入。使用受支援大學信箱登入的使用者會獲得「信箱已驗證」徽章。Apple 登入使用者是完整使用者，只是沒有該徽章。我們使用你的登入資料、貼文、定位模式、申請、配對和訊息完成配對體驗，使用檢舉、封鎖和評價維護社群安全。開啟定位時，搭搭會使用前臺精確定位快照做附近配對；定位不可用時，搭搭不會替你估算位置——你仍可正常使用，只是不帶距離。其他使用者只會看到粗略距離標籤，不會看到你的座標或精確米數。我們使用一項窄範圍的崩潰上報服務（Sentry）來修 bug，配置為不傳送任何個人內容。我們不出售個人資料，不投放廣告，不使用行為分析，不收集後臺定位，也不收集照片、手機號、政府身份證件、通訊錄或支付資訊。</p>
   </section>
 
   <h2>1. 我們是誰</h2>
@@ -383,7 +383,7 @@
     <li>年齡或由出生年份推導的年齡，用於確認你在建立資料時已滿 18 歲。</li>
     <li>性別選項：女性、男性、非二元，或跳過。</li>
     <li>頭像設定：由兩個數字選項組成的程式化植物圖示，不是照片。</li>
-    <li>學校資訊。學校信箱帳號的學校資訊由學校信箱域名推導得出，並作為學校認證訊號展示。Apple 帳號不會獲得該訊號。</li>
+    <li>學校資訊。使用大學信箱的帳號，其學校資訊由信箱域名推導得出，會被儲存並供內部使用（例如彙總的註冊統計）。其他使用者會看到一個確認你信箱已驗證的徽章。<strong>2026 年 9 月之前釋出的 App 版本會在該徽章旁一併顯示你所在機構的簡稱</strong>；自該版本起，機構名稱只有你自己可見。Apple 帳號不會獲得該徽章。</li>
     <li>Apple 帳號的內部佔位欄位，包括不可投遞的合成信箱值和內部學校標記。這些只是儲存實現細節，不會作為學校或學校信箱公開展示。</li>
   </ul>
 

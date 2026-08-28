@@ -31,6 +31,21 @@ Inside each file the three languages sit in sibling blocks:
 `legal/legal.css` shows exactly one of them; `legal/lang.js` decides which
 and draws the `EN / 简 / 繁` switch.
 
+### Check your work
+
+```bash
+python3 tools/check-languages.py
+```
+
+It greps for one marker phrase per load-bearing fact per language and fails
+if a fact is present in one language but not another. It exists because
+exactly that happened: a correction went into the English privacy text and
+the Simplified equivalent was missed, so for a while the two said opposite
+things about whether the badge names your university. Matching section
+counts would not have caught it — the blocks were the same shape and said
+different things. Add a row to `MARKERS` whenever you add a fact worth
+holding onto.
+
 ### The three rules
 
 1. **Change all three blocks, or none.** They are the same document in three
