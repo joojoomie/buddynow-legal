@@ -68,6 +68,53 @@ MARKERS: dict[str, list[tuple[str, list[str]]]] = {
 }
 
 
+
+# ---------------------------------------------------------------------------
+# Second pass: vocabulary that must NEVER appear in the zh-Hant blocks.
+#
+# The presence check above cannot catch any of this — it asks "did this fact
+# survive into all three languages", and a machine-converted word is present,
+# just wrong. Every entry below was actually shipped on the live pages and
+# found by a human reading them in 2026-08.
+#
+# These come from running the Simplified text through `opencc s2twp` and not
+# reviewing the output. Two of them were not cosmetic:
+#   釋出者可以透過 — Terms §3, the clause that DEFINES the service. s2twp
+#     mapped 發布→釋出 and 通過→透過 independently, and the result is not a
+#     sentence in any variety of Chinese.
+#   遮蔽 — the app says 封鎖. The support page told users to look for a screen
+#     that does not exist under that name, on the page that is our Guideline
+#     1.2 evidence.
+#
+# `replacement` is shown in the failure message so the fix is unambiguous.
+ZH_HANT_BANNED = [
+    ("釋出者可以透過", "發布者可以核准 — this is not a sentence"),
+    ("釋出",           "發布"),
+    ("遮蔽",           "封鎖 (matches the app's own wording)"),
+    ("響應時間",       "回應時間"),
+    # 實時 is checked with a guard: it is also the seam of 誠實+時 ("honest,
+    # when…"), and a blind replace turned 保持誠實時 into 保持誠即時 in this
+    # very repo. Same word-boundary failure the app's content filter hit.
+    ("實時", "即時", ("誠實時", "真實時", "確實時", "落實時", "紮實時")),
+    ("私信",           "私訊"),
+    ("發帖",           "發文"),
+    ("獲客",           "開發客戶"),
+    ("運營",           "營運"),
+    ("質量",           "品質"),
+    ("約會物件",       "約會對象 — 物件 is a programming object"),
+]
+
+# Navigation instructions must match the real UI. The support page used to say
+# 「我的 → 設定 → …」, but there is no 「我的」 tab: you tap your avatar in the
+# top-right of Home. A user in distress following those directions to block
+# someone could not find the screen.
+BANNED_EVERYWHERE = [
+    ("我的 → 設定",      "點首頁右上角的頭像 → 設定 (there is no 我的 tab)"),
+    ("我的 → 设置",      "点首页右上角的头像 → 设置 (there is no 我的 tab)"),
+    ("Profile → Settings", "tap your avatar (top right of Home) → Settings"),
+]
+
+
 def blocks_of(html: str) -> dict[str, str]:
     out = {}
     for tag in LANGS:
@@ -95,11 +142,34 @@ def main() -> int:
                 print(f"[MISS] {rel} — {name}\n         absent from: {', '.join(missing)}")
             else:
                 print(f"[ ok ] {rel} — {name}")
+
+    # Second pass — forbidden vocabulary.
+    for rel in sorted(MARKERS):
+        path = root / rel
+        if not path.exists():
+            continue
+        html = path.read_text(encoding="utf-8")
+        hant = blocks_of(html)["zh-Hant"]
+        for entry in ZH_HANT_BANNED:
+            term, better = entry[0], entry[1]
+            exempt = entry[2] if len(entry) > 2 else ()
+            probe = hant
+            for phrase in exempt:
+                probe = probe.replace(phrase, "")
+            if term in probe:
+                failures += 1
+                print(f"[BAD ] {rel} — zh-Hant contains {term!r}; use {better}")
+        for term, better in BANNED_EVERYWHERE:
+            if term in html:
+                failures += 1
+                print(f"[BAD ] {rel} — contains {term!r}; use {better}")
+
     print()
     if failures:
-        print(f"{failures} fact(s) missing from at least one language.")
+        print(f"{failures} problem(s). A missing fact means one language lost "
+              "it; a BAD line means the wording is wrong, not absent.")
         return 1
-    print("All languages carry every checked fact.")
+    print("All languages carry every checked fact, with no banned wording.")
     return 0
 
 
