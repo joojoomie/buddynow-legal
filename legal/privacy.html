@@ -52,14 +52,14 @@
 
   <h3>Safety data</h3>
   <ul>
-    <li>Reports submitted by one user about another, including report category, optional body text, and the match-id context if the report was filed from a specific chat. The reported user is never told a report was filed.</li>
+    <li>Reports submitted by one user about another, including report category, optional body text, and, where the client supplies it, the match-id context of the conversation the report came from. The reported user is never told a report was filed.</li>
     <li>Internal reviewer notes added by our safety team during investigation. These are admin-only and never shown to either party.</li>
     <li>Blocks between users. Blocking creates silent bidirectional invisibility — the blocked user is not notified.</li>
   </ul>
 
   <h3>Operational data</h3>
   <ul>
-    <li>Sessions, including session ID, hashed token, 30-day expiry, and revocation status.</li>
+    <li>Sessions, including session ID, hashed token, 30-day expiry from sign-in, and revocation status.</li>
     <li>OTP rate-limit timestamps within a sliding 60-minute window.</li>
     <li>Push notification token if you grant notification permission. The mobile app uses Expo push tokens; Expo relays delivery through Apple Push Notification service or Google FCM as needed. Used only to deliver match / message alerts. Dropped on account deletion or sign-out.</li>
     <li>Structured server logs containing user ID strings for operations and security. Logs do not include email addresses or message/report bodies.</li>
@@ -110,10 +110,10 @@
 
   <h2>7. How Long We Keep Data</h2>
   <ul>
-    <li><strong>Sessions:</strong> 30-day sliding expiry; revoked immediately on sign-out or account deletion.</li>
+    <li><strong>Sessions:</strong> 30 days from sign-in, not extended by activity; revoked immediately on sign-out or account deletion.</li>
     <li><strong>Activity posts and location snapshots:</strong> posts are live for 60 minutes, then become read-only or expire from discovery. Location snapshots attached to posts, applications, or matching records are kept only while needed for matching, safety review, account deletion handling, or dispute context, and are de-identified per § 8 when tied to a deleted account.</li>
     <li><strong>Chat messages and ratings:</strong> retained for the counterparty's reference, trust and safety, and quality review. On account deletion, sender / reviewer / reviewee IDs are nulled where applicable; message text, rating tags, and private note text may remain pseudonymized because they can contain user-entered context.</li>
-    <li><strong>Reports:</strong> retained for <strong>24 months</strong> from creation as a safety audit signal, even after both parties delete their accounts (user IDs nulled per § 8, body and category preserved). Terminal-status reports (actioned / dismissed) are deleted after 24 months.</li>
+    <li><strong>Reports:</strong> retained for <strong>24 months</strong> from creation as a safety audit signal, even after both parties delete their accounts (user IDs nulled per § 8, body and category preserved). All reports are deleted after 24 months, whatever their status.</li>
     <li><strong>OTP rate-limit timestamps:</strong> sliding 60-minute anti-abuse window.</li>
     <li><strong>Operational logs</strong> (request metadata, user-agent, timestamp): rotated automatically and capped at a fixed volume, so old entries are overwritten continuously rather than accumulating. In practice this is well under 30 days at current traffic, but it is a size limit, not a calendar one — we do not promise an exact number of days.</li>
     <li><strong>Sentry crash events:</strong> 30 days per Sentry's default retention.</li>
@@ -226,7 +226,7 @@
 
   <h3>安全数据</h3>
   <ul>
-    <li>用户对其他用户提交的举报，包括举报类别、可选说明，以及若举报是在某场聊天里发起则附带的 match-id 上下文。被举报者不会被通知有人举报了 ta。</li>
+    <li>用户对其他用户提交的举报，包括举报类别、可选说明，以及在客户端提供时附带的、举报所来自对话的 match-id 上下文。被举报者不会被通知有人举报了 ta。</li>
     <li>安全团队在调查过程中加入的内部审核备注。这些备注仅管理员可见，不会展示给举报者或被举报者。</li>
     <li>用户之间的拉黑记录。拉黑是静默的——被拉黑者不会被通知，双方互相不可见。</li>
   </ul>
@@ -284,10 +284,10 @@
 
   <h2>7. 数据保留期限</h2>
   <ul>
-    <li><strong>会话：</strong>30 天滑动过期；登出或注销账号时立即吊销。</li>
+    <li><strong>会话：</strong>自登录起 30 天，不因使用而延长；登出或注销账号时立即吊销。</li>
     <li><strong>活动帖子和定位快照：</strong>帖子实时展示 60 分钟，之后转为只读或从发现列表过期。与帖子、申请或匹配记录相关的定位快照，只会在匹配、安全审核、账号删除处理或争议上下文所需期间保留；如与已删除账号相关，会按 § 8 去标识化。</li>
     <li><strong>聊天消息和评价：</strong>为对方视角、信任与安全、质量观察而保留。注销账号时，sender / reviewer / reviewee ID 会在适用处置空；消息内容、评价标签和私密备注可能保留为假名化数据，因为这些内容可能包含用户自行输入的上下文。</li>
-    <li><strong>举报记录：</strong>自创建起保留 <strong>24 个月</strong>作为安全审计信号，即使双方都注销也会保留（§ 8 中将用户 ID 置空，正文和类别保留）。24 个月后，已完成处理（actioned / dismissed）的举报会被删除。</li>
+    <li><strong>举报记录：</strong>自创建起保留 <strong>24 个月</strong>作为安全审计信号，即使双方都注销也会保留（§ 8 中将用户 ID 置空，正文和类别保留）。24 个月后，所有举报都会被删除，无论处于什么状态。</li>
     <li><strong>OTP 限流时间戳：</strong>60 分钟滑动窗口内的防滥用保护。</li>
     <li><strong>运营日志</strong>（请求元数据、user-agent、时间戳）：自动轮转并限定总量，旧记录会被持续覆盖，不会无限累积。以当前流量计算实际远短于 30 天，但这是容量上限而非日历上限——我们不承诺一个确切的天数。</li>
     <li><strong>Sentry 崩溃事件：</strong>按 Sentry 默认保留 30 天。</li>
@@ -391,8 +391,8 @@
   <ul>
     <li>每日社交狀態，例如想聊天、想安靜、無偏好。該狀態會在 UTC 每日零點重置。</li>
     <li>活動貼文：活動型別、集合地點文字、可選備註、距離範圍，以及在你授權定位且裝置返回足夠準確結果時使用的前臺精確定位快照。如果定位不可用或精度不足，貼文不會附帶任何位置，展示給其他人時也不帶距離。貼文有效期為 60 分鐘。</li>
-    <li>貼文申請及狀態：待處理、已透過、已拒絕或已撤回。</li>
-    <li>配對記錄，即某個申請被透過後，兩名使用者與對應貼文之間的記錄。</li>
+    <li>貼文申請及狀態：待處理、已核准、已拒絕或已撤回。</li>
+    <li>配對記錄，即某個申請被核准後，兩名使用者與對應貼文之間的記錄。</li>
     <li>配對雙方之間的一對一聊天訊息。每條訊息 1 至 500 個字元，每個配對最多 200 條訊息。</li>
     <li>見面後的評價：是否見到、評價傾向、固定標籤（如準時、友好、遲到、難找到）以及可選的私密簡短備註。正面標籤會帶計數顯示在你的公開資料上。<strong>負面標籤只有在至少三個不同的人各自獨立選擇了同一個標籤之後，才會公開顯示在你的資料上</strong>——同一個人反覆評價永遠無法單獨越過這個閾值。未達閾值時，負面標籤只有我們的安全審閱看得到。公開的「未碰面」標記同理，需要至少兩個不同的人。可選的私密備註對任何人都不公開展示。</li>
     <li>信任計數，例如已完成見面次數和放鴿子次數。</li>
@@ -400,7 +400,7 @@
 
   <h3>安全資料</h3>
   <ul>
-    <li>使用者對其他使用者提交的檢舉，包括檢舉類別、可選說明，以及若檢舉是在某場聊天裡發起則附帶的 match-id 上下文。被檢舉者不會被通知有人檢舉了 ta。</li>
+    <li>使用者對其他使用者提交的檢舉，包括檢舉類別、可選說明，以及在客戶端提供時附帶的、檢舉所來自對話的 match-id 上下文。被檢舉者不會被通知有人檢舉了 ta。</li>
     <li>安全團隊在調查過程中加入的內部稽核備註。這些備註僅管理員可見，不會展示給檢舉者或被檢舉者。</li>
     <li>使用者之間的封鎖記錄。封鎖是靜默的——被封鎖者不會被通知，雙方互相不可見。</li>
   </ul>
@@ -409,7 +409,7 @@
   <ul>
     <li>會話資訊，包括會話 ID、雜湊後的令牌、30 天有效期和撤銷狀態。</li>
     <li>一次性驗證碼限流時間戳，用於 60 分鐘滑動視窗內的防濫用限制。</li>
-    <li>若你授予通知許可權，App 會儲存推送通知令牌。移動端使用 Expo push token；Expo 會按需透過 Apple Push Notification service 或 Google FCM 轉發通知。僅用於傳送配對 / 訊息通知。登出帳號或退出登入時清除。</li>
+    <li>若你授予通知許可權，App 會儲存推送通知令牌。移動端使用 Expo push token；Expo 會按需透過 Apple Push Notification service 或 Google FCM 轉發通知。僅用於傳送配對 / 訊息通知。刪除帳號或退出登入時清除。</li>
     <li>結構化伺服器日誌，其中可能包含使用者 ID 字串，用於運營和安全排查。日誌不包含信箱地址，也不包含訊息或檢舉正文。</li>
     <li>Sentry 採集的崩潰和未捕獲異常事件——堆疊、環境標籤、構建版本。我們不會有意傳送信箱、訊息正文、檢舉正文或位置。業務正常錯誤（限速、引數校驗失敗、會話過期等）會被過濾掉。</li>
   </ul>
@@ -424,7 +424,7 @@
       <tr><td>認證帳號、在適用時驗證學校狀態，並防止濫用</td><td>學校信箱、驗證碼記錄、學校域名、Apple 帳號識別符號、會話、限流時間戳</td></tr>
       <tr><td>建立和維護你的個人資料</td><td>暱稱、年齡、性別選項、頭像設定、適用時的學校認證資訊</td></tr>
       <tr><td>展示一小時活動貼文並完成配對</td><td>活動型別、集合地點、備註、距離範圍、可選的前臺精確定位快照、申請、配對</td></tr>
-      <tr><td>在透過申請後開啟一對一聊天</td><td>配對記錄和聊天訊息</td></tr>
+      <tr><td>在核准申請後開啟一對一聊天</td><td>配對記錄和聊天訊息</td></tr>
       <tr><td>支援信任與安全稽核</td><td>評價、檢舉、封鎖、信任計數、相關運營日誌</td></tr>
       <tr><td>維護安全、排查服務問題並執行使用限制</td><td>會話、雜湊令牌、日誌、限流時間戳</td></tr>
       <tr><td>履行法律義務並處理投訴</td><td>與請求相關的帳號、安全、運營和審計記錄</td></tr>
@@ -458,10 +458,10 @@
 
   <h2>7. 資料保留期限</h2>
   <ul>
-    <li><strong>會話：</strong>30 天滑動過期；登出或登出帳號時立即吊銷。</li>
+    <li><strong>會話：</strong>自登入起 30 天，不因使用而延長；登出或刪除帳號時立即吊銷。</li>
     <li><strong>活動貼文和定位快照：</strong>貼文實時展示 60 分鐘，之後轉為只讀或從發現列表過期。與貼文、申請或配對記錄相關的定位快照，只會在配對、安全稽核、帳號刪除處理或爭議上下文所需期間保留；如與已刪除帳號相關，會按 § 8 去標識化。</li>
-    <li><strong>聊天訊息和評價：</strong>為對方視角、信任與安全、質量觀察而保留。登出帳號時，sender / reviewer / reviewee ID 會在適用處置空；訊息內容、評價標籤和私密備註可能保留為假名化資料，因為這些內容可能包含使用者自行輸入的上下文。</li>
-    <li><strong>檢舉記錄：</strong>自建立起保留 <strong>24 個月</strong>作為安全審計訊號，即使雙方都登出也會保留（§ 8 中將使用者 ID 置空，正文和類別保留）。24 個月後，已完成處理（actioned / dismissed）的檢舉會被刪除。</li>
+    <li><strong>聊天訊息和評價：</strong>為對方視角、信任與安全、質量觀察而保留。刪除帳號時，sender / reviewer / reviewee ID 會在適用處置空；訊息內容、評價標籤和私密備註可能保留為假名化資料，因為這些內容可能包含使用者自行輸入的上下文。</li>
+    <li><strong>檢舉記錄：</strong>自建立起保留 <strong>24 個月</strong>作為安全審計訊號，即使雙方都登出也會保留（§ 8 中將使用者 ID 置空，正文和類別保留）。24 個月後，所有檢舉都會被刪除，無論處於什麼狀態。</li>
     <li><strong>OTP 限流時間戳：</strong>60 分鐘滑動視窗內的防濫用保護。</li>
     <li><strong>運營日誌</strong>（請求後設資料、user-agent、時間戳）：自動輪轉並限定總量，舊記錄會被持續覆蓋，不會無限累積。以當前流量計算實際遠短於 30 天，但這是容量上限而非日曆上限——我們不承諾一個確切的天數。</li>
     <li><strong>Sentry 崩潰事件：</strong>按 Sentry 預設保留 30 天。</li>

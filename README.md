@@ -88,6 +88,10 @@ regenerate it, re-apply at least these:
 | 郵箱 | 信箱 |
 | 爽約 | 放鴿子 |
 | 訪問（資料） | 查閱 / 存取 |
+| 註銷／注销帳號 | 刪除帳號（**不是**登出） |
+| 通過（申請） | 核准（opencc 給 透過 = via） |
+| 非排他 | 非專屬（台灣法律用語） |
+| 當事方 | 當事人 |
 
 Quotation marks should be 「」, not “”.
 
