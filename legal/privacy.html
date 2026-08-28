@@ -19,7 +19,7 @@
   </header>
 
   <section class="notice">
-    <p><strong>Short version:</strong> BuddyNow is for users aged 18 or above. You may sign in with a supported school email or with Sign in with Apple. School-email users from supported university domains receive a verified-school signal; Apple users are full users but do not receive a school verification badge. We use your sign-in data, posts, location mode, applications, matches, and messages to run the matching experience, and reports, blocks, and ratings to keep the community safer. When location is enabled, BuddyNow uses foreground precise-location snapshots for nearby matching; when it is unavailable, BuddyNow does not estimate a position for you — you simply use the app without a distance. We show other users only coarse distance labels, not your coordinates or exact meters. We use a narrow crash-reporting service (Sentry) to fix bugs, configured to send no personal content. We do not sell personal data, run ads, use behavioral analytics, collect background location, or collect photos, phone numbers, government IDs, contacts, or payment information.</p>
+    <p><strong>Short version:</strong> BuddyNow is for users aged 18 or above. You may sign in with a supported school email or with Sign in with Apple. Users who sign in with a supported university email get a verified-email badge; the institution itself is never shown to other users. Apple users are full users without that badge. We use your sign-in data, posts, location mode, applications, matches, and messages to run the matching experience, and reports, blocks, and ratings to keep the community safer. When location is enabled, BuddyNow uses foreground precise-location snapshots for nearby matching; when it is unavailable, BuddyNow does not estimate a position for you — you simply use the app without a distance. We show other users only coarse distance labels, not your coordinates or exact meters. We use a narrow crash-reporting service (Sentry) to fix bugs, configured to send no personal content. We do not sell personal data, run ads, use behavioral analytics, collect background location, or collect photos, phone numbers, government IDs, contacts, or payment information.</p>
   </section>
 
   <h2>1. Who We Are</h2>
@@ -29,13 +29,13 @@
   <h2>2. Personal Data We Collect</h2>
   <h3>Account and identity data</h3>
   <ul>
-    <li>Sign-in method. School-email sign-in uses a school email address verified by a one-time password. Current verification supports <code>@u.nus.edu</code> (NUS), <code>@e.ntu.edu.sg</code> (NTU), <code>@smu.edu.sg</code> (SMU), <code>@mymail.sutd.edu.sg</code> (SUTD), <code>@singaporetech.edu.sg</code> (SIT), and <code>@suss.edu.sg</code> (SUSS). This list changes as support is added; the app's sign-in screen always shows the current one.</li>
+    <li>Sign-in method. University-email sign-in uses an email address verified by a one-time password. We accept a fixed list of student email domains at selected degree-granting universities in Singapore, Taiwan, and Hong Kong. The list changes as universities are added — ask us at the address below for the current one. We deliberately do not accept a whole country suffix such as <code>.edu.hk</code> or <code>.edu.tw</code>, because those also cover secondary schools.</li>
     <li>Sign in with Apple account identifier, when you choose Apple login. Apple gives BuddyNow a stable app-specific identifier. We store that identifier to find or create your BuddyNow account. We do not use Apple login to verify a school.</li>
     <li>Nickname, chosen by you. It is not copied from the email local-part.</li>
     <li>Age or birth-year-derived age used to confirm you are 18 or above during profile creation.</li>
     <li>Gender selection: female, male, non-binary, or skip.</li>
     <li>Avatar settings: two numeric choices for a procedural plant icon, not a photo.</li>
-    <li>School, for school-email accounts, derived from your school email domain and shown as a verified-school signal. Apple accounts do not receive this signal.</li>
+    <li>School, for university-email accounts, derived from your email domain. It is stored and used internally (for example, aggregate sign-up statistics) but is <strong>not shown to other users</strong>: what they see is a badge that says the email address was verified, without naming the institution. Apple accounts do not receive that badge.</li>
     <li>Internal account placeholders for Apple accounts, including a synthetic non-deliverable email value and an internal school sentinel. These are storage-only implementation details and are not shown publicly as a school or school email.</li>
   </ul>
 
@@ -193,7 +193,7 @@
   </header>
 
   <section class="notice">
-    <p><strong>简要说明：</strong>BuddyNow 面向年满 18 岁的用户。你可以使用受支持的学校邮箱登录，也可以使用 Apple 登录。来自受支持大学域名的学校邮箱用户会获得学校认证信号；Apple 登录用户是完整用户，但不会获得学校认证 badge。我们使用你的登录数据、帖子、定位模式、申请、匹配和消息完成匹配体验，使用举报、拉黑和评价维护社区安全。开启定位时，搭搭会使用前台精确定位快照做附近匹配；定位不可用时，搭搭不会替你估算位置——你仍可正常使用，只是不带距离。其他用户只会看到粗略距离标签，不会看到你的坐标或精确米数。我们使用一项窄范围的崩溃上报服务（Sentry）来修 bug，配置为不发送任何个人内容。我们不出售个人数据，不投放广告，不使用行为分析，不收集后台定位，也不收集照片、手机号、政府身份证件、通讯录或支付信息。</p>
+    <p><strong>简要说明：</strong>BuddyNow 面向年满 18 岁的用户。你可以使用受支持的学校邮箱登录，也可以使用 Apple 登录。使用受支持大学邮箱登录的用户会获得「邮箱已验证」徽章；学校名称不会展示给其他用户。Apple 登录用户是完整用户，只是没有该徽章。我们使用你的登录数据、帖子、定位模式、申请、匹配和消息完成匹配体验，使用举报、拉黑和评价维护社区安全。开启定位时，搭搭会使用前台精确定位快照做附近匹配；定位不可用时，搭搭不会替你估算位置——你仍可正常使用，只是不带距离。其他用户只会看到粗略距离标签，不会看到你的坐标或精确米数。我们使用一项窄范围的崩溃上报服务（Sentry）来修 bug，配置为不发送任何个人内容。我们不出售个人数据，不投放广告，不使用行为分析，不收集后台定位，也不收集照片、手机号、政府身份证件、通讯录或支付信息。</p>
   </section>
 
   <h2>1. 我们是谁</h2>
@@ -203,7 +203,7 @@
   <h2>2. 我们收集的个人数据</h2>
   <h3>账号与身份数据</h3>
   <ul>
-    <li>登录方式。学校邮箱登录会使用通过一次性验证码验证的学校邮箱。目前认证支持 <code>@u.nus.edu</code>（NUS）、<code>@e.ntu.edu.sg</code>（NTU）、<code>@smu.edu.sg</code>（SMU）、<code>@mymail.sutd.edu.sg</code>（SUTD）、<code>@singaporetech.edu.sg</code>（SIT）和 <code>@suss.edu.sg</code>（SUSS）。该清单会随支持范围调整；App 登录页始终显示当前清单。</li>
+    <li>登录方式。学校邮箱登录会使用通过一次性验证码验证的邮箱。我们接受一份固定清单，涵盖新加坡、台湾、香港部分授予学位的大学的学生邮箱域名。清单会随支持范围调整——需要当前清单请联系下方邮箱。我们刻意不接受 <code>.edu.hk</code>、<code>.edu.tw</code> 这类整个国家/地区后缀，因为它们同样覆盖中学。</li>
     <li>Apple 登录账号标识符，当你选择 Apple 登录时使用。Apple 会向 BuddyNow 提供稳定的、仅适用于本 App 的账号标识符。我们用该标识符查找或创建你的 BuddyNow 账号。我们不会把 Apple 登录用于学校认证。</li>
     <li>你自行设置的昵称。昵称不会从邮箱前缀自动生成。</li>
     <li>年龄或由出生年份推导的年龄，用于确认你在创建资料时已满 18 岁。</li>
@@ -362,12 +362,12 @@
   <div class="lang" data-lang="zh-Hant">
 <header>
     <h1>搭搭 BuddyNow 隱私政策</h1>
-    <p class="meta">最後更新：2026 年 8 月 28 日 · 在新加坡、臺灣、香港提供</p>
+    <p class="meta">最後更新：2026 年 8 月 28 日</p>
     <p>BuddyNow（中文品牌「搭搭」）幫助符合條件的使用者在接下來一小時內找到一起自習、跑步、健身、吃飯或參加其他低壓力活動的同伴。本政策說明我們收集哪些資料、為什麼收集，以及你可以如何管理自己的資料。</p>
   </header>
 
   <section class="notice">
-    <p><strong>簡要說明：</strong>BuddyNow 面向年滿 18 歲的使用者。你可以使用受支援的學校信箱登入，也可以使用 Apple 登入。來自受支援大學域名的學校信箱使用者會獲得學校認證訊號；Apple 登入使用者是完整使用者，但不會獲得學校認證 badge。我們使用你的登入資料、貼文、定位模式、申請、配對和訊息完成配對體驗，使用檢舉、封鎖和評價維護社群安全。開啟定位時，搭搭會使用前臺精確定位快照做附近配對；定位不可用時，搭搭不會替你估算位置——你仍可正常使用，只是不帶距離。其他使用者只會看到粗略距離標籤，不會看到你的座標或精確米數。我們使用一項窄範圍的崩潰上報服務（Sentry）來修 bug，配置為不傳送任何個人內容。我們不出售個人資料，不投放廣告，不使用行為分析，不收集後臺定位，也不收集照片、手機號、政府身份證件、通訊錄或支付資訊。</p>
+    <p><strong>簡要說明：</strong>BuddyNow 面向年滿 18 歲的使用者。你可以使用受支援的學校信箱登入，也可以使用 Apple 登入。使用受支援大學信箱登入的使用者會獲得「信箱已驗證」徽章；學校名稱不會展示給其他使用者。Apple 登入使用者是完整使用者，只是沒有該徽章。我們使用你的登入資料、貼文、定位模式、申請、配對和訊息完成配對體驗，使用檢舉、封鎖和評價維護社群安全。開啟定位時，搭搭會使用前臺精確定位快照做附近配對；定位不可用時，搭搭不會替你估算位置——你仍可正常使用，只是不帶距離。其他使用者只會看到粗略距離標籤，不會看到你的座標或精確米數。我們使用一項窄範圍的崩潰上報服務（Sentry）來修 bug，配置為不傳送任何個人內容。我們不出售個人資料，不投放廣告，不使用行為分析，不收集後臺定位，也不收集照片、手機號、政府身份證件、通訊錄或支付資訊。</p>
   </section>
 
   <h2>1. 我們是誰</h2>
@@ -377,7 +377,7 @@
   <h2>2. 我們收集的個人資料</h2>
   <h3>帳號與身份資料</h3>
   <ul>
-    <li>登入方式。學校信箱登入會使用透過一次性驗證碼驗證的學校信箱。目前認證支援 <code>@u.nus.edu</code>（NUS）、<code>@e.ntu.edu.sg</code>（NTU）、<code>@smu.edu.sg</code>（SMU）、<code>@mymail.sutd.edu.sg</code>（SUTD）、<code>@singaporetech.edu.sg</code>（SIT）和 <code>@suss.edu.sg</code>（SUSS）。該清單會隨支援範圍調整；App 登入頁始終顯示當前清單。</li>
+    <li>登入方式。學校信箱登入會使用透過一次性驗證碼驗證的信箱。我們接受一份固定清單，涵蓋新加坡、臺灣、香港部分授予學位的大學的學生信箱域名。清單會隨支援範圍調整——需要當前清單請聯絡下方信箱。我們刻意不接受 <code>.edu.hk</code>、<code>.edu.tw</code> 這類整個國家/地區字尾，因為它們同樣覆蓋中學。</li>
     <li>Apple 登入帳號識別符號，當你選擇 Apple 登入時使用。Apple 會向 BuddyNow 提供穩定的、僅適用於本 App 的帳號識別符號。我們用該識別符號查詢或建立你的 BuddyNow 帳號。我們不會把 Apple 登入用於學校認證。</li>
     <li>你自行設定的暱稱。暱稱不會從信箱字首自動生成。</li>
     <li>年齡或由出生年份推導的年齡，用於確認你在建立資料時已滿 18 歲。</li>
